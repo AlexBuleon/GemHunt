@@ -1,6 +1,5 @@
-package com.apps.su.gemhunt;
+package com.crystalgems.gemhunt;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +9,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+
+import com.apps.su.gemhunt.R;
 
 public class MainActivity extends FragmentActivity {
 

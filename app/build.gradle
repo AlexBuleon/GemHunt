@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '25.0.1'
     defaultConfig {
-        applicationId "com.apps.su.gemhunt"
+        applicationId "com.crystalgems.gemhunt"
         minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
