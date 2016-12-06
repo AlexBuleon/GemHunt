@@ -1,5 +1,6 @@
 package com.crystalgems.gemhunt;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -7,12 +8,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 
 import com.apps.su.gemhunt.R;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends Activity implements ParallaxScrollView.ScrollViewListener {
 
     private static final int NUM_PAGES = 5;
     private ViewPager viewPager;
@@ -20,11 +22,19 @@ public class MainActivity extends FragmentActivity {
     private HorizontalScrollView scrollView;
     private ImageView backgroundImageView;
 
+    private ParallaxScrollView bgScrollView;
+    private ParallaxScrollView contentScrollView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_title_screen_slide_page);
-        scrollView = (HorizontalScrollView) findViewById(R.id.scroll_view);
+
+        bgScrollView = (ParallaxScrollView) findViewById(R.id.bg_sv);
+        contentScrollView = (ParallaxScrollView) findViewById(R.id.content_sv);
+        contentScrollView.setScrollViewListener(this);
+
+        /*scrollView = (HorizontalScrollView) findViewById(R.id.scroll_view);
         backgroundImageView = (ImageView) findViewById(R.id.titleScreenBackground);
 
         setContentView(R.layout.activity_screen_slide);
@@ -56,9 +66,7 @@ public class MainActivity extends FragmentActivity {
                         (float)(viewPager.getWidth() * (viewPager.getAdapter().getCount() - 1));
             }
         });
-        viewPager.setAdapter(pagerAdapter);
-
-
+        viewPager.setAdapter(pagerAdapter);*/
     }
 
     @Override
@@ -72,6 +80,13 @@ public class MainActivity extends FragmentActivity {
             viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
         }
     }
+
+    @Override
+    public void onScrollChanged(ParallaxScrollView scrollView, int x, int y, int oldx, int oldy) {
+
+        bgScrollView.scrollTo(0, (int)(y/2f));
+    }
+
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         public ScreenSlidePagerAdapter(FragmentManager fragmentManager) {

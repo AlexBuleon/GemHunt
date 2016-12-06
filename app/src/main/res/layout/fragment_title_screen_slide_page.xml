@@ -6,57 +6,34 @@
     android:layout_height="match_parent"
     tools:context="com.crystalgems.gemhunt.MainActivity">
 
-    <HorizontalScrollView
-        android:id="@+id/scroll_view"
+    <com.crystalgems.gemhunt.ParallaxScrollView
+        android:id="@+id/bg_sv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:layout_height="match_parent" >
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/titleScreenBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/space_clouds" />
 
-            <ImageView
-                android:id="@+id/titleScreenBackground"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/space_clouds" />
+    </com.crystalgems.gemhunt.ParallaxScrollView>
 
-            <!--Title-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="49dp"
-                android:shadowColor="@color/shadowBlack"
-                android:shadowDx="3"
-                android:shadowDy="3"
-                android:shadowRadius="5"
-                android:text="@string/gem_hunt"
-                android:textColor="@color/titleColor"
-                android:textSize="78sp" />
+    <com.crystalgems.gemhunt.ParallaxScrollView
+        android:id="@+id/content_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-            <!--Arrows buttons-->
-            <Button
-                android:id="@+id/leftArrowButton"
-                android:layout_width="48dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_keyboard_arrow_left_white_48dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/rightArrowButton"
-                android:layout_width="48dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/ic_keyboard_arrow_right_white_48dp" />
 
-        </RelativeLayout>
 
-    </HorizontalScrollView>
+        </LinearLayout>
+
+    </com.crystalgems.gemhunt.ParallaxScrollView>
+
 
 </RelativeLayout>
