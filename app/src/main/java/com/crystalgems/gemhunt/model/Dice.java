@@ -1,7 +1,7 @@
 package com.crystalgems.gemhunt.model;
 
 public enum Dice {
-    GreenDice(new int[]{0, 0, 0, 1, 1, 2, 2}),
+    GreenDice(new int[]{0, 0, 0, 1, 1, 2}),
     OrangeDice(new int[]{0, 0, 1, 1, 2, 2}),
     RedDice(new int[]{0, 1, 1, 2, 2, 2});
 

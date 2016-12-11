@@ -1,11 +1,23 @@
 package com.crystalgems.gemhunt.model;
 
 public class Game {
+	private int id;
+	private int turnCounter;
+	private long duration;
     private Player[] players;
     private DicePool dicePool;
     private DicePool dicePicked;
     private DicePool diceBin;
 
+    
+    public Game(int id, Player[] players, DicePool dicePool){
+    	this.id = id;
+    	this.players = players;
+    	this.dicePool = dicePool;
+    	turnCounter = 0;
+    	dicePicked = new DicePool();
+    	diceBin = new DicePool();
+    }
 
     public void pickDice(int num) {
         if (num > dicePool.size()) {
@@ -20,6 +32,14 @@ public class Game {
             dicePool.clear();
         }
     }
+    
+    public void toBin(){
+    	for (int i = 0; i<3; i++){
+    		if(dicePicked.get(i).getResult() != Dice.ESCAPE_FACE){
+    			dicePicked.moveTo(i, diceBin);
+    		}
+    	}
+    }
 
     public void resetDicePool() {
         dicePool.addAll(dicePicked);
@@ -27,8 +47,28 @@ public class Game {
         dicePool.addAll(diceBin);
         diceBin.clear();
     }
-
-    public Player[] getPlayers() {
-        return players;
+    
+    public Player getActivePlayer(){
+    	return players[turnCounter%players.length];
     }
+    
+    public int getTurnCounter(){
+    	return turnCounter;
+    }
+    public void setTurnCounter(int turn){
+    	turnCounter = turn;
+    }
+    
+    public long getDuration(){
+    	return duration;
+    }
+    
+    public void setDuration(long d){
+    	duration = d;
+    }
+    
+    public DicePool getDicePicked(){
+    	return dicePicked;
+    }
+    
 }
