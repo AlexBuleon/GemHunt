@@ -1,4 +1,4 @@
-package com.crystalgems.gemhunt;
+package com.crystalgems.gemhunt.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,14 +8,15 @@ import android.view.ViewGroup;
 
 import com.apps.su.gemhunt.R;
 
-public class TitleScreenSlidePageFragment extends Fragment {
+public class LobbyScreenSlidePageFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.fragment_title_screen_slide_page, container, false);
+                R.layout.fragment_lobby_screen_slide_page, container, false);
 
         return rootView;
     }
+
 }

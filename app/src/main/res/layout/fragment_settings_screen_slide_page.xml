@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/space_clouds">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Title-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:shadowColor="@color/shadowBlack"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="4"
+            android:text="@string/settings"
+            android:textColor="@color/titleColor"
+            android:textSize="32sp"
+            android:layout_marginBottom="24dp"
+            android:id="@+id/SettingsTextView" />
+
+        <!--Todo-->
+        <!--Language-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SettingsTextView"
+            android:id="@+id/language_settings"
+            >
+
+            <!--Todo : create a style-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/language_selected"
+                android:text="@string/language_selected"
+                android:textColor="@color/titleColor"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/language"
+                android:text="@string/language"
+                android:textColor="@color/titleColor"
+                android:textSize="24sp"
+                android:layout_above="@id/language_selected"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="16dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_keyboard_arrow_left_white_48dp"
+                android:layout_toStartOf="@id/language_selected"
+                android:layout_centerVertical="true"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_keyboard_arrow_right_white_48dp"
+                android:layout_toEndOf="@+id/language_selected"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <!--Volume-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/language_settings"
+            android:id="@+id/volume_settings"
+            >
+
+            <android.support.v7.widget.AppCompatSeekBar
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/volume_seekBar"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/volume"
+                android:text="@string/volume"
+                android:textColor="@color/titleColor"
+                android:textSize="24sp"
+                android:layout_above="@id/volume_seekBar"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="16dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_volume_down_white_48dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/volume_seekBar"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_volume_up_white_48dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/volume_seekBar"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/volume_settings"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/credits_button"
+                android:text="@string/credits"
+                android:layout_margin="8dp"
+                />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/stats_button"
+                android:text="@string/stats"
+                android:layout_toEndOf="@id/credits_button"
+                android:layout_margin="8dp"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -16,14 +16,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="49dp"
+            android:layout_marginTop="16dp"
             android:shadowColor="@color/shadowBlack"
             android:shadowDx="5"
             android:shadowDy="5"
             android:shadowRadius="4"
-            android:text="@string/gem_hunt"
+            android:text="@string/lobby"
             android:textColor="@color/titleColor"
-            android:textSize="78sp" />
+            android:textSize="32sp"
+            android:id="@+id/lobbyTextView" />
 
     </RelativeLayout>
 
