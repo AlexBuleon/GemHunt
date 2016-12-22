@@ -11,3 +11,4 @@
 app/.classpath
 app/.settings/org.eclipse.buildship.core.prefs
 *.project
+.idea/vcs.xml
