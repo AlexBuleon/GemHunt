@@ -1,5 +1,6 @@
 package com.crystalgems.gemhunt.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -114,9 +115,31 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 			player2.setText(R.string.add);
 		}
 	}
+
+    private int getPlayersNumber() {
+        if(player6.getVisibility() == View.VISIBLE && !player6.getText().equals(getResources().getString(R.string.add))){
+            return 6;
+        }
+        else if(player5.getVisibility() == View.VISIBLE && !player5.getText().equals(getResources().getString(R.string.add))){
+            return 5;
+        }
+        else if(player4.getVisibility() == View.VISIBLE && !player4.getText().equals(getResources().getString(R.string.add))){
+            return 4;
+        }
+        else if(player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))){
+            return 3;
+        }
+        else if(player2.getVisibility() == View.VISIBLE && !player2.getText().equals(getResources().getString(R.string.add))){
+            return 2;
+        }
+        else
+            return 1;
+    }
 	
 	private void launch(){//TODO : create controller with array of players in arg, create in game activity to link with
-		
+        Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), InGameActivity.class);
+        intent.putExtra("playersNumber", getPlayersNumber());
+        startActivity(intent);
 	}
 
 }

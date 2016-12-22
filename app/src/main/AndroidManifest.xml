@@ -10,12 +10,17 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.crystalgems.gemhunt.MainActivity"
-            android:screenOrientation="sensorLandscape" >
+            android:screenOrientation="sensorLandscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.crystalgems.gemhunt.view.InGameActivity"
+            android:screenOrientation="sensorLandscape">
+
         </activity>
     </application>
 
