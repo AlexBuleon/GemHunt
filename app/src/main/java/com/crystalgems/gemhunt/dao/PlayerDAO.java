@@ -2,8 +2,9 @@ package com.crystalgems.gemhunt.dao;
 
 import android.content.ContentValues;
 
-import com.crystalgems.gemhunt.Database.DatabaseHelper;
 import com.crystalgems.gemhunt.model.Player;
+
+//import com.crystalgems.gemhunt.Database.DatabaseHelper;
 
 public class PlayerDAO extends DAO<Player, Integer> {
 
@@ -12,9 +13,9 @@ public class PlayerDAO extends DAO<Player, Integer> {
 
         ContentValues values = new ContentValues();
         //store the values to add
-        values.put(DatabaseHelper.NAME_COLUMN, obj.getName());
+        /*values.put(DatabaseHelper.NAME_COLUMN, obj.getName());
         values.put(DatabaseHelper.TOTAL_SCORE_COLUMN, obj.getTotalScore());
-        values.put(DatabaseHelper.PENALTY_COLUMN, obj.getPenalty());
+        values.put(DatabaseHelper.PENALTY_COLUMN, obj.getPenalty());*/
 
 
 

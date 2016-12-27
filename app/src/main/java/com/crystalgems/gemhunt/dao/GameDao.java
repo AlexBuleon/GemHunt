@@ -3,6 +3,7 @@ package com.crystalgems.gemhunt.dao;
 import com.crystalgems.gemhunt.model.Game;
 
 public class GameDAO extends DAO<Game, Integer> {
+
     @Override
     public boolean create(Game obj) {
         return false;
