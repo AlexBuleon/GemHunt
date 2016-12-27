@@ -1,12 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/in_game_bg">
 
-    <Button
-        android:text="Button"
+    <RelativeLayout
+        android:id="@+id/diceLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/diceView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/item_blank_dice" />
+
+        <ImageView
+            android:id="@+id/diceView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/diceView1"
+            android:padding="10dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/item_blank_dice" />
+
+        <ImageView
+            android:id="@+id/diceView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/diceView2"
+            android:padding="10dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/item_blank_dice" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/diceLayout"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="30dp">
+
+        <Button
+            android:id="@+id/rollButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rollButtonText" />
+
+        <Button
+            android:id="@+id/passTurnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rollButton"
+            android:text="@string/passTurnButtonText" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

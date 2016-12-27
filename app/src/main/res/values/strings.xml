@@ -17,5 +17,7 @@
     <string name="player4">P4</string>
     <string name="player5">P5</string>
     <string name="player6">P6</string>
-    
+    <string name="rollButtonText">Roll</string>
+    <string name="passTurnButtonText">Pass turn</string>
+
 </resources>

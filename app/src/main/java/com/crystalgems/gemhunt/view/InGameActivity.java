@@ -8,10 +8,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.apps.su.gemhunt.R;
+import com.crystalgems.gemhunt.model.Game;
 
 public class InGameActivity extends FragmentActivity {
 
     private int playersNumber;
+    private Game game;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
