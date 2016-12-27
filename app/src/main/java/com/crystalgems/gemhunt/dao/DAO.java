@@ -2,8 +2,6 @@ package com.crystalgems.gemhunt.dao;
 
 public abstract class DAO<T, R> {
 
-    //add connection
-
     public DAO() {
     }
 
