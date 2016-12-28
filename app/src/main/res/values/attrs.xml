@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CharacterCardView">
+        <attr name="character" format="string" />
+        <attr name="playerName" format="string" />
+        <attr name="totalScore" format="integer" />
+        <attr name="currentScore" format="integer" />
+        <attr name="penalty" format="integer" />
+    </declare-styleable>
+</resources>
