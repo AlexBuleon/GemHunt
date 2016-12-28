@@ -3,18 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/space_clouds">
+    android:layout_height="match_parent">
     <!-- TODO : Buttons art (maybe appareance instead of P1/P2...) -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-	    <RelativeLayout
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/menu_bg3"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:id="@+id/lobby_title">
-	
+
 	        <!--Title-->
 	        <TextView
 	            android:layout_width="wrap_content"
