@@ -1,48 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray">
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/characterImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="false"
-            android:adjustViewBounds="true"
-            android:maxWidth="60dp"
-            android:src="@drawable/character_garnet1" />
+            android:id="@+id/cardBackgroud"
+            android:layout_width="134dp"
+            android:layout_height="67dp"
+            app:srcCompat="@drawable/misc_card_backgroud" />
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="false"
-            android:layout_centerInParent="true"
-            android:layout_toEndOf="@+id/characterImageView"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:layout_width="134dp"
+            android:layout_height="67dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="7dp"
+            android:paddingStart="6dp"
+            android:paddingTop="5dp">
 
-            <TextView
-                android:id="@+id/playerName"
+            <ImageView
+                android:id="@+id/characterImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="Antoine"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_centerInParent="false"
+                android:adjustViewBounds="true"
+                android:maxWidth="56dp"
+                android:src="@drawable/character_garnet1" />
 
-            <TextView
-                android:id="@+id/score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/playerName"
-                android:layout_centerHorizontal="true"
-                android:text="9 + 3" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="false"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/characterImageView">
 
+                <TextView
+                    android:id="@+id/playerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="false"
+                    android:paddingTop="10dp"
+                    android:text="Antoine"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/playerName"
+                    android:layout_centerHorizontal="true"
+                    android:text="9 + 3"
+                    android:textColor="@android:color/background_light" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/score"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/misc_card_penalty0" />
+
+            </RelativeLayout>
         </RelativeLayout>
-
     </RelativeLayout>
 
 </merge>
