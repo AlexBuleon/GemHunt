@@ -62,4 +62,18 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false">
+
+        <view
+            android:id="@+id/view"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
 </RelativeLayout>
