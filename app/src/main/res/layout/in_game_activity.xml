@@ -1,41 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/in_game_bg">
+    android:background="@drawable/background_table_top">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="35dp"
+        android:layout_height="31dp"
+        android:padding="5dp"
+        android:src="@drawable/misc_pause_button" />
+
+    <RelativeLayout
+        android:id="@+id/topCardLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:paddingTop="15dp">
+
+        <view
+            android:id="@+id/characterCard0"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <view
+            android:id="@+id/characterCard1"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/characterCard0"
+            android:paddingEnd="50dp"
+            android:paddingStart="50dp" />
+
+        <view
+            android:id="@+id/characterCard2"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/characterCard1" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/diceLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true">
+        android:layout_below="@+id/topCardLayout"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="30dp"
+        android:paddingTop="30dp">
+
+        <Button
+            android:id="@+id/rollButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/rollButtonText" />
+
+        <Space
+            android:id="@+id/space0"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/rollButton" />
 
         <ImageView
             android:id="@+id/diceView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/space0"
+            android:adjustViewBounds="true"
+            android:elevation="10dp"
+            android:maxWidth="67dp"
+            android:src="@drawable/item_blank_dice"
             android:visibility="visible"
-            app:srcCompat="@drawable/item_blank_dice" />
+            tools:targetApi="lollipop" />
+
+        <Space
+            android:id="@+id/space1"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/diceView1" />
 
         <ImageView
             android:id="@+id/diceView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/diceView1"
-            android:padding="10dp"
+            android:layout_toEndOf="@+id/space1"
+            android:adjustViewBounds="true"
+            android:elevation="10dp"
+            android:maxWidth="67dp"
+            android:src="@drawable/item_blank_dice"
             android:visibility="visible"
-            app:srcCompat="@drawable/item_blank_dice" />
+            tools:targetApi="lollipop" />
+
+        <Space
+            android:id="@+id/space2"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/diceView2" />
 
         <ImageView
             android:id="@+id/diceView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/diceView2"
-            android:padding="10dp"
+            android:layout_toEndOf="@+id/space2"
+            android:adjustViewBounds="true"
+            android:elevation="10dp"
+            android:maxWidth="67dp"
+            android:src="@drawable/item_blank_dice"
             android:visibility="visible"
-            app:srcCompat="@drawable/item_blank_dice" />
+            tools:targetApi="lollipop" />
+
+        <Space
+            android:id="@+id/space3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/diceView3" />
+
+        <Button
+            android:id="@+id/passTurnButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/space3"
+            android:text="@string/passTurnButtonText" />
 
     </RelativeLayout>
 
@@ -47,22 +138,10 @@
         android:layout_centerHorizontal="true"
         android:paddingTop="30dp">
 
-        <Button
-            android:id="@+id/rollButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rollButtonText" />
-
-        <Button
-            android:id="@+id/passTurnButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/rollButton"
-            android:text="@string/passTurnButtonText" />
-
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/bottomCardLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonLayout"
@@ -70,13 +149,29 @@
         android:layout_centerVertical="false">
 
         <view
-            android:id="@+id/view"
+            android:id="@+id/characterCard3"
             class="com.crystalgems.gemhunt.view.CharacterCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:maxHeight="200dp"
             android:maxWidth="400dp" />
+
+        <view
+            android:id="@+id/characterCard4"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/characterCard3"
+            android:paddingEnd="80dp"
+            android:paddingStart="80dp" />
+
+        <view
+            android:id="@+id/characterCard5"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/characterCard4" />
     </RelativeLayout>
 
 </RelativeLayout>
