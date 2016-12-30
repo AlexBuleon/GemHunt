@@ -5,24 +5,112 @@
     android:layout_height="match_parent"
     android:background="@drawable/in_game_bg">
 
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/pauseButton"
+        android:layout_margin="10dp"
+        android:src="@drawable/misc_pause_button"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toEndOf="@id/pauseButton">
+
+        <view
+            android:id="@+id/viewPlayer1"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:maxWidth="400dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <view
+            android:id="@+id/viewPlayer2"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:maxWidth="400dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <view
+            android:id="@+id/viewPlayer3"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:maxWidth="400dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp">
+
+        <view
+            android:id="@+id/viewPlayer4"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:maxWidth="400dp"
+            android:layout_alignParentStart="true" />
+
+        <view
+            android:id="@+id/viewPlayer5"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:maxWidth="400dp"
+            android:layout_centerHorizontal="true" />
+
+        <view
+            android:id="@+id/viewPlayer6"
+            class="com.crystalgems.gemhunt.view.CharacterCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:maxWidth="400dp"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/diceLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
 
         <ImageView
             android:id="@+id/diceView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:padding="10dp"
             android:visibility="visible"
             app:srcCompat="@drawable/item_blank_dice" />
 
         <ImageView
             android:id="@+id/diceView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_toEndOf="@+id/diceView1"
             android:padding="10dp"
             android:visibility="visible"
@@ -30,8 +118,8 @@
 
         <ImageView
             android:id="@+id/diceView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_toEndOf="@+id/diceView2"
             android:padding="10dp"
             android:visibility="visible"
@@ -41,42 +129,45 @@
 
     <RelativeLayout
         android:id="@+id/buttonLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/diceLayout"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:paddingTop="30dp">
-
-        <Button
-            android:id="@+id/rollButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rollButtonText" />
+        android:layout_margin="30dp">
 
         <Button
             android:id="@+id/passTurnButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/rollButton"
-            android:text="@string/passTurnButtonText" />
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:drawableTop="@drawable/ic_dice_white_48dp"
+            android:background="@color/bgRollTheDiceButton"
+            android:text="@string/passTurnButtonText"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/rollButton"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_alignParentEnd="true"
+            android:drawableTop="@drawable/ic_redo_white_48dp"
+            android:background="@color/bgPassYourTurnButton"
+            android:text="@string/rollButtonText"
+            android:textColor="@color/white"/>
 
     </RelativeLayout>
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/buttonLayout"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="false">
+        android:layout_centerVertical="false"
+        android:layout_marginTop="30dp">
 
-        <view
-            android:id="@+id/view"
-            class="com.crystalgems.gemhunt.view.CharacterCardView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:maxHeight="200dp"
-            android:maxWidth="400dp" />
-    </RelativeLayout>
+
+
+    </RelativeLayout>-->
+
+
 
 </RelativeLayout>

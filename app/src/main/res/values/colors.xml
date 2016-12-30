@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="titleColor">#90caf9</color>
     <color name="shadowBlack">#000000</color>
+    <color name="bg1PlayerCard">#E86250</color>
+    <color name="bg2PlayerCard">#F6DD91</color>
+    <color name="bgRollTheDiceButton">#43a047</color>
+    <color name="bgPassYourTurnButton">#c62828</color>
+    <color name="white">#FFFFFF</color>
 </resources>
