@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main">
 
     <ImageView
+        android:id="@+id/pauseButton"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:id="@+id/pauseButton"
         android:layout_margin="10dp"
         android:src="@drawable/misc_pause_button"
         />
@@ -24,33 +23,33 @@
             class="com.crystalgems.gemhunt.view.CharacterCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
             android:maxHeight="200dp"
-            android:maxWidth="400dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            android:maxWidth="400dp" />
 
         <view
             android:id="@+id/viewPlayer2"
             class="com.crystalgems.gemhunt.view.CharacterCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:maxHeight="200dp"
-            android:maxWidth="400dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:maxWidth="400dp" />
 
         <view
             android:id="@+id/viewPlayer3"
             class="com.crystalgems.gemhunt.view.CharacterCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
             android:maxHeight="200dp"
-            android:maxWidth="400dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+            android:maxWidth="400dp" />
 
     </RelativeLayout>
 
@@ -65,30 +64,30 @@
             class="com.crystalgems.gemhunt.view.CharacterCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:adjustViewBounds="true"
             android:maxHeight="200dp"
-            android:maxWidth="400dp"
-            android:layout_alignParentStart="true" />
+            android:maxWidth="400dp" />
 
         <view
             android:id="@+id/viewPlayer5"
             class="com.crystalgems.gemhunt.view.CharacterCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:maxHeight="200dp"
-            android:maxWidth="400dp"
-            android:layout_centerHorizontal="true" />
+            android:maxWidth="400dp" />
 
         <view
             android:id="@+id/viewPlayer6"
             class="com.crystalgems.gemhunt.view.CharacterCardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:adjustViewBounds="true"
             android:maxHeight="200dp"
-            android:maxWidth="400dp"
-            android:layout_alignParentEnd="true" />
+            android:maxWidth="400dp" />
 
     </RelativeLayout>
 
@@ -96,16 +95,16 @@
         android:id="@+id/diceLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
 
         <ImageView
             android:id="@+id/diceView1"
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:padding="10dp"
-            android:visibility="visible"
-            app:srcCompat="@drawable/item_blank_dice" />
+            android:src="@drawable/item_blank_dice"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/diceView2"
@@ -113,8 +112,8 @@
             android:layout_height="130dp"
             android:layout_toEndOf="@+id/diceView1"
             android:padding="10dp"
-            android:visibility="visible"
-            app:srcCompat="@drawable/item_blank_dice" />
+            android:src="@drawable/item_blank_dice"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/diceView3"
@@ -122,8 +121,8 @@
             android:layout_height="130dp"
             android:layout_toEndOf="@+id/diceView2"
             android:padding="10dp"
-            android:visibility="visible"
-            app:srcCompat="@drawable/item_blank_dice" />
+            android:src="@drawable/item_blank_dice"
+            android:visibility="visible" />
 
     </RelativeLayout>
 
@@ -131,16 +130,16 @@
         android:id="@+id/buttonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_margin="30dp">
 
         <Button
             android:id="@+id/passTurnButton"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:drawableTop="@drawable/ic_dice_white_48dp"
             android:background="@color/bgRollTheDiceButton"
+            android:drawableTop="@drawable/ic_dice_white_48dp"
             android:text="@string/passTurnButtonText"
             android:textColor="#ffffff"/>
 
@@ -149,8 +148,8 @@
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:layout_alignParentEnd="true"
-            android:drawableTop="@drawable/ic_redo_white_48dp"
             android:background="@color/bgPassYourTurnButton"
+            android:drawableTop="@drawable/ic_redo_white_48dp"
             android:text="@string/rollButtonText"
             android:textColor="@color/white"/>
 
