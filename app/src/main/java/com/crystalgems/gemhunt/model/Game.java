@@ -14,13 +14,13 @@ public class Game {
     	this.id = id;
     	this.players = players;
     	this.dicePool = dicePool;
-    	turnCounter = 0;
-    	dicePicked = new DicePool();
-    	diceBin = new DicePool();
+        turnCounter = 0;
+        dicePicked = new DicePool();
+        diceBin = new DicePool();
     }
 
     public void pickDice(int num) {
-        if (num > dicePool.size()) {
+        if (num < dicePool.size()) {
             // If there's enough dice, choose them randomly
             for (int i = 0; i < num; i++) {
                 int index = (int) (Math.random() * dicePool.size());
@@ -62,9 +62,13 @@ public class Game {
     public long getDuration(){
     	return duration;
     }
-    
+
     public void setDuration(long d){
     	duration = d;
+    }
+
+    public DicePool getDiceBin() {
+        return diceBin;
     }
     
     public DicePool getDicePicked(){

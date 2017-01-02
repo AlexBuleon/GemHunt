@@ -128,12 +128,9 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
         }
         else if(player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))){
             return 3;
-        }
-        else if(player2.getVisibility() == View.VISIBLE && !player2.getText().equals(getResources().getString(R.string.add))){
-            return 2;
-        }
-        else
-            return 1;
+		} else {
+			return 2;
+		}
     }
 	
 	private void launch(){//TODO : create controller with array of players in arg, create in game activity to link with

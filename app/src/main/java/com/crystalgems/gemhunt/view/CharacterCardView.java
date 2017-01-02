@@ -10,9 +10,10 @@ import android.widget.TextView;
 import com.apps.su.gemhunt.R;
 
 public class CharacterCardView extends LinearLayout {
-    private ImageView character;
-    private TextView playerName;
-    private TextView score;
+    private ImageView characterImageView;
+    private TextView playerNameImageView;
+    private TextView scoreImageView;
+    private ImageView penaltyImageView;
 
     public CharacterCardView(Context context) {
         super(context);
@@ -38,9 +39,25 @@ public class CharacterCardView extends LinearLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        character = (ImageView) findViewById(R.id.characterImageView);
-        playerName = (TextView) findViewById(R.id.playerName);
-        score = (TextView) findViewById(R.id.score);
-        character.setImageResource(R.drawable.character_garnet1);
+        characterImageView = (ImageView) findViewById(R.id.characterImageView);
+        playerNameImageView = (TextView) findViewById(R.id.nameTextView);
+        scoreImageView = (TextView) findViewById(R.id.scoreTextView);
+        penaltyImageView = (ImageView) findViewById(R.id.penaltyImageView);
+    }
+
+    public ImageView getCharacterImageView() {
+        return characterImageView;
+    }
+
+    public TextView getPlayerNameImageView() {
+        return playerNameImageView;
+    }
+
+    public TextView getScoreImageView() {
+        return scoreImageView;
+    }
+
+    public ImageView getPenaltyImageView() {
+        return penaltyImageView;
     }
 }
