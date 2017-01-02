@@ -27,20 +27,28 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_lobby_screen_slide_page, container, false);
+
         player1 = (Button)rootView.findViewById(R.id.player1);
         player1.setOnClickListener(this);
+
         player2 = (Button)rootView.findViewById(R.id.player2);
         player2.setOnClickListener(this);
+
         player3 = (Button)rootView.findViewById(R.id.player3);
         player3.setOnClickListener(this);
+
         player4 = (Button)rootView.findViewById(R.id.player4);
         player4.setOnClickListener(this);
+
         player5 = (Button)rootView.findViewById(R.id.player5);
         player5.setOnClickListener(this);
+
         player6 = (Button)rootView.findViewById(R.id.player6);
         player6.setOnClickListener(this);
+
         suppress = (Button)rootView.findViewById(R.id.suppress_button);
         suppress.setOnClickListener(this);
+
         launch = (Button)rootView.findViewById(R.id.launch_button);
         launch.setOnClickListener(this);
 
@@ -50,45 +58,53 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
 	@Override
 	public void onClick(View v) { //TODO : add pop-up when click on a player (choose name + appareance ?)
-		int x = v.getId();
-		switch (x) {
-		case R.id.player1:
-			
-			break;
-		
-		case R.id.player2:
-			
-			break;
-			
-		case R.id.player3:
-			player4.setVisibility(View.VISIBLE);
-			player3.setText(R.string.player3);
-			break;
-	
-		case R.id.player4:
-			player5.setVisibility(View.VISIBLE);
-			player4.setText(R.string.player4);
-			break;
-			
-		case R.id.player5:
-			player6.setVisibility(View.VISIBLE);
-			player5.setText(R.string.player5);
-			break;
-			
-		case R.id.player6:
-			player6.setText(R.string.player6);
-			break;
-			
-		case R.id.suppress_button:
-			suppress();
-			break;
-			
-		case R.id.launch_button:
-			launch();
-			break;
+		int viewId = v.getId();
+        Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), CharacterSelectActivity.class);
 
-		default:
-			break;
+		switch (viewId) {
+            case R.id.player1:
+                break;
+
+            case R.id.player2:
+                if (!player2.getText().equals("+")) {
+                    System.out.println(player2.getText());
+                    startActivity(intent);
+                }
+                else {
+                    player3.setVisibility(View.VISIBLE);
+                    player2.setText(R.string.player2);
+                }
+                break;
+
+            case R.id.player3:
+                player4.setVisibility(View.VISIBLE);
+                player3.setText(R.string.player3);
+                break;
+
+            case R.id.player4:
+                player5.setVisibility(View.VISIBLE);
+                player4.setText(R.string.player4);
+                break;
+
+            case R.id.player5:
+                player6.setVisibility(View.VISIBLE);
+                player5.setText(R.string.player5);
+                break;
+
+            case R.id.player6:
+                player6.setText(R.string.player6);
+                break;
+
+            case R.id.suppress_button:
+                suppress();
+                break;
+
+            case R.id.launch_button:
+                launch();
+                break;
+
+            default:
+                break;
 		}
 		
 	}
@@ -108,6 +124,10 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 		else if(player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))){
 			player4.setVisibility(View.INVISIBLE);
 			player3.setText(R.string.add);
+		}
+		else if(player2.getVisibility() == View.VISIBLE && !player2.getText().equals(getResources().getString(R.string.add))){
+			player3.setVisibility(View.INVISIBLE);
+			player2.setText(R.string.add);
 		}
 	}
 
