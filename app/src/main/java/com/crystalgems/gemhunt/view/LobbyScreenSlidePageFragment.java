@@ -57,8 +57,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 			break;
 		
 		case R.id.player2:
-			player3.setVisibility(View.VISIBLE);
-			player2.setText(R.string.player2);
+			
 			break;
 			
 		case R.id.player3:
@@ -109,10 +108,6 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 		else if(player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))){
 			player4.setVisibility(View.INVISIBLE);
 			player3.setText(R.string.add);
-		}
-		else if(player2.getVisibility() == View.VISIBLE && !player2.getText().equals(getResources().getString(R.string.add))){
-			player3.setVisibility(View.INVISIBLE);
-			player2.setText(R.string.add);
 		}
 	}
 
