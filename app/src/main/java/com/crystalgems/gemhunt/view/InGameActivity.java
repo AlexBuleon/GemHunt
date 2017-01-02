@@ -102,7 +102,7 @@ public class InGameActivity extends FragmentActivity {
                 characterCardViews[2] = (CharacterCardView) findViewById(R.id.characterCardView3);
                 characterCardViews[3] = (CharacterCardView) findViewById(R.id.characterCardView4);
                 characterCardViews[4] = (CharacterCardView) findViewById(R.id.characterCardView5);
-                (findViewById(R.id.characterCardView0)).setVisibility(View.INVISIBLE);
+                (findViewById(R.id.characterCardView1)).setVisibility(View.INVISIBLE);
                 break;
             case 4:
                 characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView0);
