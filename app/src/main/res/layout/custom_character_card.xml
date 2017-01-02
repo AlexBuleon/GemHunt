@@ -23,7 +23,7 @@
             android:layout_row="0"
             android:layout_rowSpan="3"
             android:adjustViewBounds="true"
-            app:srcCompat="@drawable/character_garnet1"
+            app:srcCompat="@drawable/character_garnet"
             tools:ignore="ContentDescription" />
 
         <TextView
