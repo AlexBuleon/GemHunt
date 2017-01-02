@@ -55,7 +55,7 @@
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
 	                android:id="@+id/player2"
-	                android:text="@string/add"
+	                android:text="@string/player2"
 	                android:layout_toEndOf="@id/player1"
 	                android:layout_margin="8dp"
 	                />
@@ -67,7 +67,6 @@
 	                android:text="@string/add"
 	                android:layout_toEndOf="@id/player2"
 	                android:layout_margin="8dp"
-	                android:visibility="invisible"
 	                />
 	
 		</RelativeLayout>
