@@ -76,22 +76,22 @@
         android:layout_margin="30dp">
 
         <Button
-            android:id="@+id/passTurnButton"
+            android:id="@+id/rollButton"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:background="@color/bgRollTheDiceButton"
             android:drawableTop="@drawable/ic_dice_white_48dp"
-            android:text="@string/passTurnButtonText"
+            android:text="@string/rollButtonText"
             android:textColor="#ffffff"/>
 
         <Button
-            android:id="@+id/rollButton"
+            android:id="@+id/passTurnButton"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:layout_alignParentEnd="true"
             android:background="@color/bgPassYourTurnButton"
             android:drawableTop="@drawable/ic_redo_white_48dp"
-            android:text="@string/rollButtonText"
+            android:text="@string/passTurnButtonText"
             android:textColor="@color/white"/>
 
     </RelativeLayout>
