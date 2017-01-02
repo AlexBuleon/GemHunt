@@ -10,4 +10,5 @@
     <color name="bgRollTheDiceButton">#43a047</color>
     <color name="bgPassYourTurnButton">#c62828</color>
     <color name="white">#FFFFFF</color>
+    <color name="transparent">#81000000</color>
 </resources>

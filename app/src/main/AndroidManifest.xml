@@ -22,6 +22,11 @@
             android:screenOrientation="sensorLandscape">
 
         </activity>
+        <activity
+            android:name="com.crystalgems.gemhunt.view.CharacterSelectActivity"
+            android:theme="@style/Theme.Transparent">
+
+        </activity>
     </application>
 
 </manifest>
