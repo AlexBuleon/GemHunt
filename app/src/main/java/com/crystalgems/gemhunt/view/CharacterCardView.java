@@ -44,6 +44,7 @@ public class CharacterCardView extends LinearLayout {
         playerNameImageView = (TextView) findViewById(R.id.nameTextView);
         scoreImageView = (TextView) findViewById(R.id.scoreTextView);
         penaltyImageView = (ImageView) findViewById(R.id.penaltyImageView);
+        backgroundLayout = (LinearLayout) findViewById(R.id.characterCardLayout);
     }
 
     public ImageView getCharacterImageView() {

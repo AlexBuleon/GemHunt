@@ -44,14 +44,15 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         initGameActivity();
 
 
-        Player[] players = new Player[6];
+        Player[] players = new Player[playersNumber];
         for (int i = 0; i < players.length; i++) {
             players[i] = new Player("player " + i);
         }
-        final DicePool dicePool = new DicePool(new Dice[]{Dice.GreenDice, Dice.GreenDice, Dice.GreenDice, Dice.GreenDice, Dice.GreenDice, Dice.GreenDice,
-                Dice.OrangeDice, Dice.OrangeDice, Dice.OrangeDice, Dice.OrangeDice, Dice.RedDice, Dice.RedDice,
-                Dice.RedDice});
-
+        
+        final DicePool dicePool = new DicePool(new Dice[]{new Dice(Dice.GreenDice), new Dice(Dice.GreenDice), new Dice(Dice.GreenDice), new Dice(Dice.GreenDice), new Dice(Dice.GreenDice), new Dice(Dice.GreenDice), 
+        		new Dice(Dice.OrangeDice), new Dice(Dice.OrangeDice), new Dice(Dice.OrangeDice), new Dice(Dice.OrangeDice), 
+        		new Dice(Dice.RedDice), new Dice(Dice.RedDice), new Dice(Dice.RedDice)});
+        
         game = new Game(0, players, dicePool);
 
         rollButton = (Button) findViewById(R.id.rollButton);
@@ -62,27 +63,6 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         
         rollButton.setOnClickListener(this);
         passTurnButton.setOnClickListener(this);
-
-        /*rollButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                game.pickDice(3);
-                for (int i = 0; i < 3; i++) {
-                    switch (game.getDicePicked().get(i).roll()) {
-                        case Dice.GEM_FACE:
-                            dicesViews[i].setImageResource(R.drawable.item_dice_green_0);
-                            break;
-                        case Dice.ESCAPE_FACE:
-                            dicesViews[i].setImageResource(R.drawable.item_dice_green_1);
-                            break;
-                        case Dice.MONSTER_FACE:
-                            dicesViews[i].setImageResource(R.drawable.item_dice_green_2);
-                            break;
-                    }
-                }
-                game.getDicePicked().moveTo(game.getDiceBin());
-            }
-        });*/
         
         victory = false;
 		game.setDuration(System.currentTimeMillis()); // init time
@@ -91,7 +71,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 
     private void initGameActivity() {
         characterCardViews = new CharacterCardView[playersNumber];
-        switch (playersNumber) {
+        switch (playersNumber) { //TODO : init name and avatar with players informations
             case 6:
                 characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView0);
                 characterCardViews[0].getPlayerNameImageView().setText("P1");
@@ -113,7 +93,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
                 characterCardViews[5].getCharacterImageView().setImageResource(R.drawable.character_garnet);                
                 for (int i=0;i<6;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreImageView().setText("0 + (0)");
                 }
                 break;
             case 5:
@@ -135,7 +115,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
                 (findViewById(R.id.characterCardView1)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<5;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreImageView().setText("0 + (0)");
                 }
                 break;
             case 4:
@@ -155,7 +135,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
                 (findViewById(R.id.characterCardView4)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<4;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreImageView().setText("0 + (0)");
                 }
                 break;
             case 3:
@@ -173,7 +153,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
                 (findViewById(R.id.characterCardView4)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<3;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreImageView().setText("0 + (0)");
                 }
                 break;
             case 2:
@@ -189,7 +169,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
                 (findViewById(R.id.characterCardView4)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<2;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreImageView().setText("0 + (0)");
                 }
                 break;
             default:
@@ -202,6 +182,10 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     	 * start the game, end when one player win (dedicated thread)
     	 */
     	public void start() {
+    		for(int i = 0; i < playersNumber; i++){
+    			characterCardViews[i].getBackgroundLayout().setBackgroundResource(R.color.bg1PlayerCard);
+    		}
+    		characterCardViews[game.getPlayerNumber()].getBackgroundLayout().setBackgroundResource(R.color.bg1PlayerCardActive);
     		if(!victory){	//victory value only update at the end on a turn, can't trigger between rolls
     			playDice();		//play a dice
     		}
@@ -216,14 +200,15 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     	/**
     	 * pick and play the 3 Dices
     	 */
-    	private void playDice(){ 
+    	private void playDice(){ //TODO : check if there's less than 3 dices, display blank dice
     		DicePool pool = game.getDicePicked();
     		game.pickDice(3-pool.size());
-    		for(int i=0; i<game.getDicePicked().size(); i++){ 
-    			switch (pool.get(i)) {
-				case GreenDice:
-					//diceAnimation(i,0);
-					switch (pool.get(i).roll()) {
+    		
+    		for(int i=0; i<game.getDicePicked().size(); i++){ 	
+    			int x = pool.get(i).roll();
+    			switch (pool.get(i).getColor()) {
+				case Dice.GreenDice:
+					switch (x) {
 					case Dice.GEM_FACE:
 						dicesViews[i].setImageResource(R.drawable.item_dice_green_0);
 						break;
@@ -237,9 +222,8 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 						break;
 					}
 					break;
-				case OrangeDice:
-					//diceAnimation(i,1);
-					switch (pool.get(i).roll()) {
+				case Dice.OrangeDice:
+					switch (x) {
 					case Dice.GEM_FACE:
 						dicesViews[i].setImageResource(R.drawable.item_dice_orange_0);
 						break;
@@ -253,9 +237,8 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 						break;
 					}
 					break;
-				case RedDice:
-					//diceAnimation(i,2);
-					switch (pool.get(i).roll()) {
+				case Dice.RedDice:
+					switch (x) {
 					case Dice.GEM_FACE:
 						dicesViews[i].setImageResource(R.drawable.item_dice_red_0);
 						break;
@@ -279,10 +262,10 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     	/**
     	 * check victory and update player datas before passing to next player turn
     	 */
-    	private void passTurn() { // TODO : link with activity animation (passing turn to X)
+    	private void passTurn() {
+    		updatePlayerTurn();
     		if(checkVictory())
     			victory = true;
-    		updatePlayerTurn();
     		game.setTurnCounter(game.getTurnCounter()+1);
     		game.resetDicePool();
     	}
@@ -290,40 +273,55 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     	/**
     	 * check penalty and update player datas before possible next dice roll
     	 */
-    	private void passRoll(){ // TODO : link with activity animation (3 penalty => turn pass)
+    	private void passRoll(){ 
     		updatePlayerRoll();
     		game.toBin();
     		if(checkPenalty()){
     			game.getActivePlayer().setTurnScore(0);
-    			passTurn();
     		}
     	}
     	
     	/**
     	 * update player's turn-ended datas
     	 */
-    	private void updatePlayerTurn() { //TODO : link with activity animation (update total score)
+    	private void updatePlayerTurn() { 
     		Player activePlayer = game.getActivePlayer();
     		activePlayer.setTotalScore(activePlayer.getTotalScore() + activePlayer.getTurnScore());
     		activePlayer.setTurnScore(0);
+    		characterCardViews[game.getPlayerNumber()].getScoreImageView().setText(activePlayer.getTotalScore() + " + (0)");
     		activePlayer.setPenaltyCounter(activePlayer.getPenaltyCounter() + activePlayer.getPenalty());
     		activePlayer.setPenalty(0);
-    		start();
     	}
     	
     	/**
     	 * update player's post-roll datas
     	 */
-    	private void updatePlayerRoll(){ //TODO : link with activity animation (update penalty, turn score)
+    	private void updatePlayerRoll(){
     		Player activePlayer = game.getActivePlayer();
     		DicePool pool = game.getDicePicked();
-    		for(int i = 0; i<3; i++){
+    		for(int i = 0; i<pool.size(); i++){
     			if (pool.get(i).getResult() == Dice.MONSTER_FACE)
     				activePlayer.setPenalty(activePlayer.getPenalty() + 1);
-    			else if(pool.get(i).getResult() == Dice.GEM_FACE)
+    			if (pool.get(i).getResult() == Dice.GEM_FACE)
     				activePlayer.setTurnScore(activePlayer.getTurnScore() + 1);
     		}
     		activePlayer.setRollCounter(activePlayer.getRollCounter() + 1);
+    		characterCardViews[game.getPlayerNumber()].getScoreImageView().setText(activePlayer.getTotalScore() + " + (" + activePlayer.getTurnScore() + ")");
+    		switch (activePlayer.getPenalty()) {
+    		case 0:
+				characterCardViews[game.getPlayerNumber()].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
+				break;
+			case 1:
+				characterCardViews[game.getPlayerNumber()].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty1);
+				break;
+			case 2:
+				characterCardViews[game.getPlayerNumber()].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty2);
+				break;
+
+			default:
+				characterCardViews[game.getPlayerNumber()].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty3);
+				break;
+			}
     	}
 
     	/**
@@ -343,6 +341,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     	 */
     	private boolean checkVictory() {
     		if(game.getActivePlayer().getTotalScore() >= 13){
+    			characterCardViews[game.getPlayerNumber()].getScoreImageView().setText(" WINNER"); //temp
     			return true;
     		}
     		return false;
@@ -361,74 +360,14 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 		@Override
 		public void onClick(View v) {
 			if(v == rollButton){
-				start();
+				if(!checkPenalty()){
+					start();
+				}
 			}
 			
 			if(v == passTurnButton){
 				passTurn();
+				start();
 			}
 		}
-		
-		/*private void diceAnimation(int pos, int color){ //SHINEY ANIMATIONS
-			int x = -1;
-			int y = 0;
-			for(int i = 0; i < 5; i++){
-				android.os.SystemClock.sleep(300);
-				do{
-					y = (int)Math.random()*3;
-				} while(x == y);
-				x = y;
-				switch (y) {
-				case 0:
-					switch (color) {
-					case 0:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_green_0);
-						break;
-					case 1:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_green_1);
-						break;
-					case 2:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_green_2);
-						break;
-					default:
-						break;
-					}
-					break;
-				case 1:
-					switch (color) {
-					case 0:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_orange_0);
-						break;
-					case 1:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_orange_1);
-						break;
-					case 2:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_orange_2);
-						break;
-					default:
-						break;
-					}
-					break;
-				case 2:
-					switch (color) {
-					case 0:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_red_0);
-						break;
-					case 1:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_red_1);
-						break;
-					case 2:
-						dicesViews[pos].setImageResource(R.drawable.item_dice_red_2);
-						break;
-					default:
-						break;
-					}
-					break;
-					
-				default:
-					break;
-				}
-			}
-			
-		}*/
 }

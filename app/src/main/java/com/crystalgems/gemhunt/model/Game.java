@@ -56,7 +56,7 @@ public class Game {
     	return players[turnCounter%players.length];
     }
     
-    public int getNumberPlayer(){
+    public int getPlayerNumber(){
     	return turnCounter%players.length;
     }
     
