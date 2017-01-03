@@ -1,9 +1,24 @@
 package com.crystalgems.gemhunt.model;
 
-public class Player {
-	private String name;
-	private int turnScore;
-	private int totalScore;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Player implements Parcelable {
+    public static final Creator<Player> CREATOR = new Creator<Player>() {
+        @Override
+        public Player createFromParcel(Parcel in) {
+            return new Player(in);
+        }
+
+        @Override
+        public Player[] newArray(int size) {
+            return new Player[size];
+        }
+    };
+    private String name;
+    private int pictureId;
+    private int turnScore;
+    private int totalScore;
 	private int penalty;
 	private int penaltyCounter;
 	private int rollCounter;
@@ -15,7 +30,29 @@ public class Player {
 		penalty = 0;
 		penaltyCounter = 0;
 		rollCounter = 0;
-	}
+    }
+
+    private Player(Parcel in) {
+        name = in.readString();
+        pictureId = in.readInt();
+        turnScore = 0;
+        totalScore = 0;
+        penalty = 0;
+        penaltyCounter = 0;
+        rollCounter = 0;
+    }
+
+    // Useless method
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(name);
+        out.writeInt(pictureId);
+    }
 
 	public String getName() {
 		return name;
@@ -24,6 +61,14 @@ public class Player {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+    public int getPictureId() {
+        return pictureId;
+    }
+
+    public void setPictureId(int pictureId) {
+        this.pictureId = pictureId;
+    }
 
 	public int getTurnScore() {
 		return turnScore;
@@ -51,7 +96,8 @@ public class Player {
 
 	public int getPenaltyCounter() {
 		return penaltyCounter;
-	}
+
+    }
 
 	public void setPenaltyCounter(int penaltyCounter) {
 		this.penaltyCounter = penaltyCounter;
