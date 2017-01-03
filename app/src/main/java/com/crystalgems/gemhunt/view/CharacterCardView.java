@@ -14,6 +14,7 @@ public class CharacterCardView extends LinearLayout {
     private TextView playerNameImageView;
     private TextView scoreImageView;
     private ImageView penaltyImageView;
+    private LinearLayout backgroundLayout;
 
     public CharacterCardView(Context context) {
         super(context);
@@ -59,5 +60,9 @@ public class CharacterCardView extends LinearLayout {
 
     public ImageView getPenaltyImageView() {
         return penaltyImageView;
+    }
+    
+    public LinearLayout getBackgroundLayout(){
+    	return backgroundLayout;
     }
 }
