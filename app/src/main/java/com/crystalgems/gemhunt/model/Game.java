@@ -12,7 +12,10 @@ public class Game {
     
     public Game(int id, Player[] players, DicePool dicePool){
     	this.id = id;
-    	this.players = players;
+    	this.players = new Player[players.length];
+    	for(int i = 0; i < players.length; i++){
+    		this.players[i] = players[i];
+    	}
     	this.dicePool = dicePool;
         turnCounter = 0;
         dicePicked = new DicePool();
@@ -35,8 +38,8 @@ public class Game {
     
     public void toBin(){
     	for (int i = 0; i<3; i++){
-    		if(dicePicked.get(i).getResult() != Dice.ESCAPE_FACE){
-    			dicePicked.moveTo(i, diceBin);
+    		if(dicePicked.get(2-i).getResult() != Dice.ESCAPE_FACE){
+    			dicePicked.moveTo(2-i, diceBin);
     		}
     	}
     }
