@@ -9,7 +9,7 @@ public interface GamePlayerLinkSchema {
     String COLUMN_GAME_PLAYER_LINk_ID_GAME = "idGame";
     String COLUMN_GAME_PLAYER_LINk_ID_PLAYER = "idPlayer";
     String COLUMN_GAME_PLAYER_LINk_PLAYER_SCORE = "playerScore";
-    String COLUMN_GAME_PLAYER_LINk_PLAYER_RANK = "playerrank";
+    String COLUMN_GAME_PLAYER_LINk_PLAYER_RANK = "playerRank";
 
     //Create table query
     String GAME_PLAYER_LINK_TABLE_CREATE = "create table if not exists " +
