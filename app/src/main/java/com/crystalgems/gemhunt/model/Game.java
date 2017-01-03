@@ -37,9 +37,10 @@ public class Game {
     }
     
     public void toBin(){
-    	for (int i = 0; i<3; i++){
-    		if(dicePicked.get(2-i).getResult() != Dice.ESCAPE_FACE){
-    			dicePicked.moveTo(2-i, diceBin);
+    	int x = dicePicked.size();
+    	for (int i = 0; i<x; i++){
+    		if(dicePicked.get(x-1-i).getResult() != Dice.ESCAPE_FACE){
+    			dicePicked.moveTo(x-1-i, diceBin);
     		}
     	}
     }
@@ -53,6 +54,10 @@ public class Game {
     
     public Player getActivePlayer(){
     	return players[turnCounter%players.length];
+    }
+    
+    public int getNumberPlayer(){
+    	return turnCounter%players.length;
     }
     
     public int getTurnCounter(){
