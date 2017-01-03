@@ -16,20 +16,47 @@ public class Player implements Parcelable {
         }
     };
     private String name;
+    private int id;
     private int pictureId;
     private int turnScore;
     private int totalScore;
-	private int penalty;
-	private int penaltyCounter;
-	private int rollCounter;
+    private int penalty;
+    private int totalPenalty;
+    private int penaltyCounter;
+    private int rollCounter;
 
-	public Player(String name) {
-		this.name = name;
-		turnScore = 0;
-		totalScore = 0;
-		penalty = 0;
-		penaltyCounter = 0;
-		rollCounter = 0;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id='" + id + '\'' +
+                "name='" + name + '\'' +
+                ", pictureId=" + pictureId +
+                ", turnScore=" + turnScore +
+                ", totalScore=" + totalScore +
+                ", penalty=" + penalty +
+                ", totalPenalty=" + totalPenalty +
+                ", penaltyCounter=" + penaltyCounter +
+                ", rollCounter=" + rollCounter +
+                '}';
+    }
+
+    public Player(String name) {
+        this.name = name;
+        turnScore = 0;
+        pictureId = 0;
+        totalScore = 0;
+        penalty = 0;
+        totalPenalty = 0;
+        penaltyCounter = 0;
+        rollCounter = 0;
     }
 
     private Player(Parcel in) {
@@ -40,6 +67,10 @@ public class Player implements Parcelable {
         penalty = 0;
         penaltyCounter = 0;
         rollCounter = 0;
+    }
+
+    public Player() {
+
     }
 
     // Useless method
@@ -54,13 +85,13 @@ public class Player implements Parcelable {
         out.writeInt(pictureId);
     }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getPictureId() {
         return pictureId;
@@ -70,44 +101,53 @@ public class Player implements Parcelable {
         this.pictureId = pictureId;
     }
 
-	public int getTurnScore() {
-		return turnScore;
-	}
+    public int getTurnScore() {
+        return turnScore;
+    }
 
-	public void setTurnScore(int turnScore) {
-		this.turnScore = turnScore;
-	}
+    public void setTurnScore(int turnScore) {
+        this.turnScore = turnScore;
+    }
 
-	public int getTotalScore() {
-		return totalScore;
-	}
+    public int getTotalScore() {
+        return totalScore;
+    }
 
-	public void setTotalScore(int totalScore) {
-		this.totalScore = totalScore;
-	}
+    public void setTotalScore(int totalScore) {
+        this.totalScore = totalScore;
+    }
 
-	public int getPenalty() {
-		return penalty;
-	}
+    public int getPenalty() {
+        return penalty;
+    }
 
-	public void setPenalty(int penalty) {
-		this.penalty = penalty;
-	}
+    public void setPenalty(int penalty) {
+        this.penalty = penalty;
+    }
 
-	public int getPenaltyCounter() {
-		return penaltyCounter;
+    public int getPenaltyCounter() {
+        return penaltyCounter;
 
     }
 
-	public void setPenaltyCounter(int penaltyCounter) {
-		this.penaltyCounter = penaltyCounter;
-	}
+    public int getTotalPenalty() {
+        return totalPenalty;
+    }
 
-	public int getRollCounter() {
-		return rollCounter;
-	}
+    public void setTotalPenalty(int totalPenalty) {
+        this.totalPenalty = totalPenalty;
+    }
 
-	public void setRollCounter(int rollCounter) {
-		this.rollCounter = rollCounter;
-	}
+    public void setPenaltyCounter(int penaltyCounter) {
+        this.penaltyCounter = penaltyCounter;
+    }
+
+    public int getRollCounter() {
+        return rollCounter;
+    }
+
+    public void setRollCounter(int rollCounter) {
+        this.rollCounter = rollCounter;
+    }
+
 }

@@ -11,8 +11,8 @@ import com.apps.su.gemhunt.R;
 
 public class CharacterCardView extends LinearLayout {
     private ImageView characterImageView;
-    private TextView playerNameImageView;
-    private TextView scoreImageView;
+    private TextView playerNameTextView;
+    private TextView scoreTextView;
     private ImageView penaltyImageView;
     private LinearLayout backgroundLayout;
 
@@ -41,8 +41,8 @@ public class CharacterCardView extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
         characterImageView = (ImageView) findViewById(R.id.characterImageView);
-        playerNameImageView = (TextView) findViewById(R.id.nameTextView);
-        scoreImageView = (TextView) findViewById(R.id.scoreTextView);
+        playerNameTextView = (TextView) findViewById(R.id.nameTextView);
+        scoreTextView = (TextView) findViewById(R.id.scoreTextView);
         penaltyImageView = (ImageView) findViewById(R.id.penaltyImageView);
         backgroundLayout = (LinearLayout) findViewById(R.id.characterCardLayout);
     }
@@ -51,12 +51,12 @@ public class CharacterCardView extends LinearLayout {
         return characterImageView;
     }
 
-    public TextView getPlayerNameImageView() {
-        return playerNameImageView;
+    public TextView getPlayerNameTextView() {
+        return playerNameTextView;
     }
 
-    public TextView getScoreImageView() {
-        return scoreImageView;
+    public TextView getScoreTextView() {
+        return scoreTextView;
     }
 
     public ImageView getPenaltyImageView() {
