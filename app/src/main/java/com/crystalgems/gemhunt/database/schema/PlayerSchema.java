@@ -9,7 +9,7 @@ public interface PlayerSchema {
     String COLUMN_PLAYER_NAME = "name";
     String COLUMN_PLAYER_PICTURE_ID = "pictureId";
     String COLUMN_PLAYER_TOTAL_SCORE = "totalScore";
-    String COLUMN_PLAYER_PENALTY = "penalty";
+    String COLUMN_PLAYER_TOTAL_PENALTY = "totalPenalty";
 
     //Create table query
     String PLAYER_TABLE_CREATE = "create table if not exists " +
@@ -18,9 +18,15 @@ public interface PlayerSchema {
             COLUMN_PLAYER_NAME + " text not null," +
             COLUMN_PLAYER_PICTURE_ID + " integer not null," +
             COLUMN_PLAYER_TOTAL_SCORE + " integer not null," +
-            COLUMN_PLAYER_PENALTY + " integer not null" +
+            COLUMN_PLAYER_TOTAL_PENALTY + " integer not null" +
             ");";
 
     //List of the column of the table
-    String[] PLAYER_COLUMNS = new String[] { COLUMN_PLAYER_ID, COLUMN_PLAYER_NAME, COLUMN_PLAYER_PICTURE_ID, COLUMN_PLAYER_TOTAL_SCORE, COLUMN_PLAYER_PENALTY};
+    String[] PLAYER_COLUMNS = new String[] {
+            COLUMN_PLAYER_ID,
+            COLUMN_PLAYER_NAME,
+            COLUMN_PLAYER_PICTURE_ID,
+            COLUMN_PLAYER_TOTAL_SCORE,
+            COLUMN_PLAYER_TOTAL_PENALTY
+    };
 }

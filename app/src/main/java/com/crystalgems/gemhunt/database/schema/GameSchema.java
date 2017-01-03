@@ -21,5 +21,9 @@ public interface GameSchema {
             ");";
 
     //List of the column of the table
-    String[] GAME_COLUMNS = new String[] {COLUMN_GAME_ID, COLUMN_GAME_TURN_DURATION, COLUMN_GAME_TURN_DURATION, COLUMN_GAME_PLAYER_LINK};
+    String[] GAME_COLUMNS = new String[] {
+            COLUMN_GAME_ID,
+            COLUMN_GAME_TURN_DURATION,
+            COLUMN_GAME_TURN_DURATION,
+            COLUMN_GAME_PLAYER_LINK};
 }
