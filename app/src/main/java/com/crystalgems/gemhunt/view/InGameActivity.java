@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -33,8 +32,8 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
+				View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
         setContentView(R.layout.in_game_activity);
 
@@ -333,23 +332,17 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     	 * @return player have 3 penalties and must pass turn
     	 */
     	private boolean checkPenalty() {
-    		if(game.getActivePlayer().getPenalty() >= 3){
-    			return true;
-    		}
-    		return false;
-    	}
+			return game.getActivePlayer().getPenalty() >= 3;
+		}
 
     	/**
     	 * check if the player won
     	 * @return the player won the game
     	 */
     	private boolean checkVictory() {
-    		if(game.getActivePlayer().getTotalScore() >= 13){
-    			return true;
-    		}
-    		return false;
+			return game.getActivePlayer().getTotalScore() >= 13;
 
-    	}
+		}
 
     	/**
     	 * save game datas to the database
