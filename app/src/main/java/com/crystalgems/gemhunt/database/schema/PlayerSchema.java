@@ -15,7 +15,7 @@ public interface PlayerSchema {
     String PLAYER_TABLE_CREATE = "create table if not exists " +
             PLAYER_TABLE + "(" +
             COLUMN_PLAYER_ID + " integer primary key autoincrement," +
-            COLUMN_PLAYER_NAME + " texte not null," +
+            COLUMN_PLAYER_NAME + " text not null," +
             COLUMN_PLAYER_PICTURE_ID + " integer not null," +
             COLUMN_PLAYER_TOTAL_SCORE + " integer not null," +
             COLUMN_PLAYER_PENALTY + " integer not null" +
