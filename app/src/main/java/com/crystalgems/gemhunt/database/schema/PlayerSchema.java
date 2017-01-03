@@ -7,7 +7,7 @@ public interface PlayerSchema {
 
     String COLUMN_PLAYER_ID = "id";
     String COLUMN_PLAYER_NAME = "name";
-    String COLUMN_PLAYER_TOTAL_SCORE = "total_score";
+    String COLUMN_PLAYER_TOTAL_SCORE = "totalScore";
     String COLUMN_PLAYER_PENALTY = "penalty";
 
     //Create table query

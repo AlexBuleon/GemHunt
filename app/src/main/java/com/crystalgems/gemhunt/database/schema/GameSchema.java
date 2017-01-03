@@ -11,8 +11,8 @@ public interface GameSchema {
     String COLUMN_GAME_PLAYER_LINK = "idLink";
 
     //Create table query
-    String GAME_TABLE_CREATE = "create table if not exists "
-            + TABLE_GAME + "(" +
+    String GAME_TABLE_CREATE = "create table if not exists " +
+            TABLE_GAME + "(" +
             COLUMN_GAME_ID + " integer primary key autoincrement," +
             // TODO: 03/01/2017 check if duration can be an intger
             COLUMN_GAME_DURATION + " integer not null," +
