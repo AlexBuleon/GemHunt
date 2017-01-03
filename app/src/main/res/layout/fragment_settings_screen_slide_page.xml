@@ -1,51 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_settings">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/menu_bg1"
-            android:scaleType="fitXY"/>
-
         <!--Title-->
         <TextView
+            android:id="@+id/SettingsTextView"
+            style="@style/menuTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            style="@style/menuTitle"
             android:text="@string/settings"
-            android:textSize="32sp"
-            android:id="@+id/SettingsTextView" />
+            android:textSize="32sp" />
 
         <!--Todo-->
         <!--Language-->
         <RelativeLayout
+            android:id="@+id/language_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/SettingsTextView"
-            android:id="@+id/language_settings"
             >
 
             <TextView
+                android:id="@+id/language"
+                style="@style/menuText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/language"
-                android:text="@string/language"
-                style="@style/menuText"
-                android:textSize="24sp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
+                android:text="@string/language"
+                android:textSize="24sp"
                 />
 
             <RelativeLayout
@@ -54,34 +48,34 @@
                 android:layout_below="@id/language">
 
                 <TextView
+                    android:id="@+id/language_selected"
+                    style="@style/menuText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/language_selected"
-                    android:text="@string/language_selected"
-                    style="@style/menuText"
-                    android:textSize="20sp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/language_selected"
+                    android:textSize="20sp"
                     />
 
                 <ImageView
+                    style="@style/menuText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_keyboard_arrow_left_white_48dp"
-                    style="@style/menuText"
+                    android:layout_centerVertical="true"
                     android:layout_toStartOf="@id/language_selected"
-                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_keyboard_arrow_left_white_48dp"
                     />
 
                 <ImageView
+                    style="@style/menuText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    style="@style/menuText"
-                    android:src="@drawable/ic_keyboard_arrow_right_white_48dp"
-                    android:layout_toEndOf="@+id/language_selected"
                     android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/language_selected"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_48dp"
                     />
 
             </RelativeLayout>
@@ -90,21 +84,21 @@
 
         <!--Volume settings-->
         <RelativeLayout
+            android:id="@+id/volume_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/language_settings"
-            android:id="@+id/volume_settings"
             >
 
             <TextView
+                android:id="@+id/volume"
+                style="@style/menuText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/volume"
-                android:text="@string/volume"
-                style="@style/menuText"
-                android:textSize="24sp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="16dp"
+                android:text="@string/volume"
+                android:textSize="24sp"
                 />
 
             <!--Volume seekbar-->
@@ -114,29 +108,29 @@
                 android:layout_below="@id/volume">
 
                 <android.support.v7.widget.AppCompatSeekBar
+                    android:id="@+id/volume_seekBar"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:id="@+id/volume_seekBar"
-                    android:layout_marginStart="4dp"
                     android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
                     />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_volume_down_white_48dp"
                     android:layout_centerVertical="true"
                     android:layout_toStartOf="@id/volume_seekBar"
+                    android:src="@drawable/ic_volume_down_white_48dp"
                     />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_volume_up_white_48dp"
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@id/volume_seekBar"
+                    android:src="@drawable/ic_volume_up_white_48dp"
                     />
 
             </RelativeLayout>
@@ -150,20 +144,20 @@
             android:layout_centerHorizontal="true">
 
             <Button
+                android:id="@+id/credits_button"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/credits_button"
-                android:text="@string/credits"
                 android:layout_margin="8dp"
+                android:text="@string/credits"
                 />
 
             <Button
+                android:id="@+id/stats_button"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/stats_button"
-                android:text="@string/stats"
-                android:layout_toEndOf="@id/credits_button"
                 android:layout_margin="8dp"
+                android:layout_toEndOf="@id/credits_button"
+                android:text="@string/stats"
                 />
 
         </RelativeLayout>

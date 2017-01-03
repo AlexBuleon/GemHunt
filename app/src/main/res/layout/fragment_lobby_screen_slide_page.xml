@@ -1,110 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+	android:id="@+id/activity_main"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/background_lobby">
     <!-- TODO : Buttons art (maybe appareance instead of P1/P2...) -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/menu_bg3"
-            android:scaleType="fitXY"/>
-
-        <RelativeLayout
+		<RelativeLayout
+			android:id="@+id/lobby_title"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:id="@+id/lobby_title">
+			android:layout_height="wrap_content">
 
 	        <!--Title-->
 	        <TextView
+				android:id="@+id/lobbyTextView"
+				style="@style/menuTitle"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_alignParentTop="true"
 	            android:layout_centerHorizontal="true"
-	            android:layout_marginTop="16dp"
+				android:layout_marginTop="16dp"
 	            android:shadowColor="@color/shadowBlack"
-				style="@style/menuTitle"
 	            android:text="@string/lobby"
-	            android:textSize="32sp"
-	            android:id="@+id/lobbyTextView" />
+				android:textSize="32sp" />
 	
 	    </RelativeLayout>
 	    
 	    <!-- First layer of player buttons -->
 	     <RelativeLayout
+			 android:id="@+id/lobby_players"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_below="@id/lobby_title"
-	            android:layout_centerHorizontal="true"
-	            android:id="@+id/lobby_players">
+			 android:layout_centerHorizontal="true">
 	
 	            <Button
+					android:id="@+id/player1"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/player1"
-	                android:text="@string/player1"
 	                android:layout_margin="8dp"
+					android:text="@string/player1"
 	                />
 	
 	            <Button
+					android:id="@+id/player2"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/player2"
-	                android:text="@string/player2"
-	                android:layout_toEndOf="@id/player1"
 	                android:layout_margin="8dp"
+					android:layout_toEndOf="@id/player1"
+					android:text="@string/player2"
 	                />
 	                
 	            <Button
+					android:id="@+id/player3"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/player3"
-	                android:text="@string/add"
-	                android:layout_toEndOf="@id/player2"
 	                android:layout_margin="8dp"
+					android:layout_toEndOf="@id/player2"
+					android:text="@string/add"
 	                />
 	
 		</RelativeLayout>
 	    
 	    <!-- second layer of player buttons -->
 	     <RelativeLayout
+			 android:id="@+id/lobby_players2"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_below="@id/lobby_players"
-	            android:layout_centerHorizontal="true"
-	            android:id="@+id/lobby_players2">
+			 android:layout_centerHorizontal="true">
 	
 	            <Button
+					android:id="@+id/player4"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/player4"
-	                android:text="@string/add"
 	                android:layout_margin="8dp"
+					android:text="@string/add"
 	                android:visibility="invisible"
 	                />
 	
 	            <Button
+					android:id="@+id/player5"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/player5"
-	                android:text="@string/add"
-	                android:layout_toEndOf="@id/player4"
 	                android:layout_margin="8dp"
+					android:layout_toEndOf="@id/player4"
+					android:text="@string/add"
 	                android:visibility="invisible"
 	                />
 	                
 	            <Button
+					android:id="@+id/player6"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/player6"
-	                android:text="@string/add"
-	                android:layout_toEndOf="@id/player5"
 	                android:layout_margin="8dp"
+					android:layout_toEndOf="@id/player5"
+					android:text="@string/add"
 	                android:visibility="invisible"
 	                />
 	
@@ -118,20 +112,20 @@
 	            android:layout_centerHorizontal="true">
 	
 	            <Button
+					android:id="@+id/suppress_button"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/suppress_button"
-	                android:text="@string/suppress"
 	                android:layout_margin="8dp"
+					android:text="@string/suppress"
 	                />
 	
 	            <Button
+					android:id="@+id/launch_button"
 	                android:layout_width="100dp"
 	                android:layout_height="wrap_content"
-	                android:id="@+id/launch_button"
-	                android:text="@string/launch"
-	                android:layout_toEndOf="@id/suppress_button"
 	                android:layout_margin="8dp"
+					android:layout_toEndOf="@id/suppress_button"
+					android:text="@string/launch"
 	                />
 	
 		</RelativeLayout>
