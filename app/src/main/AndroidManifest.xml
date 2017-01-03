@@ -19,14 +19,14 @@
         </activity>
         <activity
             android:name="com.crystalgems.gemhunt.view.InGameActivity"
-            android:screenOrientation="sensorLandscape">
-
-        </activity>
+            android:screenOrientation="sensorLandscape" />
         <activity
             android:name="com.crystalgems.gemhunt.view.CharacterSelectActivity"
-            android:theme="@style/Theme.Transparent">
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name="com.crystalgems.gemhunt.view.PauseActivity"
+            android:theme="@style/Theme.Transparent" />
 
-        </activity>
     </application>
 
 </manifest>

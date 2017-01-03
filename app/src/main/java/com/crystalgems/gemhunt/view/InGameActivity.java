@@ -24,6 +24,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 
     private Button rollButton;
     private Button passTurnButton;
+	private Button pauseButton;
 
     private ImageView[] dicesViews = new ImageView[3];
     private CharacterCardView[] characterCardViews;
@@ -55,6 +56,8 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 
         rollButton = (Button) findViewById(R.id.rollButton);
         passTurnButton = (Button) findViewById(R.id.passTurnButton);
+		pauseButton = (Button) findViewById(R.id.pauseButton);
+
         dicesViews[0] = (ImageView) findViewById(R.id.diceView1);
         dicesViews[1] = (ImageView) findViewById(R.id.diceView2);
         dicesViews[2] = (ImageView) findViewById(R.id.diceView3);
@@ -63,6 +66,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         
         rollButton.setOnClickListener(this);
         passTurnButton.setOnClickListener(this);
+		pauseButton.setOnClickListener(this);
 
         /*rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -361,6 +365,10 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 			
 			if(v == passTurnButton){
 				passTurn();
+			}
+
+			if (v == pauseButton) {
+				startActivity(new Intent(this, PauseActivity.class));
 			}
 		}
 		
