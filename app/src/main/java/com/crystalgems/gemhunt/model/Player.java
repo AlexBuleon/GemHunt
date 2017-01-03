@@ -42,7 +42,11 @@ public class Player implements Parcelable {
         rollCounter = 0;
     }
 
-    // Useless method
+	public Player() {
+
+	}
+
+	// Useless method
     @Override
     public int describeContents() {
         return 0;
