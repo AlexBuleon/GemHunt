@@ -52,7 +52,12 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
             //get the total penalty
             if(cursor.getColumnIndex(COLUMN_PLAYER_TOTAL_PENALTY) != -1) {
                 totalPenaltyIndex = cursor.getColumnIndex(COLUMN_PLAYER_TOTAL_PENALTY);
-                player.setTotalScore(cursor.getInt(totalPenaltyIndex));
+                player.setTotalPenalty(cursor.getInt(totalPenaltyIndex));
+            }
+
+            if(cursor.getColumnIndex(COLUMN_PLAYER_ID) != -1) {
+                int i = cursor.getColumnIndex(COLUMN_PLAYER_ID);
+                player.setId(cursor.getInt(i));
             }
 
             //set the other field to an zero value
@@ -60,6 +65,8 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
             player.setPenaltyCounter(0);
             player.setRollCounter(0);
         }
+
+
 
         return player;
     }
@@ -81,9 +88,11 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
             }
 
             cursor.close();
+
+            return player;
         }
 
-        return player;
+        return null;
     }
 
     @Override
@@ -135,6 +144,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
     }
 
     private void setContentValues(Player player) {
+        values  = new ContentValues();
         values.put(COLUMN_PLAYER_NAME, player.getName());
         values.put(COLUMN_PLAYER_PICTURE_ID, player.getPictureId());
         values.put(COLUMN_PLAYER_TOTAL_SCORE, player.getTotalScore());

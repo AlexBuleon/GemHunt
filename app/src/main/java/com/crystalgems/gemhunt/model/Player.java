@@ -16,6 +16,7 @@ public class Player implements Parcelable {
         }
     };
     private String name;
+    private int id;
     private int pictureId;
     private int turnScore;
     private int totalScore;
@@ -24,11 +25,36 @@ public class Player implements Parcelable {
     private int penaltyCounter;
     private int rollCounter;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id='" + id + '\'' +
+                "name='" + name + '\'' +
+                ", pictureId=" + pictureId +
+                ", turnScore=" + turnScore +
+                ", totalScore=" + totalScore +
+                ", penalty=" + penalty +
+                ", totalPenalty=" + totalPenalty +
+                ", penaltyCounter=" + penaltyCounter +
+                ", rollCounter=" + rollCounter +
+                '}';
+    }
+
     public Player(String name) {
         this.name = name;
         turnScore = 0;
+        pictureId = 0;
         totalScore = 0;
         penalty = 0;
+        totalPenalty = 0;
         penaltyCounter = 0;
         rollCounter = 0;
     }
@@ -123,4 +149,5 @@ public class Player implements Parcelable {
     public void setRollCounter(int rollCounter) {
         this.rollCounter = rollCounter;
     }
+
 }
