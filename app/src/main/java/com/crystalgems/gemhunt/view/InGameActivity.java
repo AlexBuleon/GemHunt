@@ -59,6 +59,8 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         dicesViews[0] = (ImageView) findViewById(R.id.diceView1);
         dicesViews[1] = (ImageView) findViewById(R.id.diceView2);
         dicesViews[2] = (ImageView) findViewById(R.id.diceView3);
+
+        characterCardViews[1].getPlayerNameTextView().setText("Antoine");
         
         rollButton.setOnClickListener(this);
         passTurnButton.setOnClickListener(this);
@@ -94,94 +96,94 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         switch (playersNumber) {
             case 6:
                 characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView0);
-                characterCardViews[0].getPlayerNameImageView().setText("P1");
+                characterCardViews[0].getPlayerNameTextView().setText("P1");
                 characterCardViews[0].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[1] = (CharacterCardView) findViewById(R.id.characterCardView1);
-                characterCardViews[1].getPlayerNameImageView().setText("P2");
+                characterCardViews[1].getPlayerNameTextView().setText("P2");
                 characterCardViews[1].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[2] = (CharacterCardView) findViewById(R.id.characterCardView2);
-                characterCardViews[2].getPlayerNameImageView().setText("P3");
+                characterCardViews[2].getPlayerNameTextView().setText("P3");
                 characterCardViews[2].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[3] = (CharacterCardView) findViewById(R.id.characterCardView3);
-                characterCardViews[3].getPlayerNameImageView().setText("P4");
+                characterCardViews[3].getPlayerNameTextView().setText("P4");
                 characterCardViews[3].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[4] = (CharacterCardView) findViewById(R.id.characterCardView4);
-                characterCardViews[4].getPlayerNameImageView().setText("P5");
+                characterCardViews[4].getPlayerNameTextView().setText("P5");
                 characterCardViews[4].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[5] = (CharacterCardView) findViewById(R.id.characterCardView5);
-                characterCardViews[5].getPlayerNameImageView().setText("P6");
+                characterCardViews[5].getPlayerNameTextView().setText("P6");
                 characterCardViews[5].getCharacterImageView().setImageResource(R.drawable.character_garnet);                
                 for (int i=0;i<6;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreTextView().setText("0");
                 }
                 break;
             case 5:
                 characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView0);
-                characterCardViews[0].getPlayerNameImageView().setText("P1");
+                characterCardViews[0].getPlayerNameTextView().setText("P1");
                 characterCardViews[0].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[1] = (CharacterCardView) findViewById(R.id.characterCardView2);
-                characterCardViews[1].getPlayerNameImageView().setText("P2");
+                characterCardViews[1].getPlayerNameTextView().setText("P2");
                 characterCardViews[1].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[2] = (CharacterCardView) findViewById(R.id.characterCardView3);
-                characterCardViews[2].getPlayerNameImageView().setText("P3");
+                characterCardViews[2].getPlayerNameTextView().setText("P3");
                 characterCardViews[2].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[3] = (CharacterCardView) findViewById(R.id.characterCardView4);
-                characterCardViews[3].getPlayerNameImageView().setText("P4");
+                characterCardViews[3].getPlayerNameTextView().setText("P4");
                 characterCardViews[3].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[4] = (CharacterCardView) findViewById(R.id.characterCardView5);
-                characterCardViews[4].getPlayerNameImageView().setText("P5");
+                characterCardViews[4].getPlayerNameTextView().setText("P5");
                 characterCardViews[4].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 (findViewById(R.id.characterCardView1)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<5;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreTextView().setText("0");
                 }
                 break;
             case 4:
                 characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView0);
-                characterCardViews[0].getPlayerNameImageView().setText("P1");
+                characterCardViews[0].getPlayerNameTextView().setText("P1");
                 characterCardViews[0].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[1] = (CharacterCardView) findViewById(R.id.characterCardView2);
-                characterCardViews[1].getPlayerNameImageView().setText("P2");
+                characterCardViews[1].getPlayerNameTextView().setText("P2");
                 characterCardViews[1].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[2] = (CharacterCardView) findViewById(R.id.characterCardView3);
-                characterCardViews[2].getPlayerNameImageView().setText("P3");
+                characterCardViews[2].getPlayerNameTextView().setText("P3");
                 characterCardViews[2].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[3] = (CharacterCardView) findViewById(R.id.characterCardView5);
-                characterCardViews[3].getPlayerNameImageView().setText("P4");
+                characterCardViews[3].getPlayerNameTextView().setText("P4");
                 characterCardViews[3].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 (findViewById(R.id.characterCardView1)).setVisibility(View.INVISIBLE);
                 (findViewById(R.id.characterCardView4)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<4;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreTextView().setText("0");
                 }
                 break;
             case 3:
                 characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView1);
-                characterCardViews[0].getPlayerNameImageView().setText("P1");
+                characterCardViews[0].getPlayerNameTextView().setText("P1");
                 characterCardViews[0].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[1] = (CharacterCardView) findViewById(R.id.characterCardView3);
-                characterCardViews[1].getPlayerNameImageView().setText("P2");
+                characterCardViews[1].getPlayerNameTextView().setText("P2");
                 characterCardViews[1].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[2] = (CharacterCardView) findViewById(R.id.characterCardView5);
-                characterCardViews[2].getPlayerNameImageView().setText("P3");
+                characterCardViews[2].getPlayerNameTextView().setText("P3");
                 characterCardViews[2].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 (findViewById(R.id.characterCardView0)).setVisibility(View.INVISIBLE);
                 (findViewById(R.id.characterCardView2)).setVisibility(View.INVISIBLE);
                 (findViewById(R.id.characterCardView4)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<3;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreTextView().setText("0");
                 }
                 break;
             case 2:
                 characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView3);
-                characterCardViews[0].getPlayerNameImageView().setText("P1");
+                characterCardViews[0].getPlayerNameTextView().setText("P1");
                 characterCardViews[0].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 characterCardViews[1] = (CharacterCardView) findViewById(R.id.characterCardView5);
-                characterCardViews[1].getPlayerNameImageView().setText("P2");
+                characterCardViews[1].getPlayerNameTextView().setText("P2");
                 characterCardViews[1].getCharacterImageView().setImageResource(R.drawable.character_garnet);
                 (findViewById(R.id.characterCardView0)).setVisibility(View.INVISIBLE);
                 (findViewById(R.id.characterCardView1)).setVisibility(View.INVISIBLE);
@@ -189,7 +191,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
                 (findViewById(R.id.characterCardView4)).setVisibility(View.INVISIBLE);
                 for (int i=0;i<2;i++){
                 	characterCardViews[i].getPenaltyImageView().setImageResource(R.drawable.misc_card_penalty0);
-                	characterCardViews[i].getScoreImageView().setText("0");
+                	characterCardViews[i].getScoreTextView().setText("0");
                 }
                 break;
             default:
@@ -201,7 +203,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         /**
     	 * start the game, end when one player win (dedicated thread)
     	 */
-    	public void start() {
+    	public void start() { //TODO : complete and thread
     		if(!victory){	//victory value only update at the end on a turn, can't trigger between rolls
     			playDice();		//play a dice
     		}
