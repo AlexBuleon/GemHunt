@@ -59,8 +59,6 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         dicesViews[0] = (ImageView) findViewById(R.id.diceView1);
         dicesViews[1] = (ImageView) findViewById(R.id.diceView2);
         dicesViews[2] = (ImageView) findViewById(R.id.diceView3);
-
-        characterCardViews[1].getPlayerNameImageView().setText("Antoine");
         
         rollButton.setOnClickListener(this);
         passTurnButton.setOnClickListener(this);
@@ -203,7 +201,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
         /**
     	 * start the game, end when one player win (dedicated thread)
     	 */
-    	public void start() { //TODO : complete and thread
+    	public void start() {
     		if(!victory){	//victory value only update at the end on a turn, can't trigger between rolls
     			playDice();		//play a dice
     		}
