@@ -67,7 +67,7 @@ public class StatisticsActivity extends Activity implements View.OnClickListener
 	 
 	 private void initStatsList() {
 	        List<Player> players = database.getPlayerDAO().findAllPlayer();
-	        for(int i = 0; i < players.size(); i++){
+	        for(int i = 0; i < Math.min(players.size(),14); i++){
 	        	statsCardViews[i].setPlayer(players.get(i));
 	        }
 	        for(int i = players.size(); i < 14; i++){
