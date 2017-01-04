@@ -66,11 +66,6 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
     @Override
     public void onResume() {
         super.onResume();
-        //
-        // String characterChosen = getArguments().getString("character");
-        /*Intent intent = getActivity().getIntent();
-        int character = intent.getIntExtra("character", 0);*/
-
     }
 
     @Override
@@ -218,10 +213,22 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
         switch(buttonID) {
             case R.id.player1:
                 player1.setBackgroundResource(pictureID);
-                System.out.println(pictureID + "HELLO");
                 break;
-
+            case R.id.player2:
+                player2.setBackgroundResource(pictureID);
+                break;
+            case R.id.player3:
+                player3.setBackgroundResource(pictureID);
+                break;
+            case R.id.player4:
+                player4.setBackgroundResource(pictureID);
+                break;
+            case R.id.player5:
+                player5.setBackgroundResource(pictureID);
+                break;
+            case R.id.player6:
+                player6.setBackgroundResource(pictureID);
+                break;
         }
-
     }
 }

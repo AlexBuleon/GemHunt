@@ -11,12 +11,12 @@
     <string name="suppress">←</string>
     <string name="launch">√</string>
     <string name="add">+</string>
-    <string name="player1">P1</string>
-    <string name="player2">P2</string>
-    <string name="player3">P3</string>
-    <string name="player4">P4</string>
-    <string name="player5">P5</string>
-    <string name="player6">P6</string>
+    <string name="player1"></string>
+    <string name="player2"></string>
+    <string name="player3"></string>
+    <string name="player4"></string>
+    <string name="player5"></string>
+    <string name="player6"></string>
     <string name="rollButtonText">Roll</string>
     <string name="passTurnButtonText">Pass turn</string>
 
