@@ -12,15 +12,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:text="FIN"
+        android:text="FIN DE LA PARTIE"
+        android:textColor="@color/white"
         android:textSize="46sp" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/ScoreTitleTextView"
-        android:layout_marginEnd="80dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginStart="150dp"
         android:fillViewport="false">
 
         <LinearLayout
@@ -76,4 +77,25 @@
                 android:layout_marginTop="1dp" />
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="14dp"
+        android:text="Home" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"
+        android:text="Restart" />
 </RelativeLayout>

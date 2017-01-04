@@ -20,41 +20,41 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/scoreCardCharacterImageView"
         android:text="Peridot"
         android:textAlignment="center"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/scoreCardTotalScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scoreCardPlayerName"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/scoreCardCharacterImageView"
-        android:text="Score : 13"
-        android:textSize="25sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/scoreCardRollCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scoreCardTotalScore"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/scoreCardCharacterImageView"
         android:text="Rolls : 40"
-        android:textSize="25sp" />
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/scoreCardTotalScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/scoreCardRollCounter"
+        android:layout_centerVertical="true"
+        android:paddingTop="10dp"
+        android:text="Score : 13"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/scoreCardPenaltyCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/scoreCardPlayerName"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/scoreCardTotalScore"
+        android:layout_alignEnd="@+id/scoreCardPlayerName"
+        android:layout_centerVertical="true"
+        android:paddingTop="10dp"
         android:text="Penalty : 8"
-        android:textSize="25sp" />
+        android:textSize="18sp" />
 </RelativeLayout>
