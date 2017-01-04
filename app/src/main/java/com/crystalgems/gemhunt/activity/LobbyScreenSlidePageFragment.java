@@ -64,7 +64,8 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
     @Override
     public void onResume() {
         super.onResume();
-
+        //
+        // String characterChosen = getArguments().getString("character");
         /*Intent intent = getActivity().getIntent();
         int character = intent.getIntExtra("character", 0);*/
 
@@ -77,7 +78,8 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
 		switch (viewId) {
             case R.id.player1:
-                startActivity(intent);
+                intent.putExtra("buttonID", R.id.player1);
+                startActivityForResult(intent, 1);
                 break;
 
             case R.id.player2:
@@ -85,6 +87,8 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     startActivity(intent);
                 }
                 else {
+                    //Todo : drawable en fonction des données de l'intent
+                    player2.setBackgroundResource(R.drawable.character_connie);
                     player3.setVisibility(View.VISIBLE);
                     player2.setText(R.string.player2);
                 }
@@ -95,6 +99,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     startActivity(intent);
                 }
                 else {
+                    player3.setBackgroundResource(R.drawable.character_connie);
                     player4.setVisibility(View.VISIBLE);
                     player3.setText(R.string.player3);
                 }
@@ -105,6 +110,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     startActivity(intent);
                 }
                 else {
+                    player4.setBackgroundResource(R.drawable.character_connie);
                     player5.setVisibility(View.VISIBLE);
                     player4.setText(R.string.player4);
                 }
@@ -115,6 +121,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     startActivity(intent);
                 }
                 else {
+                    player5.setBackgroundResource(R.drawable.character_connie);
                     player6.setVisibility(View.VISIBLE);
                     player5.setText(R.string.player5);
                 }
@@ -125,6 +132,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     startActivity(intent);
                 }
                 else {
+                    player6.setBackgroundResource(R.drawable.character_connie);
                     player6.setText(R.string.player6);
                 }
                 break;
@@ -142,26 +150,33 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 		}
 		
 	}
+
+
 	
 	private void suppress(){
 		if(player6.getVisibility() == View.VISIBLE && !player6.getText().equals(getResources().getString(R.string.add))){
 			player6.setText(R.string.add);
+            player6.setBackgroundResource(android.R.drawable.btn_default);
 		}
 		else if(player5.getVisibility() == View.VISIBLE && !player5.getText().equals(getResources().getString(R.string.add))){
 			player6.setVisibility(View.INVISIBLE);
 			player5.setText(R.string.add);
+            player5.setBackgroundResource(android.R.drawable.btn_default);
 		}
 		else if(player4.getVisibility() == View.VISIBLE && !player4.getText().equals(getResources().getString(R.string.add))){
 			player5.setVisibility(View.INVISIBLE);
 			player4.setText(R.string.add);
+            player4.setBackgroundResource(android.R.drawable.btn_default);
 		}
 		else if(player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))){
 			player4.setVisibility(View.INVISIBLE);
 			player3.setText(R.string.add);
+            player3.setBackgroundResource(android.R.drawable.btn_default);
 		}
 		else if(player2.getVisibility() == View.VISIBLE && !player2.getText().equals(getResources().getString(R.string.add))){
 			player3.setVisibility(View.INVISIBLE);
 			player2.setText(R.string.add);
+            player2.setBackgroundResource(android.R.drawable.btn_default);
 		}
 	}
 
@@ -188,4 +203,14 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
         startActivity(intent);
 	}
 
+    public void setCharacter(int buttonID, int pictureID) {
+        switch(buttonID) {
+            case R.id.player1:
+                player1.setBackgroundResource(pictureID);
+                System.out.println(pictureID + "HELLO");
+                break;
+
+        }
+
+    }
 }

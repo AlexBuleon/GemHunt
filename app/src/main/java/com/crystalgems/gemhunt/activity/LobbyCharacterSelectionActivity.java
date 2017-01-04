@@ -1,6 +1,7 @@
 package com.crystalgems.gemhunt.activity;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,12 +37,22 @@ public class LobbyCharacterSelectionActivity extends Activity implements View.On
 
     @Override
     public void onClick(View view) {
-        /*if (view == steven) {
-            *//*Intent intent = new Intent(this, MainActivity.class);
+        Bundle bundle = new Bundle();
+
+        if (view == steven) {
+            intent.putExtra("pictureID", R.drawable.character_steven);
+            setResult(RESULT_OK, intent);
+            finish();
+
+            /*bundle.putString("character", "steven");
+            LobbyScreenSlidePageFragment fragment = new LobbyScreenSlidePageFragment();
+            fragment.setArguments(bundle);*/
+
+            /*Intent intent = new Intent(this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtra("character", 1);
-            startActivity(intent);*//*
-        }*/
-        characterChosen = view.toString();
+            startActivity(intent);*/
+        }
+        //characterChosen = view.toString();
     }
 }
