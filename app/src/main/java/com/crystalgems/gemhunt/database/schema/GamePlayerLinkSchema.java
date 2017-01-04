@@ -15,7 +15,7 @@ public interface GamePlayerLinkSchema {
     //Create table query
     String GAME_PLAYER_LINK_TABLE_CREATE = "create table if not exists " +
             GAME_PLAYER_LINK_TABLE + "(" +
-            COLUMN_GAME_PLAYER_LINK_ID + " integer primary key autoincrement," +
+            COLUMN_GAME_PLAYER_LINK_ID + " integer primary key," +
             COLUMN_GAME_PLAYER_LINk_ID_GAME + " integer not null," +
             COLUMN_GAME_PLAYER_LINk_ID_PLAYER + " integer not null," +
             COLUMN_GAME_PLAYER_LINk_PLAYER_SCORE + " integer not null," +

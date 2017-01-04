@@ -1,7 +1,10 @@
 package com.crystalgems.gemhunt.model;
 
+import java.util.Arrays;
+
 public class Game {
 	private int id;
+	private int gamePlayerLinkId;
 	private int turnCounter;
 	private long duration;
     private Player[] players;
@@ -9,7 +12,24 @@ public class Game {
     private DicePool dicePicked;
     private DicePool diceBin;
 
-    
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", gamePlayerLinkId=" + gamePlayerLinkId +
+                ", turnCounter=" + turnCounter +
+                ", duration=" + duration +
+                ", players=" + Arrays.toString(players) +
+                ", dicePool=" + dicePool +
+                ", dicePicked=" + dicePicked +
+                ", diceBin=" + diceBin +
+                '}';
+    }
+
+    public Game() {
+    }
+
     public Game(int id, Player[] players, DicePool dicePool){
     	this.id = id;
         this.players = players;
@@ -78,5 +98,20 @@ public class Game {
     public DicePool getDicePicked(){
     	return dicePicked;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getGamePlayerLinkId() {
+        return gamePlayerLinkId;
+    }
+
+    public void setGamePlayerLinkId(int gamePlayerLinkId) {
+        this.gamePlayerLinkId = gamePlayerLinkId;
+    }
 }
