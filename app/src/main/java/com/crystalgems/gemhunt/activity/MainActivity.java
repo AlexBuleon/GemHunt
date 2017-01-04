@@ -57,16 +57,13 @@ public class MainActivity extends FragmentActivity {
             switch (position) {
                 //Settings page
                 case 0:
-                    System.out.println("1");
                     return new SettingsScreenSlidePageFragment();
                 //Home page
                 case 1:
-                    System.out.println("2");
                     return new TitleScreenSlidePageFragment();
                 //Lobby page
 
                 case 2:
-                    System.out.println("3");
                     return new LobbyScreenSlidePageFragment();
                 default:
                     System.err.println("Wrong menu item number.");

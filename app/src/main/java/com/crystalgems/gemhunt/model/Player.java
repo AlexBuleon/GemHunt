@@ -167,8 +167,8 @@ public class Player implements Parcelable {
         this.rank = rank;
     }
 
-    @Override
+    /*@Override
     public int compareTo(Player o) {
         return o.totalScore - this.totalScore;
-    }
+    }*/
 }
