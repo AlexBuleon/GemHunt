@@ -75,8 +75,7 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         	else{
         		players[i].setGlobalPenalty(players[i].getGlobalPenalty()+player.getGlobalPenalty());
         		players[i].setGlobalScore(players[i].getGlobalScore() + player.getGlobalScore());
-        		playerDAO.deletePlayer(player.getId()); // wait for update
-        		playerDAO.addPlayer(players[i]);
+        		playerDAO.updatePlayer(players[i].getId(), players[i]);
         	}
         }       
         database.getGameDAO().addGame(game);
