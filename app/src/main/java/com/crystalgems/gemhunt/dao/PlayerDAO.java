@@ -44,15 +44,15 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
             }
 
             //get the total score
-            if(cursor.getColumnIndex(COLUMN_PLAYER_TOTAL_SCORE) != -1) {
-                totalScoreIndex = cursor.getColumnIndex(COLUMN_PLAYER_TOTAL_SCORE);
+            if(cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_SCORE) != -1) {
+                totalScoreIndex = cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_SCORE);
                 player.setTotalScore(cursor.getInt(totalScoreIndex));
             }
 
             //get the total penalty
-            if(cursor.getColumnIndex(COLUMN_PLAYER_TOTAL_PENALTY) != -1) {
-                totalPenaltyIndex = cursor.getColumnIndex(COLUMN_PLAYER_TOTAL_PENALTY);
-                player.setTotalPenalty(cursor.getInt(totalPenaltyIndex));
+            if(cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_PENALTY) != -1) {
+                totalPenaltyIndex = cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_PENALTY);
+                player.setGlobalPenalty(cursor.getInt(totalPenaltyIndex));
             }
 
             if(cursor.getColumnIndex(COLUMN_PLAYER_ID) != -1) {
@@ -147,7 +147,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
         values  = new ContentValues();
         values.put(COLUMN_PLAYER_NAME, player.getName());
         values.put(COLUMN_PLAYER_PICTURE_ID, player.getPictureId());
-        values.put(COLUMN_PLAYER_TOTAL_SCORE, player.getTotalScore());
-        values.put(COLUMN_PLAYER_TOTAL_PENALTY, player.getTotalPenalty());
+        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getTotalScore());
+        values.put(COLUMN_PLAYER_GLOBAL_PENALTY, player.getGlobalPenalty());
     }
 }

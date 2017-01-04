@@ -65,22 +65,23 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
     public void onResume() {
         super.onResume();
 
-        Intent intent = getActivity().getIntent();
-        int character = intent.getIntExtra("character", 0);
+        /*Intent intent = getActivity().getIntent();
+        int character = intent.getIntExtra("character", 0);*/
+
     }
 
     @Override
-	public void onClick(View v) { //TODO : add pop-up when click on a player (choose name + appareance ?)
+	public void onClick(View v) {
 		int viewId = v.getId();
         Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), LobbyCharacterSelectionActivity.class);
 
 		switch (viewId) {
             case R.id.player1:
+                startActivity(intent);
                 break;
 
             case R.id.player2:
                 if (!player2.getText().equals("+")) {
-                    System.out.println(player2.getText());
                     startActivity(intent);
                 }
                 else {
@@ -90,22 +91,42 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                 break;
 
             case R.id.player3:
-                player4.setVisibility(View.VISIBLE);
-                player3.setText(R.string.player3);
+                if (!player3.getText().equals("+")) {
+                    startActivity(intent);
+                }
+                else {
+                    player4.setVisibility(View.VISIBLE);
+                    player3.setText(R.string.player3);
+                }
                 break;
 
             case R.id.player4:
-                player5.setVisibility(View.VISIBLE);
-                player4.setText(R.string.player4);
+                if (!player4.getText().equals("+")) {
+                    startActivity(intent);
+                }
+                else {
+                    player5.setVisibility(View.VISIBLE);
+                    player4.setText(R.string.player4);
+                }
                 break;
 
             case R.id.player5:
-                player6.setVisibility(View.VISIBLE);
-                player5.setText(R.string.player5);
+                if (!player5.getText().equals("+")) {
+                    startActivity(intent);
+                }
+                else {
+                    player6.setVisibility(View.VISIBLE);
+                    player5.setText(R.string.player5);
+                }
                 break;
 
             case R.id.player6:
-                player6.setText(R.string.player6);
+                if (!player6.getText().equals("+")) {
+                    startActivity(intent);
+                }
+                else {
+                    player6.setText(R.string.player6);
+                }
                 break;
 
             case R.id.suppress_button:

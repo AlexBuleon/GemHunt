@@ -13,6 +13,7 @@ public class LobbyCharacterSelectionActivity extends Activity implements View.On
 
     private Button steven;
     private Intent intent;
+    private String characterChosen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +36,12 @@ public class LobbyCharacterSelectionActivity extends Activity implements View.On
 
     @Override
     public void onClick(View view) {
-        if (view == steven) {
+        /*if (view == steven) {
+            *//*Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtra("character", 1);
-        }
-
-        this.finish();
+            startActivity(intent);*//*
+        }*/
+        characterChosen = view.toString();
     }
 }

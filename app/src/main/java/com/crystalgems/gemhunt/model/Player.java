@@ -23,10 +23,13 @@ public class Player implements Parcelable, Comparable<Player> {
     private int turnScore;
     private int totalScore;
     private int penalty;
-    private int totalPenalty;
     private int penaltyCounter;
     private int rollCounter;
     private int rank;
+
+    //idependant of the game
+    private int globalScore;
+    private int globalPenalty;
 
     public Player(String name) {
         this.name = name;
@@ -34,7 +37,7 @@ public class Player implements Parcelable, Comparable<Player> {
         pictureId = 0;
         totalScore = 0;
         penalty = 0;
-        totalPenalty = 0;
+        globalPenalty = 0;
         penaltyCounter = 0;
         rollCounter = 0;
     }
@@ -70,7 +73,7 @@ public class Player implements Parcelable, Comparable<Player> {
                 ", turnScore=" + turnScore +
                 ", totalScore=" + totalScore +
                 ", penalty=" + penalty +
-                ", totalPenalty=" + totalPenalty +
+                ", globalPenalty=" + globalPenalty +
                 ", penaltyCounter=" + penaltyCounter +
                 ", rollCounter=" + rollCounter +
                 ", rank=" + rank +
@@ -143,12 +146,12 @@ public class Player implements Parcelable, Comparable<Player> {
         this.penaltyCounter = penaltyCounter;
     }
 
-    public int getTotalPenalty() {
-        return totalPenalty;
+    public int getGlobalPenalty() {
+        return globalPenalty;
     }
 
-    public void setTotalPenalty(int totalPenalty) {
-        this.totalPenalty = totalPenalty;
+    public void setGlobalPenalty(int globalPenalty) {
+        this.globalPenalty = globalPenalty;
     }
 
     public int getRollCounter() {
@@ -165,6 +168,14 @@ public class Player implements Parcelable, Comparable<Player> {
 
     public void setRank(int rank) {
         this.rank = rank;
+    }
+
+    public int getGlobalScore() {
+        return globalScore;
+    }
+
+    public void setGlobalScore(int globalScore) {
+        this.globalScore = globalScore;
     }
 
     @Override
