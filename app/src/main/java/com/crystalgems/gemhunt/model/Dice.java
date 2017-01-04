@@ -1,9 +1,9 @@
 package com.crystalgems.gemhunt.model;
 
-public enum Dice {
-    GreenDice(new int[]{0, 0, 0, 1, 1, 2}),
-    OrangeDice(new int[]{0, 0, 1, 1, 2, 2}),
-    RedDice(new int[]{0, 1, 1, 2, 2, 2});
+public class Dice {
+    public static final int GreenDice = 0;
+    public static final int OrangeDice = 1;
+    public static final int RedDice = 2;
 
     public static final int GEM_FACE = 0;
     public static final int ESCAPE_FACE = 1;
@@ -11,9 +11,24 @@ public enum Dice {
 
     private int[] faces;
     private int result;
+    private int color;
 
-    Dice(int[] faces) {
-        this.faces = faces;
+    public Dice(int color) {
+    	this.color = color;
+        switch (color) {
+		case GreenDice:
+			faces = new int[]{0, 0, 0, 1, 1, 2};
+			break;
+		case OrangeDice:
+			faces = new int[]{0, 0, 1, 1, 2, 2};
+			break;
+		case RedDice:
+			faces = new int[]{0, 1, 1, 2, 2, 2};
+			break;
+
+		default:
+			break;
+		}
     }
 
     public int getResult() {
@@ -23,5 +38,9 @@ public enum Dice {
     public int roll() {
         result = faces[(int) (Math.random() * faces.length)];
         return result;
+    }
+    
+    public int getColor(){
+    	return color;
     }
 }

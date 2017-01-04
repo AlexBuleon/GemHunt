@@ -34,7 +34,7 @@ public class CharacterCardView extends LinearLayout {
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.custom_character_card, this);
+        inflater.inflate(R.layout.view_character_card, this);
     }
 
     @Override
@@ -44,6 +44,7 @@ public class CharacterCardView extends LinearLayout {
         playerNameTextView = (TextView) findViewById(R.id.nameTextView);
         scoreTextView = (TextView) findViewById(R.id.scoreTextView);
         penaltyImageView = (ImageView) findViewById(R.id.penaltyImageView);
+        backgroundLayout = (LinearLayout) findViewById(R.id.characterCardLayout);
     }
 
     public ImageView getCharacterImageView() {

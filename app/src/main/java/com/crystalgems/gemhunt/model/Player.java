@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Player implements Parcelable {
+
     public static final Creator<Player> CREATOR = new Creator<Player>() {
         @Override
         public Player createFromParcel(Parcel in) {
@@ -15,6 +16,7 @@ public class Player implements Parcelable {
             return new Player[size];
         }
     };
+
     private String name;
     private int id;
     private int pictureId;
@@ -24,6 +26,31 @@ public class Player implements Parcelable {
     private int totalPenalty;
     private int penaltyCounter;
     private int rollCounter;
+
+    public Player(String name) {
+        this.name = name;
+        turnScore = 0;
+        pictureId = 0;
+        totalScore = 0;
+        penalty = 0;
+        totalPenalty = 0;
+        penaltyCounter = 0;
+        rollCounter = 0;
+    }
+
+    private Player(Parcel in) {
+        name = in.readString();
+        pictureId = in.readInt();
+        turnScore = in.readInt();
+        totalScore = in.readInt();
+        penalty = in.readInt();
+        penaltyCounter = in.readInt();
+        rollCounter = in.readInt();
+    }
+
+    public Player() {
+
+    }
 
     public int getId() {
         return id;
@@ -48,31 +75,6 @@ public class Player implements Parcelable {
                 '}';
     }
 
-    public Player(String name) {
-        this.name = name;
-        turnScore = 0;
-        pictureId = 0;
-        totalScore = 0;
-        penalty = 0;
-        totalPenalty = 0;
-        penaltyCounter = 0;
-        rollCounter = 0;
-    }
-
-    private Player(Parcel in) {
-        name = in.readString();
-        pictureId = in.readInt();
-        turnScore = 0;
-        totalScore = 0;
-        penalty = 0;
-        penaltyCounter = 0;
-        rollCounter = 0;
-    }
-
-    public Player() {
-
-    }
-
     // Useless method
     @Override
     public int describeContents() {
@@ -83,6 +85,11 @@ public class Player implements Parcelable {
     public void writeToParcel(Parcel out, int flags) {
         out.writeString(name);
         out.writeInt(pictureId);
+        out.writeInt(turnScore);
+        out.writeInt(totalScore);
+        out.writeInt(penalty);
+        out.writeInt(penaltyCounter);
+        out.writeInt(rollCounter);
     }
 
     public String getName() {
@@ -130,16 +137,16 @@ public class Player implements Parcelable {
 
     }
 
+    public void setPenaltyCounter(int penaltyCounter) {
+        this.penaltyCounter = penaltyCounter;
+    }
+
     public int getTotalPenalty() {
         return totalPenalty;
     }
 
     public void setTotalPenalty(int totalPenalty) {
         this.totalPenalty = totalPenalty;
-    }
-
-    public void setPenaltyCounter(int penaltyCounter) {
-        this.penaltyCounter = penaltyCounter;
     }
 
     public int getRollCounter() {

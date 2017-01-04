@@ -5,7 +5,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.apps.su.gemhunt.R;
@@ -32,7 +31,7 @@ public class CharacterProfileView extends LinearLayout {
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.custom_character_profile, this);
+        inflater.inflate(R.layout.view_character_profile, this);
     }
 
     @Override
