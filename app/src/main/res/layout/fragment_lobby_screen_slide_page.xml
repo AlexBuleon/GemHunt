@@ -149,7 +149,7 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Suppr" />
+                android:text="Del" />
 
             <Button
                 android:id="@+id/launch_button"
@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_toEndOf="@id/suppress_button"
-                android:text="Launch" />
+                android:text="Start" />
 
         </RelativeLayout>
     </RelativeLayout>
