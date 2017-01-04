@@ -43,7 +43,7 @@
                 android:id="@+id/player1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:background="@drawable/character_connie"
+                android:background="@drawable/character_steven"
                 android:layout_margin="8dp"
                 android:textAllCaps="false"
                  />
@@ -53,12 +53,11 @@
                  android:layout_width="80dp"
                  android:layout_height="80dp"
                  android:layout_margin="8dp"
-                 android:text="+"
                  android:textAllCaps="false"
                  android:textColor="@color/white"
                  android:shadowColor="@color/shadowBlack"
                  android:layout_toEndOf="@id/player1"
-                 />
+                 android:background="@drawable/character_connie" />
 
              <Button
                  android:id="@+id/player3"
@@ -70,7 +69,7 @@
                  android:textColor="@color/white"
                  android:shadowColor="@color/shadowBlack"
                  android:layout_toEndOf="@id/player2"
-                 android:visibility="invisible"
+                 android:visibility="visible"
                  />
 	
 		</RelativeLayout>

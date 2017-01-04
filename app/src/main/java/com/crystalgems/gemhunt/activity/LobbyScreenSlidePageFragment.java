@@ -24,7 +24,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
     private Button suppress;
     private Button launch;
 
-    private Player[] tabPLayers;
+    private Player[] players = new Player[6];
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,11 +36,16 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
         Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "font/rimouski_sb.ttf");
         lobbyTitle.setTypeface(font);
 
+        players[0] = new Player("Steven", R.drawable.character_steven);
+        players[1] = new Player("Connie", R.drawable.character_connie);
+
         player1 = (Button)rootView.findViewById(R.id.player1);
         player1.setOnClickListener(this);
+        player1.setBackgroundResource(R.drawable.character_steven);
 
         player2 = (Button)rootView.findViewById(R.id.player2);
         player2.setOnClickListener(this);
+        player2.setBackgroundResource(R.drawable.character_connie);
 
         player3 = (Button)rootView.findViewById(R.id.player3);
         player3.setOnClickListener(this);
@@ -84,11 +89,6 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     intent.putExtra("buttonID", R.id.player2);
                     startActivityForResult(intent, 2);
                 }
-                else {
-                    player2.setBackgroundResource(R.drawable.character_connie);
-                    player3.setVisibility(View.VISIBLE);
-                    player2.setText(R.string.player2);
-                }
                 break;
 
             case R.id.player3:
@@ -100,6 +100,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     player3.setBackgroundResource(R.drawable.character_connie);
                     player4.setVisibility(View.VISIBLE);
                     player3.setText(R.string.player3);
+                    players[2] = new Player("Connie", R.drawable.character_connie);
                 }
                 break;
 
@@ -112,6 +113,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     player4.setBackgroundResource(R.drawable.character_connie);
                     player5.setVisibility(View.VISIBLE);
                     player4.setText(R.string.player4);
+                    players[3] = new Player("Connie", R.drawable.character_connie);
                 }
                 break;
 
@@ -124,6 +126,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                     player5.setBackgroundResource(R.drawable.character_connie);
                     player6.setVisibility(View.VISIBLE);
                     player5.setText(R.string.player5);
+                    players[4] = new Player("Connie", R.drawable.character_connie);
                 }
                 break;
 
@@ -135,6 +138,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                 else {
                     player6.setBackgroundResource(R.drawable.character_connie);
                     player6.setText(R.string.player6);
+                    players[5] = new Player("Connie", R.drawable.character_connie);
                 }
                 break;
 
@@ -158,22 +162,26 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 		if(player6.getVisibility() == View.VISIBLE && !player6.getText().equals(getResources().getString(R.string.add))){
 			player6.setText(R.string.add);
             player6.setBackgroundResource(android.R.drawable.btn_default);
+            players[5] = null;
 		}
 		else if(player5.getVisibility() == View.VISIBLE && !player5.getText().equals(getResources().getString(R.string.add))){
 			player6.setVisibility(View.INVISIBLE);
 			player5.setText(R.string.add);
             player5.setBackgroundResource(android.R.drawable.btn_default);
+            players[4] = null;
 		}
 		else if(player4.getVisibility() == View.VISIBLE && !player4.getText().equals(getResources().getString(R.string.add))){
 			player5.setVisibility(View.INVISIBLE);
 			player4.setText(R.string.add);
             player4.setBackgroundResource(android.R.drawable.btn_default);
+            players[3] = null;
 		}
-		else if(player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))){
+		else {
 			player4.setVisibility(View.INVISIBLE);
 			player3.setText(R.string.add);
             player3.setBackgroundResource(android.R.drawable.btn_default);
-		}
+            players[2] = null;
+        }
 	}
 
     private int getPlayersNumber() {
@@ -193,36 +201,43 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 		}
     }
 	
-	private void launch(){//TODO : create controller with array of players in arg, create in game activity to link with
-        Player[] players = new Player[getPlayersNumber()];
-        for (int i = 0; i < players.length; i++) {
-            players[i] = new Player("P" + i);
-            players[i].setPictureId(R.drawable.character_peridot);
-        }
+	private void launch(){
         Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), InGameActivity.class);
         intent.putExtra("players", players);
         startActivity(intent);
 	}
 
-    public void setCharacter(int buttonID, int pictureID) {
+    public void setCharacter(int buttonID, int pictureID, String name) {
         switch(buttonID) {
             case R.id.player1:
                 player1.setBackgroundResource(pictureID);
+                players[0].setName(name);
+                players[0].setPictureId(pictureID);
                 break;
             case R.id.player2:
                 player2.setBackgroundResource(pictureID);
+                players[1].setName(name);
+                players[1].setPictureId(pictureID);
                 break;
             case R.id.player3:
                 player3.setBackgroundResource(pictureID);
+                players[2].setName(name);
+                players[2].setPictureId(pictureID);
                 break;
             case R.id.player4:
                 player4.setBackgroundResource(pictureID);
+                players[3].setName(name);
+                players[3].setPictureId(pictureID);
                 break;
             case R.id.player5:
                 player5.setBackgroundResource(pictureID);
+                players[4].setName(name);
+                players[4].setPictureId(pictureID);
                 break;
             case R.id.player6:
                 player6.setBackgroundResource(pictureID);
+                players[5].setName(name);
+                players[5].setPictureId(pictureID);
                 break;
         }
     }
