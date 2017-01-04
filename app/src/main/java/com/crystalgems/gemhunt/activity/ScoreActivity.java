@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.apps.su.gemhunt.R;
+import com.crystalgems.gemhunt.dao.PlayerDAO;
+import com.crystalgems.gemhunt.database.Database;
 import com.crystalgems.gemhunt.model.Game;
+import com.crystalgems.gemhunt.model.Player;
 import com.crystalgems.gemhunt.view.ScoreCardView;
 
 import java.util.Arrays;
@@ -21,6 +24,8 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
     private ScoreCardView[] scoreCardViews;
     private Button homeButton;
     private Button restartButton;
+    
+    public static Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,8 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
 
         Intent i = getIntent();
         game = i.getParcelableExtra("game");
+        
+        database = new Database(this);
 
         TextView scoreTitle = (TextView) findViewById(R.id.scoreTitleTextView);
         Typeface font = Typeface.createFromAsset(getAssets(), "font/rimouski_sb.ttf");
@@ -56,6 +63,28 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         super.onStart();
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        database.open();
+        
+        PlayerDAO playerDAO = database.getPlayerDAO();
+        Player[] players = game.getPlayers();
+        Player player;
+        for(int i = 0; i<players.length; i++){
+        	if((player = playerDAO.findPlayerByName(players[i].getName())) == null){
+        		playerDAO.addPlayer(players[i]);
+        	}
+        	else{
+        		players[i].setGlobalPenalty(players[i].getGlobalPenalty()+player.getGlobalPenalty());
+        		players[i].setGlobalScore(players[i].getGlobalScore() + player.getGlobalScore());
+        		playerDAO.deletePlayer(player.getId()); // wait for update
+        		playerDAO.addPlayer(players[i]);
+        	}
+        }       
+        database.getGameDAO().addGame(game);
+    }
+    
+    @Override
+    protected void onStop(){
+    	database.close();
     }
 
     private void initScoreList() {
