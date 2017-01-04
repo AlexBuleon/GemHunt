@@ -91,7 +91,6 @@ public class Game implements Parcelable {
         for (int i = 0; i < players.length; i++) {
             players[i].resetPlayer();
         }
-        turnCounter = 0;
     }
     
     public Player getActivePlayer(){

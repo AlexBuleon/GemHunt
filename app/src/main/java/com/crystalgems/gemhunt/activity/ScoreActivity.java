@@ -20,12 +20,11 @@ import java.util.Arrays;
 
 public class ScoreActivity extends Activity implements View.OnClickListener {
 
+    public static Database database;
     private Game game;
     private ScoreCardView[] scoreCardViews;
     private Button homeButton;
     private Button restartButton;
-    
-    public static Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +63,8 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         database.open();
-        
-        PlayerDAO playerDAO = database.getPlayerDAO();
+
+        PlayerDAO playerDAO = Database.getPlayerDAO();
         Player[] players = game.getPlayers();
         Player player;
         for(int i = 0; i<players.length; i++){
@@ -77,14 +76,14 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         		players[i].setGlobalScore(players[i].getGlobalScore() + player.getGlobalScore());
         		playerDAO.updatePlayer(players[i].getId(), players[i]);
         	}
-        }       
-        database.getGameDAO().addGame(game);
+        }
+        Database.getGameDAO().addGame(game);
     }
     
     @Override
     protected void onStop(){
-    	super.onStop();
-    	database.close();
+        database.close();
+        super.onStop();
     }
 
     private void initScoreList() {
@@ -110,7 +109,7 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         if (v == restartButton) {
             game.resetGame();
             Intent i = new Intent(this, InGameActivity.class);
-            i.putExtra("game", game);
+            i.putExtra("players", game.getPlayers());
             this.finish();
             startActivity(i);
         }

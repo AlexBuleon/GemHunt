@@ -13,7 +13,7 @@ import com.apps.su.gemhunt.R;
 
 public class PauseActivity extends Activity implements View.OnClickListener {
 
-    private Button returnButton;
+    private Button resumeButton;
     private Button homeButton;
 
     @Override
@@ -26,9 +26,9 @@ public class PauseActivity extends Activity implements View.OnClickListener {
         Typeface font = Typeface.createFromAsset(getAssets(), "font/rimouski_sb.ttf");
         pauseTextView.setTypeface(font);
 
-        returnButton = (Button) findViewById(R.id.returnButton);
+        resumeButton = (Button) findViewById(R.id.resumeButton);
         homeButton = (Button) findViewById(R.id.homeButton);
-        returnButton.setOnClickListener(this);
+        resumeButton.setOnClickListener(this);
         homeButton.setOnClickListener(this);
     }
 
@@ -41,7 +41,7 @@ public class PauseActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v == returnButton) {
+        if (v == resumeButton) {
             this.finish();
         }
         if (v == homeButton) {

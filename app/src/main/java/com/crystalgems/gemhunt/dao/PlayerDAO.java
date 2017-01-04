@@ -135,6 +135,14 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
     }
 
     @Override
+    public boolean exists(String name) {
+        final String selection = COLUMN_PLAYER_NAME + " = ?";
+        final String[] selectionArg = { String.valueOf(name) };
+
+        return super.query(PLAYER_TABLE, PLAYER_COLUMNS, selection, selectionArg, COLUMN_PLAYER_ID) != null;
+    }
+
+    @Override
     public List<Player> findAllPlayer() {
         List<Player> players = new ArrayList<>();
 
@@ -179,7 +187,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
 
     @Override
     public boolean deleteAllPlayers() {
-        return false;
+        return super.delete(PLAYER_TABLE, null, null) > 0;
     }
 
     private void setContentValues(Player player) {

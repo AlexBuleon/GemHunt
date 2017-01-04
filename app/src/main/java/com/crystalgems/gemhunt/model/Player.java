@@ -31,6 +31,11 @@ public class Player implements Parcelable, Comparable<Player> {
     private int globalScore;
     private int globalPenalty;
 
+    public Player(String name, int pictureId) {
+        this.name = name;
+        this.pictureId = pictureId;
+    }
+
     public Player(String name) {
         this.name = name;
         turnScore = 0;

@@ -2,47 +2,49 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:scrollbarStyle="outsideInset">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="5"
         android:layout_gravity="center"
-        android:layout_marginTop="42dp"
         android:layout_marginBottom="30dp"
-        >
+        android:layout_marginTop="42dp"
+        android:columnCount="5">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/stevenButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:scaleType="fitXY"
-                android:background="@drawable/character_steven" />
+                android:background="@drawable/character_steven"
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/stevenTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Steven"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/garnetButton"
@@ -54,18 +56,21 @@
                 android:id="@+id/garnetTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Garnet"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/amethystButton"
@@ -77,18 +82,21 @@
                 android:id="@+id/amethystTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Amethyst"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/pearlButton"
@@ -100,18 +108,21 @@
                 android:id="@+id/pearlTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Pearl"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/connieButton"
@@ -123,18 +134,21 @@
                 android:id="@+id/connieTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Connie"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/stevonnieButton"
@@ -146,18 +160,21 @@
                 android:id="@+id/stevonnieTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Stevonnie"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/lapisButton"
@@ -169,18 +186,21 @@
                 android:id="@+id/lapisTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Lapis"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/peridotButton"
@@ -192,18 +212,21 @@
                 android:id="@+id/peridotTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Peridot"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/rubyButton"
@@ -215,18 +238,21 @@
                 android:id="@+id/rubyTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Ruby"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/sapphireButton"
@@ -238,18 +264,21 @@
                 android:id="@+id/sapphireTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Sapphire"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/roseButton"
@@ -261,18 +290,21 @@
                 android:id="@+id/roseTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Rose"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/lionButton"
@@ -284,18 +316,21 @@
                 android:id="@+id/lionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Lion"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/jasperButton"
@@ -307,18 +342,21 @@
                 android:id="@+id/jasperTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Jasper"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/bg2PlayerCard"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/alexandriteButton"
@@ -330,14 +368,14 @@
                 android:id="@+id/alexandriteTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Alexandrite"
-                android:textColor="@color/shadowBlack"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/white" />
 
         </LinearLayout>
-
-
-
     </GridLayout>
-
 </ScrollView>
