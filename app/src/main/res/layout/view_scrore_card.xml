@@ -23,7 +23,7 @@
         android:layout_toEndOf="@+id/scoreCardCharacterImageView"
         android:text="Peridot"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/scoreCardTotalScore"
@@ -34,7 +34,7 @@
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/scoreCardCharacterImageView"
         android:text="Score : 13"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/scoreCardRollCounter"
@@ -45,7 +45,7 @@
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/scoreCardCharacterImageView"
         android:text="Rolls : 40"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/scoreCardPenaltyCounter"
@@ -56,5 +56,5 @@
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/scoreCardTotalScore"
         android:text="Penalty : 8"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 </RelativeLayout>
