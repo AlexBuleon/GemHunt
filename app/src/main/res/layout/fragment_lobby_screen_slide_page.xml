@@ -16,15 +16,17 @@
 
 	        <!--Title-->
 	        <TextView
-				android:id="@+id/lobbyTextView"
+				android:id="@+id/lobbyTitleTextView"
 				style="@style/menuTitle"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_alignParentTop="true"
 	            android:layout_centerHorizontal="true"
 				android:layout_marginTop="16dp"
-	            android:shadowColor="@color/shadowBlack"
-	            android:text="@string/lobby"
+				android:shadowDx="0"
+				android:shadowDy="2"
+				android:shadowRadius="4"
+				android:text="@string/lobby"
 				android:textSize="32sp" />
 	
 	    </RelativeLayout>

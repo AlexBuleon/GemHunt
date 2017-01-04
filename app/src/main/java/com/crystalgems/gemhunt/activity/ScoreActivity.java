@@ -2,9 +2,11 @@ package com.crystalgems.gemhunt.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.apps.su.gemhunt.R;
 import com.crystalgems.gemhunt.model.Game;
@@ -25,6 +27,11 @@ public class ScoreActivity extends Activity {
 
         Intent i = getIntent();
         game = i.getParcelableExtra("game");
+
+        TextView scoreTitle = (TextView) findViewById(R.id.scoreTitleTextView);
+        Typeface font = Typeface.createFromAsset(getAssets(), "font/rimouski_sb.ttf");
+        scoreTitle.setTypeface(font);
+
 
         scoreCardViews = new ScoreCardView[6];
         scoreCardViews[0] = (ScoreCardView) findViewById(R.id.scoreCardView0);

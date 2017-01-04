@@ -22,9 +22,9 @@ public class PauseActivity extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_pause);
 
-        TextView txt = (TextView) findViewById(R.id.pauseTextView);
-        Typeface font = Typeface.createFromAsset(getAssets(), "font/odin_rounded.otf");
-        txt.setTypeface(font);
+        TextView pauseTextView = (TextView) findViewById(R.id.pauseTextView);
+        Typeface font = Typeface.createFromAsset(getAssets(), "font/rimouski_sb.ttf");
+        pauseTextView.setTypeface(font);
 
         returnButton = (Button) findViewById(R.id.returnButton);
         homeButton = (Button) findViewById(R.id.homeButton);
@@ -47,6 +47,7 @@ public class PauseActivity extends Activity implements View.OnClickListener {
         if (v == homeButton) {
             Intent i = new Intent(this, MainActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
         }
     }
 }

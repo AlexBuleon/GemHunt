@@ -1,6 +1,7 @@
 package com.crystalgems.gemhunt.activity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.apps.su.gemhunt.R;
 
@@ -27,6 +29,10 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_lobby_screen_slide_page, container, false);
+
+        TextView lobbyTitle = (TextView) rootView.findViewById(R.id.lobbyTitleTextView);
+        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "font/rimouski_sb.ttf");
+        lobbyTitle.setTypeface(font);
 
         player1 = (Button)rootView.findViewById(R.id.player1);
         player1.setOnClickListener(this);
