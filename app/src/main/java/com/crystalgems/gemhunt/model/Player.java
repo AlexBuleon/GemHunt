@@ -3,7 +3,7 @@ package com.crystalgems.gemhunt.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Player implements Parcelable {
+public class Player implements Parcelable, Comparable<Player> {
 
     public static final Creator<Player> CREATOR = new Creator<Player>() {
         @Override
@@ -167,8 +167,8 @@ public class Player implements Parcelable {
         this.rank = rank;
     }
 
-    /*@Override
+    @Override
     public int compareTo(Player o) {
         return o.totalScore - this.totalScore;
-    }*/
+    }
 }
