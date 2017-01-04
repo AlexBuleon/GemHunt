@@ -34,9 +34,6 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
-				View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
         setContentView(R.layout.in_game_activity);
 
         Intent intent = getIntent();
@@ -73,6 +70,13 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 		game.setDuration(System.currentTimeMillis()); // init time
 		start();
     }
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
+				View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+	}
 
     private void initGameActivity() {
         characterCardViews = new CharacterCardView[playersNumber];
