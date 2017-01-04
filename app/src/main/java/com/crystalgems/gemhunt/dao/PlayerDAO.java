@@ -96,7 +96,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
     }
 
     @Override
-    public Player findPlaerByName(String name) {
+    public Player findPlayerByName(String name) {
         Player player = new Player();
 
         final String selection = COLUMN_PLAYER_NAME + " = ?";
