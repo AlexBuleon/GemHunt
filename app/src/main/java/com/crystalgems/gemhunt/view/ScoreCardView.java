@@ -49,8 +49,7 @@ public class ScoreCardView extends RelativeLayout {
     }
 
     public void setPlayer(Player p) {
-        // TODO : configure the right pictureId
-        //characterImageView.setImageResource(p.getPictureId());
+        characterImageView.setImageResource(p.getPictureId());
         playerNameTextView.setText(p.getName());
         totalScoreTextView.setText("Score : " + String.valueOf(p.getTotalScore()));
         penaltyCounterTextView.setText("Penalty : " + String.valueOf(p.getPenaltyCounter()));

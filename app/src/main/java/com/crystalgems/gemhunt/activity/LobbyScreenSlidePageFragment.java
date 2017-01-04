@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.apps.su.gemhunt.R;
 import com.crystalgems.gemhunt.model.Player;
 
+import java.util.Random;
+
 public class LobbyScreenSlidePageFragment extends Fragment implements OnClickListener{
 	private Button player1;
     private Button player2;
@@ -202,8 +204,22 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
     }
 	
 	private void launch(){
+        int playerNum = 0;
+        while (playerNum < players.length && players[playerNum] != null)
+            playerNum++;
+        Player[] p = new Player[playerNum];
+        System.arraycopy(players, 0, p, 0, p.length);
+        // Shuffle players
+        Random rnd = new Random();
+        for (int i = p.length - 1; i > 0; i--) {
+            int index = rnd.nextInt(i + 1);
+            // Simple swap
+            Player a = p[index];
+            p[index] = p[i];
+            p[i] = a;
+        }
         Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), InGameActivity.class);
-        intent.putExtra("players", players);
+        intent.putExtra("players", p);
         startActivity(intent);
 	}
 
