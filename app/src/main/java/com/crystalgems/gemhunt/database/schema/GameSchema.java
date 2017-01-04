@@ -12,8 +12,7 @@ public interface GameSchema {
     //Create table query
     String GAME_TABLE_CREATE = "create table if not exists " +
             GAME_TABLE + "(" +
-            COLUMN_GAME_ID + " integer primary key," +
-            // TODO: 03/01/2017 check if duration can be an intger
+            COLUMN_GAME_ID + " integer primary key autoincrement," +
             COLUMN_GAME_DURATION + " integer not null," +
             COLUMN_GAME_TURN_DURATION + " integer not null" +
             ");";

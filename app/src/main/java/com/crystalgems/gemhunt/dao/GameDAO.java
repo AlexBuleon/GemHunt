@@ -104,20 +104,35 @@ public class GameDAO extends DatabaseContentProvider implements GameSchema, Game
 
         //add the game
         boolean gameInsert = false;
-        boolean gamePlayerLinkInsert = false;
+        boolean gamePlayerLinkInsert = true;
 
         //save the game in database
         setContentValues(game);
         try {
-            gameInsert = super.insert(GAME_TABLE, values) > 0;
+            long gameId = super.insert(GAME_TABLE, values);
+            gameInsert = gameId > 0;
+            game.setId((int) gameId);
         } catch (SQLiteConstraintException e) {
             return false;
         }
 
-        //save the gamePlayerLink in database
+        //for each player of the game, add a record on gamePlayerLink table
+        Player[] playersInGame = game.getPlayers();
+        for (int i = 0; i < playersInGame.length; i++) {
+            GamePlayerLink gamePlayerLink = new GamePlayerLink();
 
+            gamePlayerLink.setGameId(game.getId());
 
-        return gameInsert && gamePlayerLinkInsert;
+            gamePlayerLink.setPlayerId(playersInGame[i].getId());
+            gamePlayerLink.setPlayerScore(playersInGame[i].getTotalScore());
+            gamePlayerLink.setPlayerPenalty(playersInGame[i].getPenalty());
+            gamePlayerLink.setPlayerRank(playersInGame[i].getRank());
+
+            //save in database
+            gamePlayerLinkInsert = gamePlayerLinkInsert & Database.getGamePlayerLinkDAO().addGamePLayerLink(gamePlayerLink);
+        }
+
+        return gameInsert & gamePlayerLinkInsert;
     }
 
     @Override

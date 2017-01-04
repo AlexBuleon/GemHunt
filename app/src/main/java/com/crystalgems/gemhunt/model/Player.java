@@ -64,8 +64,8 @@ public class Player implements Parcelable {
     @Override
     public String toString() {
         return "Player{" +
-                "id='" + id + '\'' +
                 "name='" + name + '\'' +
+                ", id=" + id +
                 ", pictureId=" + pictureId +
                 ", turnScore=" + turnScore +
                 ", totalScore=" + totalScore +
@@ -73,6 +73,7 @@ public class Player implements Parcelable {
                 ", totalPenalty=" + totalPenalty +
                 ", penaltyCounter=" + penaltyCounter +
                 ", rollCounter=" + rollCounter +
+                ", rank=" + rank +
                 '}';
     }
 
