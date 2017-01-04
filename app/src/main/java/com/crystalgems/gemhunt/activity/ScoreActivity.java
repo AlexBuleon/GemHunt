@@ -19,12 +19,12 @@ import com.crystalgems.gemhunt.view.ScoreCardView;
 import java.util.Arrays;
 
 public class ScoreActivity extends Activity implements View.OnClickListener {
-
-    public static Database database;
     private Game game;
     private ScoreCardView[] scoreCardViews;
     private Button homeButton;
     private Button restartButton;
+
+    private static Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,6 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
 
         Intent i = getIntent();
         game = i.getParcelableExtra("game");
-        
-        database = new Database(this);
 
         TextView scoreTitle = (TextView) findViewById(R.id.scoreTitleTextView);
         Typeface font = Typeface.createFromAsset(getAssets(), "font/rimouski_sb.ttf");
@@ -62,26 +60,36 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         super.onStart();
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+        database = new Database(this);
         database.open();
 
-        PlayerDAO playerDAO = Database.getPlayerDAO();
         Player[] players = game.getPlayers();
-        Player player;
-        for(int i = 0; i<players.length; i++){
-        	if((player = playerDAO.findPlayerByName(players[i].getName())) == null){
-        		playerDAO.addPlayer(players[i]);
-        	}
-        	else{
-        		players[i].setGlobalPenalty(players[i].getGlobalPenalty()+player.getGlobalPenalty());
-        		players[i].setGlobalScore(players[i].getGlobalScore() + player.getGlobalScore());
-        		playerDAO.updatePlayer(players[i].getId(), players[i]);
-        	}
+
+        //save each player of the game
+        for (int i = 0; i < players.length; i++) {
+            //if the player does not exists on database, we create it
+            if(Database.getPlayerDAO().exists(players[i].getName())) {
+                Database.getPlayerDAO().addPlayer(players[i]);
+            } else {
+                //get the concerned player on the database
+                Player player = Database.getPlayerDAO().findPlayerByName(players[i].getName());
+
+                //update the global values of the player
+                players[i].setGlobalScore(players[i].getGlobalScore() + player.getGlobalScore());
+                players[i].setGlobalPenalty(players[i].getGlobalPenalty() + player.getGlobalPenalty());
+
+                //save the player
+                Database.getPlayerDAO().updatePlayer(player.getId(), players[i]);
+            }
         }
+
+        //save the game
         Database.getGameDAO().addGame(game);
     }
-    
+
     @Override
-    protected void onStop(){
+    protected void onStop() {
         database.close();
         super.onStop();
     }
