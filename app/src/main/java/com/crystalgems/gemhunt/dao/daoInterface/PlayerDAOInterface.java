@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PlayerDAOInterface {
     Player findPlayerById(int id);
-    Player findPlaerByName(String name);
+    Player findPlayerByName(String name);
     List<Player> findAllPlayer();
     boolean addPlayer(Player player);
     boolean addPlayers(List<Player> players);
