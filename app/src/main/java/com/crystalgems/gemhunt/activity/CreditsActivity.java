@@ -13,7 +13,7 @@ public class CreditsActivity extends Activity implements View.OnClickListener {
 
     private Button resumeButton;
 
-    MediaPlayer mediaPlayer;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class CreditsActivity extends Activity implements View.OnClickListener {
         resumeButton = (Button) findViewById(R.id.button_resume);
         resumeButton.setOnClickListener(this);
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.love_like_you);
+        mediaPlayer = MediaPlayer.create(this, R.raw.love_like_you);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
     }
@@ -39,14 +39,12 @@ public class CreditsActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == resumeButton) {
+            if (mediaPlayer != null) {
+                mediaPlayer.stop();
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
             this.finish();
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        mediaPlayer.release();
-        mediaPlayer = null;
-        super.onDestroy();
     }
 }
