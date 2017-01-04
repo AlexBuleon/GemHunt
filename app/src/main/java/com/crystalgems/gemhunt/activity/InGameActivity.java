@@ -2,7 +2,6 @@ package com.crystalgems.gemhunt.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -31,8 +30,8 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     private CharacterCardView[] characterCardViews;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.in_game_activity);
 
