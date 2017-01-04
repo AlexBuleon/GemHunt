@@ -1,5 +1,6 @@
 package com.crystalgems.gemhunt.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -17,10 +18,18 @@ public class MainActivity extends FragmentActivity {
     private ViewPager viewPager;
     private PagerAdapter pagerAdapter;
 
+    private SettingsScreenSlidePageFragment settingsScreenSlidePageFragment;
+    private TitleScreenSlidePageFragment titleScreenSlidePageFragment;
+    private LobbyScreenSlidePageFragment lobbyScreenSlidePageFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_slide);
+
+        settingsScreenSlidePageFragment = new SettingsScreenSlidePageFragment();
+        titleScreenSlidePageFragment = new TitleScreenSlidePageFragment();
+        lobbyScreenSlidePageFragment = new LobbyScreenSlidePageFragment();
 
         //ViewPager and PageAdapter
         viewPager = (ViewPager) findViewById(R.id.pager);
@@ -45,6 +54,12 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (intent != null)
+            lobbyScreenSlidePageFragment.setCharacter(intent.getIntExtra("buttonID", 0), intent.getIntExtra("pictureID", 0));
+    }
+
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
@@ -55,17 +70,17 @@ public class MainActivity extends FragmentActivity {
             switch (position) {
                 //Settings page
                 case 0:
-                    return new SettingsScreenSlidePageFragment();
+                    return settingsScreenSlidePageFragment;
                 //Home page
                 case 1:
-                    return new TitleScreenSlidePageFragment();
+                    return titleScreenSlidePageFragment;
                 //Lobby page
 
                 case 2:
-                    return new LobbyScreenSlidePageFragment();
+                    return lobbyScreenSlidePageFragment;
                 default:
                     System.err.println("Wrong menu item number.");
-                    return new TitleScreenSlidePageFragment();
+                    return titleScreenSlidePageFragment;
             }
         }
 
