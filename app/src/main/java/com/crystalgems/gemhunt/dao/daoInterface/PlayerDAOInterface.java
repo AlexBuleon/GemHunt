@@ -8,6 +8,7 @@ public interface PlayerDAOInterface {
     Player findPlayerById(int id);
     Player findPlayerByName(String name);
     List<Player> findAllPlayer();
+    boolean updatePlayer(int id, Player player);
     boolean addPlayer(Player player);
     boolean addPlayers(List<Player> players);
     boolean deletePlayer(int id);

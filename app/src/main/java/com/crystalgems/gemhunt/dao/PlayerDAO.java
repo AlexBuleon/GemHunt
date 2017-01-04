@@ -72,6 +72,21 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
     }
 
     @Override
+    public boolean updatePlayer(int id, Player player) {
+        values = new ContentValues();
+
+        values.put(COLUMN_PLAYER_NAME, player.getName());
+        values.put(COLUMN_PLAYER_PICTURE_ID, player.getPictureId());
+        values.put(COLUMN_PLAYER_GLOBAL_PENALTY, player.getGlobalPenalty());
+        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getTotalScore());
+
+        final String selection = COLUMN_PLAYER_ID + " = ?";
+        final String[] selectionArg = {String.valueOf(id)};
+
+        return super.update(PLAYER_TABLE, values, selection, selectionArg) > 0;
+    }
+
+    @Override
     public Player findPlayerById(int id) {
         Player player = new Player();
 
