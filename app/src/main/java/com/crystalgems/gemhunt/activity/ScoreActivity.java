@@ -69,7 +69,7 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         //save each player of the game
         for (int i = 0; i < players.length; i++) {
             //if the player does not exists on database, we create it
-            if(Database.getPlayerDAO().exists(players[i].getName())) {
+            if(!Database.getPlayerDAO().exists(players[i].getName())) {
                 Database.getPlayerDAO().addPlayer(players[i]);
             } else {
                 //get the concerned player on the database
