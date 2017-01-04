@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.crystalgems.gemhunt.dao.daoInterface.GameDAOInterface;
 import com.crystalgems.gemhunt.database.Database;
-import com.crystalgems.gemhunt.database.schema.GamePlayerLinkSchema;
 import com.crystalgems.gemhunt.database.schema.GameSchema;
 import com.crystalgems.gemhunt.model.Game;
 import com.crystalgems.gemhunt.model.GamePlayerLink;
@@ -150,7 +149,7 @@ public class GameDAO extends DatabaseContentProvider implements GameSchema, Game
 
     @Override
     public boolean deleteAllGames() {
-        return false;
+        return super.delete(GAME_TABLE, null, null) > 0;
     }
 
     private void setContentValues(Game game) {
