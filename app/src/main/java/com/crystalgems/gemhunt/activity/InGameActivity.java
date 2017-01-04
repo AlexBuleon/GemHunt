@@ -161,10 +161,10 @@ public class InGameActivity extends Activity implements OnClickListener {
                 }
                 break;
             case 2:
-                characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView3);
+				characterCardViews[0] = (CharacterCardView) findViewById(R.id.characterCardView5);
 				characterCardViews[0].getPlayerNameTextView().setText(players[0].getName());
 				characterCardViews[0].getCharacterImageView().setImageResource(players[0].getPictureId());
-				characterCardViews[1] = (CharacterCardView) findViewById(R.id.characterCardView5);
+				characterCardViews[1] = (CharacterCardView) findViewById(R.id.characterCardView3);
 				characterCardViews[1].getPlayerNameTextView().setText(players[1].getName());
 				characterCardViews[1].getCharacterImageView().setImageResource(players[1].getPictureId());
 				(findViewById(R.id.characterCardView0)).setVisibility(View.INVISIBLE);
