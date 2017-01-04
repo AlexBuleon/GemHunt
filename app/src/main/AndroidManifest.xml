@@ -30,6 +30,9 @@
         <activity
             android:name="com.crystalgems.gemhunt.activity.ScoreActivity"
             android:screenOrientation="sensorLandscape" />
+        <activity
+            android:name="com.crystalgems.gemhunt.activity.CreditsActivity"
+            android:screenOrientation="sensorLandscape" />
     </application>
 
 </manifest>
