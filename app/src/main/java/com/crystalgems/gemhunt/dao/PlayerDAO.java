@@ -96,6 +96,30 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
     }
 
     @Override
+    public Player findPlayerByName(String name) {
+        Player player = new Player();
+
+        final String selection = COLUMN_PLAYER_NAME + " = ?";
+        final String[] selectionArg = { String.valueOf(name) };
+
+        cursor = super.query(PLAYER_TABLE, PLAYER_COLUMNS, selection, selectionArg, COLUMN_PLAYER_ID);
+
+        if(cursor != null) {
+            cursor.moveToFirst();
+            while(!cursor.isAfterLast()) {
+                player = cursorToEntity(cursor);
+                cursor.moveToNext();
+            }
+
+            cursor.close();
+
+            return player;
+        }
+
+        return null;
+    }
+
+    @Override
     public List<Player> findAllPlayer() {
         List<Player> players = new ArrayList<>();
 
@@ -147,7 +171,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
         values  = new ContentValues();
         values.put(COLUMN_PLAYER_NAME, player.getName());
         values.put(COLUMN_PLAYER_PICTURE_ID, player.getPictureId());
-        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getTotalScore());
+        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getGlobalScore());
         values.put(COLUMN_PLAYER_GLOBAL_PENALTY, player.getGlobalPenalty());
     }
 }
