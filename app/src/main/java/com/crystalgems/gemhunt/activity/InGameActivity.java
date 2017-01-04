@@ -3,6 +3,7 @@ package com.crystalgems.gemhunt.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -34,16 +35,6 @@ public class InGameActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activty_in_game);
 
         Intent intent = getIntent();
-        playersNumber = intent.getIntExtra("playersNumber", 2);
-
-        initGameActivity();
-
-
-        Player[] players = new Player[playersNumber];
-        for (int i = 0; i < players.length; i++) {
-            players[i] = new Player("player " + i);
-        }
-        
 		Parcelable[] parcelables = intent.getParcelableArrayExtra("players");
 		Player[] players = new Player[parcelables.length];
 		for (int i = 0; i < players.length; i++) {
@@ -345,8 +336,8 @@ public class InGameActivity extends Activity implements OnClickListener {
     		if(game.getActivePlayer().getTotalScore() >= 13){
     			game.setDuration(System.currentTimeMillis() - game.getDuration()); //final duration of the game
     			Player[] players = game.getPlayers();
-    			for(int i = 0; i<playersNumber; i++){
-    				players[i].setGlobalScore(players[i].getTotalScore());
+				for (int i = 0; i < game.getPlayers().length; i++) {
+					players[i].setGlobalScore(players[i].getTotalScore());
     				players[i].setGlobalPenalty(players[i].getPenaltyCounter());
     			}
 
