@@ -1,152 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/lobby_fragment_scrollview"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:background="@drawable/background_lobby">
+    android:id="@+id/lobby_fragment_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_lobby">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-		<RelativeLayout
-			android:id="@+id/lobby_title"
-	        android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/lobby_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-	        <!--Title-->
-	        <TextView
-				android:id="@+id/lobbyTitleTextView"
-				style="@style/menuTitle"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_alignParentTop="true"
-	            android:layout_centerHorizontal="true"
-				android:layout_marginTop="16dp"
-				android:shadowDx="0"
-				android:shadowDy="2"
-				android:shadowRadius="4"
-				android:text="@string/lobby"
-				android:textSize="32sp" />
-	
-	    </RelativeLayout>
-	    
-	    <!-- First layer of player buttons -->
-	     <RelativeLayout
-			 android:id="@+id/lobby_players"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_below="@id/lobby_title"
-			 android:layout_centerHorizontal="true">
+            <!--Title-->
+            <TextView
+                android:id="@+id/lobbyTitleTextView"
+                style="@style/menuTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:text="@string/lobby"
+                android:textSize="32sp" />
 
-             <Button
+        </RelativeLayout>
+
+        <!-- First layer of player buttons -->
+        <RelativeLayout
+            android:id="@+id/lobby_players"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lobby_title"
+            android:layout_centerHorizontal="true">
+
+            <Button
                 android:id="@+id/player1"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="8dp"
-				 android:background="@drawable/character_steven"
+                android:background="@drawable/character_steven"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4" />
+
+            <Button
+                android:id="@+id/player2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/player1"
+                android:background="@drawable/character_connie"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4" />
+
+            <Button
+                android:id="@+id/player3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/player2"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:text="+"
                 android:textAllCaps="false"
-                 />
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:visibility="visible" />
 
-             <Button
-                 android:id="@+id/player2"
-                 android:layout_width="80dp"
-                 android:layout_height="80dp"
-                 android:layout_margin="8dp"
-                 android:layout_toEndOf="@id/player1"
-				 android:background="@drawable/character_connie"
-				 android:shadowColor="@color/shadowBlack"
-				 android:textAllCaps="false"
-				 android:textColor="@color/white" />
+        </RelativeLayout>
 
-             <Button
-                 android:id="@+id/player3"
-                 android:layout_width="80dp"
-                 android:layout_height="80dp"
-                 android:layout_margin="8dp"
-				 android:layout_toEndOf="@id/player2"
-				 android:shadowColor="@color/shadowBlack"
-                 android:text="+"
-                 android:textAllCaps="false"
-                 android:textColor="@color/white"
-                 android:visibility="visible"
-                 />
-	
-		</RelativeLayout>
-	    
-	    <!-- second layer of player buttons -->
-	     <RelativeLayout
-			 android:id="@+id/lobby_players2"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_below="@id/lobby_players"
-			 android:layout_centerHorizontal="true">
+        <!-- second layer of player buttons -->
+        <RelativeLayout
+            android:id="@+id/lobby_players2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lobby_players"
+            android:layout_centerHorizontal="true">
 
-             <Button
-                 android:id="@+id/player4"
-                 android:layout_width="80dp"
-                 android:layout_height="80dp"
-                 android:layout_margin="8dp"
-				 android:shadowColor="@color/shadowBlack"
-                 android:text="+"
-                 android:textAllCaps="false"
-                 android:textColor="@color/white"
-                 android:visibility="invisible"
-                 />
+            <Button
+                android:id="@+id/player4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:text="+"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:visibility="invisible" />
 
-             <Button
-                 android:id="@+id/player5"
-                 android:layout_width="80dp"
-                 android:layout_height="80dp"
-                 android:layout_margin="8dp"
-				 android:layout_toEndOf="@id/player4"
-				 android:shadowColor="@color/shadowBlack"
-                 android:text="+"
-                 android:textAllCaps="false"
-                 android:textColor="@color/white"
-                 android:visibility="invisible"
-                 />
+            <Button
+                android:id="@+id/player5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/player4"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:text="+"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:visibility="invisible" />
 
-             <Button
-                 android:id="@+id/player6"
-                 android:layout_width="80dp"
-                 android:layout_height="80dp"
-                 android:layout_margin="8dp"
-				 android:layout_toEndOf="@id/player5"
-				 android:shadowColor="@color/shadowBlack"
-                 android:text="+"
-                 android:textAllCaps="false"
-                 android:textColor="@color/white"
-                 android:visibility="invisible"
-                 />
-	
-		</RelativeLayout>
-	    
-	    <!-- control buttons -->
-	    <RelativeLayout
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_below="@id/lobby_players2"
-	            android:layout_centerHorizontal="true">
-	
-	            <Button
-					android:id="@+id/suppress_button"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:text="Suppr"
-	                />
-	
-	            <Button
-					android:id="@+id/launch_button"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:layout_toEndOf="@id/suppress_button"
-					android:text="Launch"
-	                />
-	
-		</RelativeLayout>
-	</RelativeLayout>
+            <Button
+                android:id="@+id/player6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/player5"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:text="+"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <!-- control buttons -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lobby_players2"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/suppress_button"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Suppr" />
+
+            <Button
+                android:id="@+id/launch_button"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_toEndOf="@id/suppress_button"
+                android:text="Launch" />
+
+        </RelativeLayout>
+    </RelativeLayout>
 
 </ScrollView>
