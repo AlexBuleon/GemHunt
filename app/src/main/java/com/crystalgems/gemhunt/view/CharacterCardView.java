@@ -34,7 +34,7 @@ public class CharacterCardView extends LinearLayout {
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.custom_character_card, this);
+        inflater.inflate(R.layout.view_character_card, this);
     }
 
     @Override
