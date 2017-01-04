@@ -47,8 +47,7 @@ public class StatisticsCardView extends RelativeLayout {
     }
 
     public void setPlayer(Player p) {
-        // TODO : configure the right pictureId
-        //characterImageView.setImageResource(p.getPictureId());
+        characterImageView.setImageResource(p.getPictureId());
         playerNameTextView.setText(p.getName());
         globalScoreTextView.setText("Score : " + String.valueOf(p.getGlobalScore()));
         globalPenaltyTextView.setText("Penalties : " + String.valueOf(p.getGlobalPenalty()));
