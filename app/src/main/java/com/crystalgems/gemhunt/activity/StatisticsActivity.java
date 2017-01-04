@@ -39,7 +39,7 @@ public class StatisticsActivity extends Activity implements View.OnClickListener
 	        homeButton = (Button) findViewById(R.id.statisticsHomeButton);
 	        homeButton.setOnClickListener(this);
 
-	        statsCardViews = new StatisticsCardView[6];
+	        statsCardViews = new StatisticsCardView[14];
 	        statsCardViews[0] = (StatisticsCardView) findViewById(R.id.statisticsCardView0);
 	        statsCardViews[1] = (StatisticsCardView) findViewById(R.id.statisticsCardView1);
 	        statsCardViews[2] = (StatisticsCardView) findViewById(R.id.statisticsCardView2);
