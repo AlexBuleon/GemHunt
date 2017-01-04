@@ -346,8 +346,11 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
     	 */
     	private boolean checkVictory() {
     		if(game.getActivePlayer().getTotalScore() >= 13){
-    			characterCardViews[game.getPlayerNumber()].getScoreTextView().setText(" WINNER"); //temp
-    			return true;
+				Intent i = new Intent(this, ScoreActivity.class);
+				i.putExtra("game", game);
+				this.finish();
+				startActivity(i);
+				return true;
     		}
     		return false;
 
