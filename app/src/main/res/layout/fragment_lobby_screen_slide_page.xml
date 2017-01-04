@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/activity_main"
+	android:id="@+id/lobby_fragment_scrollview"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/background_lobby">
-    <!-- TODO : Buttons art (maybe appareance instead of P1/P2...) -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,32 +38,40 @@
 	            android:layout_height="wrap_content"
 	            android:layout_below="@id/lobby_title"
 			 android:layout_centerHorizontal="true">
-	
-	            <Button
-					android:id="@+id/player1"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:text="@string/player1"
-	                />
-	
-	            <Button
-					android:id="@+id/player2"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:layout_toEndOf="@id/player1"
-					android:text="@string/player2"
-	                />
-	                
-	            <Button
-					android:id="@+id/player3"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:layout_toEndOf="@id/player2"
-					android:text="@string/add"
-	                />
+
+             <Button
+                android:id="@+id/player1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/character_connie"
+                android:layout_margin="8dp"
+                android:textAllCaps="false"
+                 />
+
+             <Button
+                 android:id="@+id/player2"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_margin="8dp"
+                 android:text="+"
+                 android:textAllCaps="false"
+                 android:textColor="@color/white"
+                 android:shadowColor="@color/shadowBlack"
+                 android:layout_toEndOf="@id/player1"
+                 />
+
+             <Button
+                 android:id="@+id/player3"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_margin="8dp"
+                 android:text="+"
+                 android:textAllCaps="false"
+                 android:textColor="@color/white"
+                 android:shadowColor="@color/shadowBlack"
+                 android:layout_toEndOf="@id/player2"
+                 android:visibility="invisible"
+                 />
 	
 		</RelativeLayout>
 	    
@@ -74,35 +82,44 @@
 	            android:layout_height="wrap_content"
 	            android:layout_below="@id/lobby_players"
 			 android:layout_centerHorizontal="true">
-	
-	            <Button
-					android:id="@+id/player4"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:text="@string/add"
-	                android:visibility="invisible"
-	                />
-	
-	            <Button
-					android:id="@+id/player5"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:layout_toEndOf="@id/player4"
-					android:text="@string/add"
-	                android:visibility="invisible"
-	                />
-	                
-	            <Button
-					android:id="@+id/player6"
-	                android:layout_width="100dp"
-	                android:layout_height="wrap_content"
-	                android:layout_margin="8dp"
-					android:layout_toEndOf="@id/player5"
-					android:text="@string/add"
-	                android:visibility="invisible"
-	                />
+
+             <Button
+                 android:id="@+id/player4"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_margin="8dp"
+                 android:text="+"
+                 android:textAllCaps="false"
+                 android:textColor="@color/white"
+                 android:shadowColor="@color/shadowBlack"
+                 android:visibility="invisible"
+                 />
+
+             <Button
+                 android:id="@+id/player5"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_margin="8dp"
+                 android:text="+"
+                 android:textAllCaps="false"
+                 android:textColor="@color/white"
+                 android:shadowColor="@color/shadowBlack"
+                 android:layout_toEndOf="@id/player4"
+                 android:visibility="invisible"
+                 />
+
+             <Button
+                 android:id="@+id/player6"
+                 android:layout_width="80dp"
+                 android:layout_height="80dp"
+                 android:layout_margin="8dp"
+                 android:text="+"
+                 android:textAllCaps="false"
+                 android:textColor="@color/white"
+                 android:shadowColor="@color/shadowBlack"
+                 android:layout_toEndOf="@id/player5"
+                 android:visibility="invisible"
+                 />
 	
 		</RelativeLayout>
 	    
