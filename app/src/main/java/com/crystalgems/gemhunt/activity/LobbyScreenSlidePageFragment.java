@@ -15,15 +15,16 @@ import com.apps.su.gemhunt.R;
 import com.crystalgems.gemhunt.model.Player;
 
 public class LobbyScreenSlidePageFragment extends Fragment implements OnClickListener{
-	Button player1;
-	Button player2;
-	Button player3;
-	Button player4;
-	Button player5;
-	Button player6;
-	Button suppress;
-	Button launch;
-	
+	private Button player1;
+    private Button player2;
+    private Button player3;
+    private Button player4;
+    private Button player5;
+    private Button player6;
+    private Button suppress;
+    private Button launch;
+
+    private Player[] tabPLayers;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -85,10 +86,10 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
             case R.id.player2:
                 if (!player2.getText().equals("+")) {
-                    startActivity(intent);
+                    intent.putExtra("buttonID", R.id.player2);
+                    startActivityForResult(intent, 2);
                 }
                 else {
-                    //Todo : drawable en fonction des données de l'intent
                     player2.setBackgroundResource(R.drawable.character_connie);
                     player3.setVisibility(View.VISIBLE);
                     player2.setText(R.string.player2);
@@ -97,7 +98,8 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
             case R.id.player3:
                 if (!player3.getText().equals("+")) {
-                    startActivity(intent);
+                    intent.putExtra("buttonID", R.id.player3);
+                    startActivityForResult(intent, 3);
                 }
                 else {
                     player3.setBackgroundResource(R.drawable.character_connie);
@@ -108,7 +110,8 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
             case R.id.player4:
                 if (!player4.getText().equals("+")) {
-                    startActivity(intent);
+                    intent.putExtra("buttonID", R.id.player4);
+                    startActivityForResult(intent, 4);
                 }
                 else {
                     player4.setBackgroundResource(R.drawable.character_connie);
@@ -119,7 +122,8 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
             case R.id.player5:
                 if (!player5.getText().equals("+")) {
-                    startActivity(intent);
+                    intent.putExtra("buttonID", R.id.player5);
+                    startActivityForResult(intent, 5);
                 }
                 else {
                     player5.setBackgroundResource(R.drawable.character_connie);
@@ -130,7 +134,8 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
             case R.id.player6:
                 if (!player6.getText().equals("+")) {
-                    startActivity(intent);
+                    intent.putExtra("buttonID", R.id.player6);
+                    startActivityForResult(intent, 6);
                 }
                 else {
                     player6.setBackgroundResource(R.drawable.character_connie);
