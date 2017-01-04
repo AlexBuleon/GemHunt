@@ -81,7 +81,7 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         if (v == restartButton) {
             game.resetGame();
             Intent i = new Intent(this, InGameActivity.class);
-            i.putExtra("game", game);
+            i.putExtra("players", game.getPlayers());
             this.finish();
             startActivity(i);
         }

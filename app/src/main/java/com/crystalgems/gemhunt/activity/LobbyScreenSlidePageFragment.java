@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.apps.su.gemhunt.R;
+import com.crystalgems.gemhunt.model.Player;
 
 public class LobbyScreenSlidePageFragment extends Fragment implements OnClickListener{
 	Button player1;
@@ -183,8 +184,13 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
     }
 	
 	private void launch(){//TODO : create controller with array of players in arg, create in game activity to link with
+        Player[] players = new Player[getPlayersNumber()];
+        for (int i = 0; i < players.length; i++) {
+            players[i] = new Player("P" + i);
+            players[i].setPictureId(R.drawable.character_peridot);
+        }
         Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), InGameActivity.class);
-        intent.putExtra("playersNumber", getPlayersNumber());
+        intent.putExtra("players", players);
         startActivity(intent);
 	}
 
