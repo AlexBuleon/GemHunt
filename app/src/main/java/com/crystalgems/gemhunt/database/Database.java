@@ -5,10 +5,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.crystalgems.gemhunt.dao.GameDAO;
+import com.crystalgems.gemhunt.dao.GamePlayerLinkDAO;
 import com.crystalgems.gemhunt.dao.PlayerDAO;
 import com.crystalgems.gemhunt.database.schema.GamePlayerLinkSchema;
 import com.crystalgems.gemhunt.database.schema.GameSchema;
 import com.crystalgems.gemhunt.database.schema.PlayerSchema;
+import com.crystalgems.gemhunt.model.GamePlayerLink;
 
 public class Database {
 
@@ -21,6 +23,7 @@ public class Database {
     private final Context context;
     private static PlayerDAO playerDAO;
     private static GameDAO gameDAO;
+    private static GamePlayerLinkDAO gamePlayerLinkDAO;
 
     public Database(Context context) {
         this.context = context;
@@ -31,6 +34,8 @@ public class Database {
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
 
         playerDAO = new PlayerDAO(sqLiteDatabase);
+        gameDAO = new GameDAO(sqLiteDatabase);
+        gamePlayerLinkDAO = new GamePlayerLinkDAO(sqLiteDatabase);
 
         return this;
     }
@@ -45,6 +50,10 @@ public class Database {
 
     public static GameDAO getGameDAO() {
         return gameDAO;
+    }
+
+    public static GamePlayerLinkDAO getGamePlayerLinkDAO() {
+        return gamePlayerLinkDAO;
     }
 
     private static class DatabaseHelper extends SQLiteOpenHelper {

@@ -9,6 +9,6 @@ public interface GameDAOInterface {
     List<Game> findAllGames();
     boolean addGame(Game game);
     boolean addGames(List<Game> games);
-    boolean deleteGame(Game game);
+    boolean deleteGame(int id);
     boolean deleteAllGames();
 }

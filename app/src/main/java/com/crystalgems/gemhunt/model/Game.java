@@ -15,6 +15,10 @@ public class Game implements Parcelable {
             return new Game[size];
         }
     };
+
+    public Game() {
+    }
+
     private int id;
 	private int turnCounter;
 	private long duration;
@@ -22,6 +26,7 @@ public class Game implements Parcelable {
     private DicePool dicePool;
     private DicePool dicePicked;
     private DicePool diceBin;
+    private int gamePlayerLinkId;
 
     public Game(int id, Player[] players, DicePool dicePool){
     	this.id = id;
@@ -118,4 +123,19 @@ public class Game implements Parcelable {
     	return dicePicked;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getGamePlayerLinkId() {
+        return gamePlayerLinkId;
+    }
+
+    public void setGamePlayerLinkId(int gamePlayerLinkId) {
+        this.gamePlayerLinkId = gamePlayerLinkId;
+    }
 }
