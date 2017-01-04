@@ -27,7 +27,7 @@ public class Player implements Parcelable, Comparable<Player> {
     private int rollCounter;
     private int rank;
 
-    //idependant of the game
+    //independent of the game
     private int globalScore;
     private int globalPenalty;
 
@@ -95,6 +95,15 @@ public class Player implements Parcelable, Comparable<Player> {
         out.writeInt(penalty);
         out.writeInt(penaltyCounter);
         out.writeInt(rollCounter);
+    }
+
+    public void resetPlayer() {
+        this.turnScore = 0;
+        this.totalScore = 0;
+        this.penalty = 0;
+        this.penaltyCounter = 0;
+        this.rollCounter = 0;
+        this.rank = 0;
     }
 
     public String getName() {
@@ -180,6 +189,6 @@ public class Player implements Parcelable, Comparable<Player> {
 
     @Override
     public int compareTo(Player o) {
-        return o.totalScore - this.totalScore;
+        return this.totalScore - o.totalScore;
     }
 }
