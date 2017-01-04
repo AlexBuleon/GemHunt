@@ -6,25 +6,25 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:background="@color/bg1PlayerCard">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
             android:background="@color/bg2PlayerCard"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/returnButton"
+                android:id="@+id/resumeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="Retour" />
+                android:text="Resume" />
 
             <TextView
                 android:id="@+id/pauseTextView"
@@ -32,9 +32,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:shadowColor="@color/shadowBlack"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
                 android:text="Pause"
                 android:textAlignment="center"
-                android:textSize="46sp" />
+                android:textColor="@color/white"
+                android:textSize="28sp" />
 
             <Button
                 android:id="@+id/homeButton"
