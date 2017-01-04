@@ -93,10 +93,15 @@ public class Game implements Parcelable {
     public int getPlayerNumber(){
     	return turnCounter%players.length;
     }
-    
+
+    public Player[] getPlayers() {
+        return players;
+    }
+
     public int getTurnCounter(){
     	return turnCounter;
     }
+
     public void setTurnCounter(int turn){
     	turnCounter = turn;
     }
