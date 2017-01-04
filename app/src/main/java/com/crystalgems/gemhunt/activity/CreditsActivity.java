@@ -1,6 +1,7 @@
 package com.crystalgems.gemhunt.activity;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -12,6 +13,8 @@ public class CreditsActivity extends Activity implements View.OnClickListener {
 
     private Button resumeButton;
 
+    MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,9 @@ public class CreditsActivity extends Activity implements View.OnClickListener {
         resumeButton = (Button) findViewById(R.id.button_resume);
         resumeButton.setOnClickListener(this);
 
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.love_like_you);
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
     }
 
     @Override
@@ -35,5 +41,12 @@ public class CreditsActivity extends Activity implements View.OnClickListener {
         if (v == resumeButton) {
             this.finish();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        mediaPlayer.release();
+        mediaPlayer = null;
+        super.onDestroy();
     }
 }
