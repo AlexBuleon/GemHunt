@@ -6,9 +6,12 @@ import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.crystalgems.gemhunt.dao.daoInterface.GameDAOInterface;
+import com.crystalgems.gemhunt.database.Database;
 import com.crystalgems.gemhunt.database.schema.GamePlayerLinkSchema;
 import com.crystalgems.gemhunt.database.schema.GameSchema;
 import com.crystalgems.gemhunt.model.Game;
+import com.crystalgems.gemhunt.model.GamePlayerLink;
+import com.crystalgems.gemhunt.model.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +32,6 @@ public class GameDAO extends DatabaseContentProvider implements GameSchema, Game
         int gameIdIndex;
         int durationIndex;
         int turnDurationIndex;
-        int gamePlayerLinkIdIndex;
 
         if(cursor != null) {
             //get the gameId
@@ -48,12 +50,6 @@ public class GameDAO extends DatabaseContentProvider implements GameSchema, Game
             if(cursor.getColumnIndex(COLUMN_GAME_TURN_DURATION) != -1) {
                 turnDurationIndex = cursor.getColumnIndex(COLUMN_GAME_TURN_DURATION);
                 game.setTurnCounter(cursor.getInt(turnDurationIndex));
-            }
-
-            //get the gamePlayerLinkId
-            if(cursor.getColumnIndex(COLUMN_GAME_PLAYER_LINK_ID) != -1) {
-                gamePlayerLinkIdIndex = cursor.getColumnIndex(COLUMN_GAME_PLAYER_LINK_ID);
-                game.setGamePlayerLinkId(cursor.getInt(gamePlayerLinkIdIndex));
             }
         }
 
@@ -108,13 +104,20 @@ public class GameDAO extends DatabaseContentProvider implements GameSchema, Game
 
         //add the game
         boolean gameInsert = false;
+        boolean gamePlayerLinkInsert = false;
+
+        //save the game in database
         setContentValues(game);
         try {
             gameInsert = super.insert(GAME_TABLE, values) > 0;
-            return gameInsert;
         } catch (SQLiteConstraintException e) {
             return false;
         }
+
+        //save the gamePlayerLink in database
+
+
+        return gameInsert && gamePlayerLinkInsert;
     }
 
     @Override
@@ -140,6 +143,5 @@ public class GameDAO extends DatabaseContentProvider implements GameSchema, Game
 
         values.put(COLUMN_GAME_DURATION, game.getDuration());
         values.put(COLUMN_GAME_TURN_DURATION, game.getTurnCounter());
-        values.put(COLUMN_GAME_PLAYER_LINK_ID, 0);
     }
 }

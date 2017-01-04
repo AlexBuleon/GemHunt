@@ -26,7 +26,6 @@ public class Game implements Parcelable {
     private DicePool dicePool;
     private DicePool dicePicked;
     private DicePool diceBin;
-    private int gamePlayerLinkId;
 
     public Game(int id, Player[] players, DicePool dicePool){
     	this.id = id;
@@ -126,11 +125,11 @@ public class Game implements Parcelable {
         this.id = id;
     }
 
-    public int getGamePlayerLinkId() {
-        return gamePlayerLinkId;
+    public Player[] getPlayers() {
+        return players;
     }
 
-    public void setGamePlayerLinkId(int gamePlayerLinkId) {
-        this.gamePlayerLinkId = gamePlayerLinkId;
+    public void setPlayers(Player[] players) {
+        this.players = players;
     }
 }
