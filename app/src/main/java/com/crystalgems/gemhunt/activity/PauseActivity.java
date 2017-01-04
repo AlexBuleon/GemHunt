@@ -1,6 +1,7 @@
 package com.crystalgems.gemhunt.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.apps.su.gemhunt.R;
 public class PauseActivity extends Activity implements View.OnClickListener {
 
     private Button returnButton;
+    private Button homeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,9 @@ public class PauseActivity extends Activity implements View.OnClickListener {
         txt.setTypeface(font);
 
         returnButton = (Button) findViewById(R.id.returnButton);
+        homeButton = (Button) findViewById(R.id.homeButton);
         returnButton.setOnClickListener(this);
+        homeButton.setOnClickListener(this);
     }
 
     @Override
@@ -37,9 +41,14 @@ public class PauseActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        //Intent i = new Intent(this, InGameActivity.class);
-        //TODO : I'm sure with this flag
-        this.finish();
-        //startActivity(i);
+        if (v == returnButton) {
+            this.finish();
+        }
+        if (v == homeButton) {
+            /*Intent i = new Intent(this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);*/
+            Intent i = new Intent(this, ScoreActivity.class);
+            startActivity(i);
+        }
     }
 }

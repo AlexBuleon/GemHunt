@@ -25,8 +25,11 @@
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name="com.crystalgems.gemhunt.activity.PauseActivity"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/Theme.Transparent" />
-
+        <activity
+            android:name="com.crystalgems.gemhunt.activity.ScoreActivity"
+            android:screenOrientation="sensorLandscape" />
     </application>
 
 </manifest>

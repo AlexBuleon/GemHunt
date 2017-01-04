@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_score"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/ScoreTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="FIN"
+        android:textSize="46sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ScoreTitleTextView"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="80dp"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:id="@+id/scoreListLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <view
+                android:id="@+id/scoreCardView0"
+                class="com.crystalgems.gemhunt.view.ScoreCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp" />
+
+            <view
+                android:id="@+id/scoreCardView1"
+                class="com.crystalgems.gemhunt.view.ScoreCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/scoreCardView2"
+                class="com.crystalgems.gemhunt.view.ScoreCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/scoreCardView3"
+                class="com.crystalgems.gemhunt.view.ScoreCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/scoreCardView4"
+                class="com.crystalgems.gemhunt.view.ScoreCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/scoreCardView5"
+                class="com.crystalgems.gemhunt.view.ScoreCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
