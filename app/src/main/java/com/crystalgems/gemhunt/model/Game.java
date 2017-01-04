@@ -1,7 +1,21 @@
 package com.crystalgems.gemhunt.model;
 
-public class Game {
-	private int id;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Game implements Parcelable {
+    public static final Creator<Game> CREATOR = new Creator<Game>() {
+        @Override
+        public Game createFromParcel(Parcel in) {
+            return new Game(in);
+        }
+
+        @Override
+        public Game[] newArray(int size) {
+            return new Game[size];
+        }
+    };
+    private int id;
 	private int turnCounter;
 	private long duration;
     private Player[] players;
@@ -9,7 +23,6 @@ public class Game {
     private DicePool dicePicked;
     private DicePool diceBin;
 
-    
     public Game(int id, Player[] players, DicePool dicePool){
     	this.id = id;
         this.players = players;
@@ -17,6 +30,27 @@ public class Game {
         turnCounter = 0;
         dicePicked = new DicePool();
         diceBin = new DicePool();
+    }
+
+    protected Game(Parcel in) {
+        id = in.readInt();
+        turnCounter = in.readInt();
+        duration = in.readLong();
+        players = in.createTypedArray(Player.CREATOR);
+    }
+
+    // Useless method
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeInt(id);
+        out.writeInt(turnCounter);
+        out.writeLong(duration);
+        out.writeTypedArray(players, flags);
     }
 
     public void pickDice(int num) {
@@ -78,5 +112,5 @@ public class Game {
     public DicePool getDicePicked(){
     	return dicePicked;
     }
-    
+
 }
