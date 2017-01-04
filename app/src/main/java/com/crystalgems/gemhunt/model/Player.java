@@ -26,6 +26,7 @@ public class Player implements Parcelable {
     private int totalPenalty;
     private int penaltyCounter;
     private int rollCounter;
+    private int rank;
 
     public Player(String name) {
         this.name = name;
@@ -157,4 +158,11 @@ public class Player implements Parcelable {
         this.rollCounter = rollCounter;
     }
 
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
 }

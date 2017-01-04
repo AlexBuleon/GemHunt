@@ -3,6 +3,8 @@ package com.crystalgems.gemhunt.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Arrays;
+
 public class Game implements Parcelable {
     public static final Creator<Game> CREATOR = new Creator<Game>() {
         @Override
@@ -98,6 +100,10 @@ public class Game implements Parcelable {
         return players;
     }
 
+    public void setPlayers(Player[] players) {
+        this.players = players;
+    }
+
     public int getTurnCounter(){
     	return turnCounter;
     }
@@ -130,11 +136,16 @@ public class Game implements Parcelable {
         this.id = id;
     }
 
-    public Player[] getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(Player[] players) {
-        this.players = players;
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", turnCounter=" + turnCounter +
+                ", duration=" + duration +
+                ", players=" + Arrays.toString(players) +
+                ", dicePool=" + dicePool +
+                ", dicePicked=" + dicePicked +
+                ", diceBin=" + diceBin +
+                '}';
     }
 }
