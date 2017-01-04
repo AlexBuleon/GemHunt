@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.apps.su.gemhunt.R;
@@ -14,10 +15,12 @@ import com.crystalgems.gemhunt.view.ScoreCardView;
 
 import java.util.Arrays;
 
-public class ScoreActivity extends Activity {
+public class ScoreActivity extends Activity implements View.OnClickListener {
 
     private Game game;
     private ScoreCardView[] scoreCardViews;
+    private Button homeButton;
+    private Button restartButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,10 @@ public class ScoreActivity extends Activity {
         Typeface font = Typeface.createFromAsset(getAssets(), "font/rimouski_sb.ttf");
         scoreTitle.setTypeface(font);
 
+        homeButton = (Button) findViewById(R.id.scoreHomeButton);
+        homeButton.setOnClickListener(this);
+        restartButton = (Button) findViewById(R.id.scoreRestartButton);
+        restartButton.setOnClickListener(this);
 
         scoreCardViews = new ScoreCardView[6];
         scoreCardViews[0] = (ScoreCardView) findViewById(R.id.scoreCardView0);
@@ -60,6 +67,19 @@ public class ScoreActivity extends Activity {
             } else {
                 scoreCardViews[i].setVisibility(View.GONE);
             }
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == homeButton) {
+            Intent i = new Intent(this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
+        }
+
+        if (v == restartButton) {
+            //TODO : restart game
         }
     }
 }
