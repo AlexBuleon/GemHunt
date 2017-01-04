@@ -55,11 +55,18 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
         return rootView;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
 
-	@Override
+        Intent intent = getActivity().getIntent();
+        int character = intent.getIntExtra("character", 0);
+    }
+
+    @Override
 	public void onClick(View v) { //TODO : add pop-up when click on a player (choose name + appareance ?)
 		int viewId = v.getId();
-        Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), CharacterSelectActivity.class);
+        Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), LobbyCharacterSelectionActivity.class);
 
 		switch (viewId) {
             case R.id.player1:

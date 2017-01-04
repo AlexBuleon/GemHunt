@@ -18,11 +18,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.crystalgems.gemhunt.activity.InGameActivity"
+            android:name="com.crystalgems.gemhunt.activity.LobbyCharacterSelectionActivity"
+            android:theme="@style/Theme.Transparent"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name="com.crystalgems.gemhunt.activity.CharacterSelectActivity"
-            android:theme="@style/Theme.Transparent" />
+            android:name="com.crystalgems.gemhunt.activity.InGameActivity"
+            android:screenOrientation="sensorLandscape" />
         <activity
             android:name="com.crystalgems.gemhunt.activity.PauseActivity"
             android:screenOrientation="sensorLandscape"
