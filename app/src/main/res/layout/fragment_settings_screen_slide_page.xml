@@ -83,64 +83,11 @@
         </RelativeLayout>
 
         <!--Volume settings-->
-        <RelativeLayout
-            android:id="@+id/volume_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/language_settings"
-            >
-
-            <TextView
-                android:id="@+id/volume"
-                style="@style/menuText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="16dp"
-                android:text="@string/volume"
-                android:textSize="24sp"
-                />
-
-            <!--Volume seekbar-->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/volume">
-
-                <android.support.v7.widget.AppCompatSeekBar
-                    android:id="@+id/volume_seekBar"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginStart="4dp"
-                    />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toStartOf="@id/volume_seekBar"
-                    android:src="@drawable/ic_volume_down_white_48dp"
-                    />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/volume_seekBar"
-                    android:src="@drawable/ic_volume_up_white_48dp"
-                    />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/volume_settings"
+            android:layout_below="@+id/language_settings"
             android:layout_centerHorizontal="true">
 
             <Button
