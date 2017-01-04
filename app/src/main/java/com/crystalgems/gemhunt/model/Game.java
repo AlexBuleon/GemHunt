@@ -17,10 +17,6 @@ public class Game implements Parcelable {
             return new Game[size];
         }
     };
-
-    public Game() {
-    }
-
     private int id;
 	private int turnCounter;
 	private long duration;
@@ -28,6 +24,9 @@ public class Game implements Parcelable {
     private DicePool dicePool;
     private DicePool dicePicked;
     private DicePool diceBin;
+
+    public Game() {
+    }
 
     public Game(int id, Player[] players, DicePool dicePool){
     	this.id = id;
@@ -86,6 +85,13 @@ public class Game implements Parcelable {
         dicePicked.clear();
         dicePool.addAll(diceBin);
         diceBin.clear();
+    }
+
+    public void resetGame() {
+        for (int i = 0; i < players.length; i++) {
+            players[i].resetPlayer();
+        }
+        turnCounter = 0;
     }
     
     public Player getActivePlayer(){

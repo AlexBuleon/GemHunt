@@ -62,8 +62,8 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         Arrays.sort(game.getPlayers());
         for (int i = 0; i < scoreCardViews.length; i++) {
             if (i < game.getPlayers().length) {
-                game.getPlayers()[i].setRank(i + 1);
-                scoreCardViews[i].setPlayer(game.getPlayers()[i]);
+                game.getPlayers()[game.getPlayers().length - 1 - i].setRank(i + 1);
+                scoreCardViews[i].setPlayer(game.getPlayers()[game.getPlayers().length - 1 - i]);
             } else {
                 scoreCardViews[i].setVisibility(View.GONE);
             }
@@ -79,7 +79,11 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         }
 
         if (v == restartButton) {
-            //TODO : restart game
+            game.resetGame();
+            Intent i = new Intent(this, InGameActivity.class);
+            i.putExtra("game", game);
+            this.finish();
+            startActivity(i);
         }
     }
 }
