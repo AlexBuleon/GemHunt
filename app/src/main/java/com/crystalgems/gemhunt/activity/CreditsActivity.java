@@ -1,6 +1,6 @@
 package com.crystalgems.gemhunt.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.apps.su.gemhunt.R;
 
-public class CreditsActivity extends AppCompatActivity implements View.OnClickListener {
+public class CreditsActivity extends Activity implements View.OnClickListener {
 
     private Button resumeButton;
 

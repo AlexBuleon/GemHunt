@@ -45,10 +45,8 @@ public class PauseActivity extends Activity implements View.OnClickListener {
             this.finish();
         }
         if (v == homeButton) {
-            /*Intent i = new Intent(this, MainActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);*/
-            Intent i = new Intent(this, ScoreActivity.class);
-            startActivity(i);
+            Intent i = new Intent(this, MainActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         }
     }
 }

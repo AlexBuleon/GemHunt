@@ -1,8 +1,8 @@
 package com.crystalgems.gemhunt.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -16,7 +16,7 @@ import com.crystalgems.gemhunt.model.Game;
 import com.crystalgems.gemhunt.model.Player;
 import com.crystalgems.gemhunt.view.CharacterCardView;
 
-public class InGameActivity extends FragmentActivity implements OnClickListener{
+public class InGameActivity extends Activity implements OnClickListener {
 
     private int playersNumber;
     private boolean victory;
@@ -33,7 +33,7 @@ public class InGameActivity extends FragmentActivity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.in_game_activity);
+		setContentView(R.layout.activty_in_game);
 
         Intent intent = getIntent();
         playersNumber = intent.getIntExtra("playersNumber", 2);
