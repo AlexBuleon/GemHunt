@@ -13,6 +13,20 @@ import com.apps.su.gemhunt.R;
 public class LobbyCharacterSelectionActivity extends Activity implements View.OnClickListener {
 
     private Button steven;
+    private Button garnet;
+    private Button amethyst;
+    private Button pearl;
+    private Button connie;
+    private Button stevonnie;
+    private Button lapis;
+    private Button peridot;
+    private Button ruby;
+    private Button sapphire;
+    private Button rose;
+    private Button lion;
+    private Button jasper;
+    private Button alexandrite;
+
     private Intent intent;
     private String characterChosen;
 
@@ -43,16 +57,72 @@ public class LobbyCharacterSelectionActivity extends Activity implements View.On
             intent.putExtra("pictureID", R.drawable.character_steven);
             setResult(RESULT_OK, intent);
             finish();
-
-            /*bundle.putString("character", "steven");
-            LobbyScreenSlidePageFragment fragment = new LobbyScreenSlidePageFragment();
-            fragment.setArguments(bundle);*/
-
-            /*Intent intent = new Intent(this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.putExtra("character", 1);
-            startActivity(intent);*/
         }
-        //characterChosen = view.toString();
+        else if (view == garnet) {
+            intent.putExtra("pictureID", R.drawable.character_garnet);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == amethyst) {
+            intent.putExtra("pictureID", R.drawable.character_amethyst);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == pearl) {
+            intent.putExtra("pictureID", R.drawable.character_pearl);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == connie) {
+            intent.putExtra("pictureID", R.drawable.character_connie);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == stevonnie) {
+            intent.putExtra("pictureID", R.drawable.character_stevonnie);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == lapis) {
+            intent.putExtra("pictureID", R.drawable.character_lapis);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == peridot) {
+            intent.putExtra("pictureID", R.drawable.character_peridot);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == ruby) {
+            intent.putExtra("pictureID", R.drawable.character_ruby);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == sapphire) {
+            intent.putExtra("pictureID", R.drawable.character_sapphire);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == rose) {
+            intent.putExtra("pictureID", R.drawable.character_rose);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == lion) {
+            intent.putExtra("pictureID", R.drawable.character_lion);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == jasper) {
+            intent.putExtra("pictureID", R.drawable.character_jasper);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+        else if (view == alexandrite) {
+            intent.putExtra("pictureID", R.drawable.character_alexandrite);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+
     }
 }
