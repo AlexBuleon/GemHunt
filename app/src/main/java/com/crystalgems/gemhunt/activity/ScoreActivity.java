@@ -54,9 +54,10 @@ public class ScoreActivity extends Activity {
     private void initScoreList() {
         Arrays.sort(game.getPlayers());
         for (int i = 0; i < scoreCardViews.length; i++) {
-            if (i < game.getPlayers().length)
+            if (i < game.getPlayers().length) {
+                game.getPlayers()[i].setRank(i + 1);
                 scoreCardViews[i].setPlayer(game.getPlayers()[i]);
-            else {
+            } else {
                 scoreCardViews[i].setVisibility(View.GONE);
             }
         }
