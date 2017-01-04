@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_statistics"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_score">
+
+    <TextView
+        android:id="@+id/statisticsTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:shadowColor="@color/shadowBlack"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:text="STATISTIQUES"
+        android:textColor="@color/bg2PlayerCard"
+        android:textSize="46sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/statisticsTitleTextView"
+        android:layout_marginEnd="150dp"
+        android:layout_marginStart="150dp"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:id="@+id/statisticsListLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <view
+                android:id="@+id/statisticsCardView0"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp" />
+
+            <view
+                android:id="@+id/statisticsCardView1"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/statisticsCardView2"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/statisticsCardView3"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/statisticsCardView4"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView5"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView6"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView7"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView8"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView9"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView10"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView11"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+                
+                <view
+                android:id="@+id/statisticsCardView12"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp" />
+
+            <view
+                android:id="@+id/statisticsCardView13"
+                class="com.crystalgems.gemhunt.view.StatisticsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/statisticsHomeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="14dp"
+        android:text="Home" />
+        
+</RelativeLayout>

@@ -83,6 +83,7 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
     
     @Override
     protected void onStop(){
+    	super.onStop();
     	database.close();
     }
 
