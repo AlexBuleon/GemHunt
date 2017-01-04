@@ -20,11 +20,12 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/stevenImageView"
+            <Button
+                android:id="@+id/stevenButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_steven" />
+                android:scaleType="fitXY"
+                android:background="@drawable/character_steven" />
 
             <TextView
                 android:id="@+id/stevenTextView"
@@ -43,11 +44,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/garnetImageView"
+            <Button
+                android:id="@+id/garnetButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_garnet" />
+                android:background="@drawable/character_garnet" />
 
             <TextView
                 android:id="@+id/garnetTextView"
@@ -66,11 +67,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/amethystImageView"
+            <Button
+                android:id="@+id/amethystButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_amethyst" />
+                android:background="@drawable/character_amethyst" />
 
             <TextView
                 android:id="@+id/amethystTextView"
@@ -89,11 +90,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/pearlImageView"
+            <Button
+                android:id="@+id/pearlButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_pearl" />
+                android:background="@drawable/character_pearl" />
 
             <TextView
                 android:id="@+id/pearlTextView"
@@ -112,11 +113,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/connieImageView"
+            <Button
+                android:id="@+id/connieButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_connie" />
+                android:background="@drawable/character_connie" />
 
             <TextView
                 android:id="@+id/connieTextView"
@@ -135,11 +136,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/stevonnieImageView"
+            <Button
+                android:id="@+id/stevonnieButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_stevonnie" />
+                android:background="@drawable/character_stevonnie" />
 
             <TextView
                 android:id="@+id/stevonnieTextView"
@@ -158,11 +159,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/lapisImageView"
+            <Button
+                android:id="@+id/lapisButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_lapis" />
+                android:background="@drawable/character_lapis" />
 
             <TextView
                 android:id="@+id/lapisTextView"
@@ -181,11 +182,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/peridotImageView"
+            <Button
+                android:id="@+id/peridotButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_peridot" />
+                android:background="@drawable/character_peridot" />
 
             <TextView
                 android:id="@+id/peridotTextView"
@@ -204,11 +205,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/rubyImageView"
+            <Button
+                android:id="@+id/rubyButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_ruby" />
+                android:background="@drawable/character_ruby" />
 
             <TextView
                 android:id="@+id/rubyTextView"
@@ -227,11 +228,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/sapphireImageView"
+            <Button
+                android:id="@+id/sapphireButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_sapphire" />
+                android:background="@drawable/character_sapphire" />
 
             <TextView
                 android:id="@+id/sapphireTextView"
@@ -250,11 +251,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/roseImageView"
+            <Button
+                android:id="@+id/roseButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_rose" />
+                android:background="@drawable/character_rose" />
 
             <TextView
                 android:id="@+id/roseTextView"
@@ -273,11 +274,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/lionImageView"
+            <Button
+                android:id="@+id/lionButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_lion" />
+                android:background="@drawable/character_lion" />
 
             <TextView
                 android:id="@+id/lionTextView"
@@ -296,11 +297,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/jasperImageView"
+            <Button
+                android:id="@+id/jasperButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_jasper" />
+                android:background="@drawable/character_jasper" />
 
             <TextView
                 android:id="@+id/jasperTextView"
@@ -319,11 +320,11 @@
             android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/alexandriteImageView"
+            <Button
+                android:id="@+id/alexandriteButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/character_alexandrite" />
+                android:background="@drawable/character_alexandrite" />
 
             <TextView
                 android:id="@+id/alexandriteTextView"
