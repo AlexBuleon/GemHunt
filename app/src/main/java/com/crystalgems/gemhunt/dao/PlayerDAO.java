@@ -147,7 +147,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
         values  = new ContentValues();
         values.put(COLUMN_PLAYER_NAME, player.getName());
         values.put(COLUMN_PLAYER_PICTURE_ID, player.getPictureId());
-        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getTotalScore());
+        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getGlobalScore());
         values.put(COLUMN_PLAYER_GLOBAL_PENALTY, player.getGlobalPenalty());
     }
 }
