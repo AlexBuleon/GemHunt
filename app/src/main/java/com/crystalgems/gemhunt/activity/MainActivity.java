@@ -1,4 +1,4 @@
-package com.crystalgems.gemhunt;
+package com.crystalgems.gemhunt.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,9 +11,6 @@ import android.view.View;
 import android.view.Window;
 
 import com.apps.su.gemhunt.R;
-import com.crystalgems.gemhunt.view.LobbyScreenSlidePageFragment;
-import com.crystalgems.gemhunt.view.SettingsScreenSlidePageFragment;
-import com.crystalgems.gemhunt.view.TitleScreenSlidePageFragment;
 
 public class MainActivity extends FragmentActivity {
 

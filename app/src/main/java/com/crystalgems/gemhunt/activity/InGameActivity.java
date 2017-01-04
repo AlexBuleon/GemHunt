@@ -1,4 +1,4 @@
-package com.crystalgems.gemhunt.view;
+package com.crystalgems.gemhunt.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import com.crystalgems.gemhunt.model.Dice;
 import com.crystalgems.gemhunt.model.DicePool;
 import com.crystalgems.gemhunt.model.Game;
 import com.crystalgems.gemhunt.model.Player;
+import com.crystalgems.gemhunt.view.CharacterCardView;
 
 public class InGameActivity extends FragmentActivity implements OnClickListener{
 

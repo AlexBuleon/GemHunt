@@ -1,4 +1,4 @@
-package com.crystalgems.gemhunt.view;
+package com.crystalgems.gemhunt.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.crystalgems.gemhunt.MainActivity"
+            android:name="com.crystalgems.gemhunt.activity.MainActivity"
             android:screenOrientation="sensorLandscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,13 +18,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.crystalgems.gemhunt.view.InGameActivity"
+            android:name="com.crystalgems.gemhunt.activity.InGameActivity"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name="com.crystalgems.gemhunt.view.CharacterSelectActivity"
+            android:name="com.crystalgems.gemhunt.activity.CharacterSelectActivity"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name="com.crystalgems.gemhunt.view.PauseActivity"
+            android:name="com.crystalgems.gemhunt.activity.PauseActivity"
             android:theme="@style/Theme.Transparent" />
 
     </application>
