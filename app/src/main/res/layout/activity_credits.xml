@@ -20,11 +20,7 @@
         android:id="@+id/button_resume" />
 
     <TextView
-        android:text="Project made by students :
-        Buléon Alex
-        Chédin Atoine
-        Fourier Léo
-        Maréchal Valentin"
+        android:text="Project made by students :\nBuléon Alex\nChédin Atoine\nFourier Léo\nMaréchal Valentin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -32,7 +28,7 @@
         android:id="@+id/textViewNames" />
 
     <TextView
-        android:text="GemHunt, inspired by Steven Universe"
+        android:text="GemHunt, inspired by Steven Universe\n\nThank you Rebecca Sugar ! :)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
