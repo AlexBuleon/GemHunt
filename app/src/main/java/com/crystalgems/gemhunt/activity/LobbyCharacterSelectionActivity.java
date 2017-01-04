@@ -77,72 +77,86 @@ public class LobbyCharacterSelectionActivity extends Activity implements View.On
     public void onClick(View view) {
         if (view == steven) {
             intent.putExtra("pictureID", R.drawable.character_steven);
+            intent.putExtra("name", "Steven");
             setResult(RESULT_OK, intent);
             finish();
         }
         else if (view == garnet) {
             intent.putExtra("pictureID", R.drawable.character_garnet);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Garnet");
             finish();
         }
         else if (view == amethyst) {
             intent.putExtra("pictureID", R.drawable.character_amethyst);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Amethyst");
             finish();
         }
         else if (view == pearl) {
             intent.putExtra("pictureID", R.drawable.character_pearl);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Pearl");
             finish();
         }
         else if (view == connie) {
             intent.putExtra("pictureID", R.drawable.character_connie);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Connie");
             finish();
         }
         else if (view == stevonnie) {
             intent.putExtra("pictureID", R.drawable.character_stevonnie);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Stevonnie");
             finish();
         }
         else if (view == lapis) {
             intent.putExtra("pictureID", R.drawable.character_lapis);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Lapis");
             finish();
         }
         else if (view == peridot) {
             intent.putExtra("pictureID", R.drawable.character_peridot);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Peridot");
             finish();
         }
         else if (view == ruby) {
             intent.putExtra("pictureID", R.drawable.character_ruby);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Ruby");
             finish();
         }
         else if (view == sapphire) {
             intent.putExtra("pictureID", R.drawable.character_sapphire);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Sapphire");
             finish();
         }
         else if (view == rose) {
             intent.putExtra("pictureID", R.drawable.character_rose);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Rose");
             finish();
         }
         else if (view == lion) {
             intent.putExtra("pictureID", R.drawable.character_lion);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Lion");
             finish();
         }
         else if (view == jasper) {
             intent.putExtra("pictureID", R.drawable.character_jasper);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Jasper");
             finish();
         }
         else if (view == alexandrite) {
             intent.putExtra("pictureID", R.drawable.character_alexandrite);
             setResult(RESULT_OK, intent);
+            intent.putExtra("name", "Alexandrite");
             finish();
         }
 

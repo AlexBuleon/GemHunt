@@ -57,7 +57,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (intent != null)
-            lobbyScreenSlidePageFragment.setCharacter(intent.getIntExtra("buttonID", 0), intent.getIntExtra("pictureID", 0));
+            lobbyScreenSlidePageFragment.setCharacter(intent.getIntExtra("buttonID", 0), intent.getIntExtra("pictureID", 0), intent.getStringExtra("name"));
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
