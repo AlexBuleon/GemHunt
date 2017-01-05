@@ -1,12 +1,5 @@
 package com.crystalgems.gemhunt.activity;
 
-import java.util.List;
-
-import com.apps.su.gemhunt.R;
-import com.crystalgems.gemhunt.database.Database;
-import com.crystalgems.gemhunt.model.Player;
-import com.crystalgems.gemhunt.view.StatisticsCardView;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -16,14 +9,21 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.apps.su.gemhunt.R;
+import com.crystalgems.gemhunt.database.Database;
+import com.crystalgems.gemhunt.model.Player;
+import com.crystalgems.gemhunt.view.StatisticsCardView;
+
+import java.util.List;
+
 public class StatisticsActivity extends Activity implements View.OnClickListener{
 
+	public static Database database;
 	private StatisticsCardView[] statsCardViews;
     private Button homeButton;
-    
-    public static Database database;
-    
-	 @Override
+	private Button resetButton;
+
+	@Override
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -38,6 +38,9 @@ public class StatisticsActivity extends Activity implements View.OnClickListener
 
 	        homeButton = (Button) findViewById(R.id.statisticsHomeButton);
 	        homeButton.setOnClickListener(this);
+		 resetButton = (Button) findViewById(R.id.statisticsResetButton);
+		 resetButton.setOnClickListener(this);
+		 resetButton.setEnabled(false); //TODO : fix this
 
 	        statsCardViews = new StatisticsCardView[14];
 	        statsCardViews[0] = (StatisticsCardView) findViewById(R.id.statisticsCardView0);
@@ -66,8 +69,8 @@ public class StatisticsActivity extends Activity implements View.OnClickListener
 	    }
 	 
 	 private void initStatsList() {
-	        List<Player> players = database.getPlayerDAO().findAllPlayer();
-	        for(int i = 0; i < Math.min(players.size(),14); i++){
+		 List<Player> players = Database.getPlayerDAO().findAllPlayer();
+		 for(int i = 0; i < Math.min(players.size(),14); i++){
 	        	statsCardViews[i].setPlayer(players.get(i));
 	        }
 	        for(int i = players.size(); i < 14; i++){
@@ -82,11 +85,18 @@ public class StatisticsActivity extends Activity implements View.OnClickListener
 	            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 	            startActivity(i);
 	        }
-	    }
+		 if (v == resetButton) {
+			 Database.getGameDAO().deleteAllGames();
+			 Database.getGamePlayerLinkDAO().deleteAllGamePlayers();
+			 Database.getPlayerDAO();
+			 this.finish();
+			 startActivity(getIntent());
+		 }
+	 }
 	 
 	 @Override
 	 protected void onStop(){
-		 super.onStop();
 		 database.close();
+		 super.onStop();
 	 }
 }

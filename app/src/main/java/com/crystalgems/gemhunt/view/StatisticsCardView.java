@@ -1,14 +1,14 @@
 package com.crystalgems.gemhunt.view;
 
-import com.apps.su.gemhunt.R;
-import com.crystalgems.gemhunt.model.Player;
-
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.apps.su.gemhunt.R;
+import com.crystalgems.gemhunt.model.Player;
 
 public class StatisticsCardView extends RelativeLayout {
     private ImageView characterImageView;
@@ -49,8 +49,8 @@ public class StatisticsCardView extends RelativeLayout {
     public void setPlayer(Player p) {
         characterImageView.setImageResource(p.getPictureId());
         playerNameTextView.setText(p.getName());
-        globalScoreTextView.setText("Score : " + String.valueOf(p.getGlobalScore()));
-        globalPenaltyTextView.setText("Penalties : " + String.valueOf(p.getGlobalPenalty()));
+        globalScoreTextView.setText("Total Score : " + String.valueOf(p.getGlobalScore()));
+        globalPenaltyTextView.setText("Total Penalties : " + String.valueOf(p.getGlobalPenalty()));
     }
 
 }

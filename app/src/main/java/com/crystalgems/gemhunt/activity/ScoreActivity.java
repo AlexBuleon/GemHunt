@@ -10,22 +10,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.apps.su.gemhunt.R;
-import com.crystalgems.gemhunt.dao.PlayerDAO;
 import com.crystalgems.gemhunt.database.Database;
 import com.crystalgems.gemhunt.model.Game;
 import com.crystalgems.gemhunt.model.Player;
 import com.crystalgems.gemhunt.view.ScoreCardView;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class ScoreActivity extends Activity implements View.OnClickListener {
+    private static Database database;
     private Game game;
     private ScoreCardView[] scoreCardViews;
     private Button homeButton;
     private Button restartButton;
-
-    private static Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +51,10 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         scoreCardViews[5] = (ScoreCardView) findViewById(R.id.scoreCardView5);
 
         initScoreList();
+        saveData();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
-                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
+    private void saveData() {
         database = new Database(this);
         database.open();
 
@@ -71,7 +64,7 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
         for (int i = 0; i < players.length; i++) {
             //if the player does not exists on database, we create it
 
-            if(!Database.getPlayerDAO().exists(players[i].getName())) {
+            if (!Database.getPlayerDAO().exists(players[i].getName())) {
                 Database.getPlayerDAO().addPlayer(players[i]);
             } else {
                 //get the concerned player on the database
@@ -88,6 +81,13 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
 
         //save the game
         Database.getGameDAO().addGame(game);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN |
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
 
     @Override

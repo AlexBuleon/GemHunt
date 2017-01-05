@@ -27,8 +27,8 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
 
         int nameIndex;
         int pictureIdIndex;
-        int totalScoreIndex;
-        int totalPenaltyIndex;
+        int globalScoreIndex;
+        int globalPenaltyIndex;
 
         if(cursor != null) {
             //get the name
@@ -43,16 +43,16 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
                 player.setPictureId(cursor.getInt(pictureIdIndex));
             }
 
-            //get the total score
+            //get the global score
             if(cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_SCORE) != -1) {
-                totalScoreIndex = cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_SCORE);
-                player.setTotalScore(cursor.getInt(totalScoreIndex));
+                globalScoreIndex = cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_SCORE);
+                player.setGlobalScore(cursor.getInt(globalScoreIndex));
             }
 
-            //get the total penalty
+            //get the global penalty
             if(cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_PENALTY) != -1) {
-                totalPenaltyIndex = cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_PENALTY);
-                player.setGlobalPenalty(cursor.getInt(totalPenaltyIndex));
+                globalPenaltyIndex = cursor.getColumnIndex(COLUMN_PLAYER_GLOBAL_PENALTY);
+                player.setGlobalPenalty(cursor.getInt(globalPenaltyIndex));
             }
 
             if(cursor.getColumnIndex(COLUMN_PLAYER_ID) != -1) {
@@ -78,7 +78,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
         values.put(COLUMN_PLAYER_NAME, player.getName());
         values.put(COLUMN_PLAYER_PICTURE_ID, player.getPictureId());
         values.put(COLUMN_PLAYER_GLOBAL_PENALTY, player.getGlobalPenalty());
-        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getTotalScore());
+        values.put(COLUMN_PLAYER_GLOBAL_SCORE, player.getGlobalScore());
 
         final String selection = COLUMN_PLAYER_ID + " = ?";
         final String[] selectionArg = {String.valueOf(id)};

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="65dp"
     android:background="@color/bg2PlayerCard"
     android:orientation="horizontal">
 
@@ -31,20 +31,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="5dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
-        android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/statisticsCardCharacterImageView"
         android:text="Score : 13"
-        android:textSize="18sp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/statisticsCardGlobalPenalty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/statisticsCardPlayerName"
-        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         android:text="Penalty : 8"
-        android:textSize="18sp" />
+        android:textSize="14sp" />
 </RelativeLayout>

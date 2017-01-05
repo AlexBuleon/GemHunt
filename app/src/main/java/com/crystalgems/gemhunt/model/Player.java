@@ -55,6 +55,8 @@ public class Player implements Parcelable, Comparable<Player> {
         penalty = in.readInt();
         penaltyCounter = in.readInt();
         rollCounter = in.readInt();
+        globalScore = in.readInt();
+        globalPenalty = in.readInt();
     }
 
     public Player() {
@@ -101,6 +103,8 @@ public class Player implements Parcelable, Comparable<Player> {
         out.writeInt(penalty);
         out.writeInt(penaltyCounter);
         out.writeInt(rollCounter);
+        out.writeInt(globalScore);
+        out.writeInt(globalPenalty);
     }
 
     public void resetPlayer() {
