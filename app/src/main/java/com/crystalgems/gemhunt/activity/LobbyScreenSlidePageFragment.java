@@ -16,8 +16,8 @@ import com.crystalgems.gemhunt.model.Player;
 
 import java.util.Random;
 
-public class LobbyScreenSlidePageFragment extends Fragment implements OnClickListener{
-	private Button player1;
+public class LobbyScreenSlidePageFragment extends Fragment implements OnClickListener {
+    private Button player1;
     private Button player2;
     private Button player3;
     private Button player4;
@@ -41,30 +41,31 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
         players[0] = new Player("Steven", R.drawable.character_steven);
         players[1] = new Player("Connie", R.drawable.character_connie);
 
-        player1 = (Button)rootView.findViewById(R.id.player1);
+        player1 = (Button) rootView.findViewById(R.id.player1);
         player1.setOnClickListener(this);
         player1.setBackgroundResource(R.drawable.character_steven);
 
-        player2 = (Button)rootView.findViewById(R.id.player2);
+        player2 = (Button) rootView.findViewById(R.id.player2);
         player2.setOnClickListener(this);
         player2.setBackgroundResource(R.drawable.character_connie);
 
-        player3 = (Button)rootView.findViewById(R.id.player3);
+        player3 = (Button) rootView.findViewById(R.id.player3);
         player3.setOnClickListener(this);
 
-        player4 = (Button)rootView.findViewById(R.id.player4);
+        player4 = (Button) rootView.findViewById(R.id.player4);
         player4.setOnClickListener(this);
 
-        player5 = (Button)rootView.findViewById(R.id.player5);
+        player5 = (Button) rootView.findViewById(R.id.player5);
         player5.setOnClickListener(this);
 
-        player6 = (Button)rootView.findViewById(R.id.player6);
+        player6 = (Button) rootView.findViewById(R.id.player6);
         player6.setOnClickListener(this);
 
-        suppress = (Button)rootView.findViewById(R.id.suppress_button);
+        suppress = (Button) rootView.findViewById(R.id.suppress_button);
         suppress.setOnClickListener(this);
+        suppress.setEnabled(false);
 
-        launch = (Button)rootView.findViewById(R.id.launch_button);
+        launch = (Button) rootView.findViewById(R.id.launch_button);
         launch.setOnClickListener(this);
 
         return rootView;
@@ -76,29 +77,28 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
     }
 
     @Override
-	public void onClick(View v) {
-		int viewId = v.getId();
+    public void onClick(View v) {
+        int viewId = v.getId();
         Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), LobbyCharacterSelectionActivity.class);
 
-		switch (viewId) {
+        switch (viewId) {
             case R.id.player1:
                 intent.putExtra("buttonID", R.id.player1);
                 startActivityForResult(intent, 1);
                 break;
 
             case R.id.player2:
-                if (!player2.getText().equals("+")) {
-                    intent.putExtra("buttonID", R.id.player2);
-                    startActivityForResult(intent, 2);
-                }
+                intent.putExtra("buttonID", R.id.player2);
+                startActivityForResult(intent, 2);
+
                 break;
 
             case R.id.player3:
                 if (!player3.getText().equals("+")) {
                     intent.putExtra("buttonID", R.id.player3);
                     startActivityForResult(intent, 3);
-                }
-                else {
+                } else {
+                    suppress.setEnabled(true);
                     player3.setBackgroundResource(R.drawable.character_connie);
                     player4.setVisibility(View.VISIBLE);
                     player3.setText(R.string.player3);
@@ -110,8 +110,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                 if (!player4.getText().equals("+")) {
                     intent.putExtra("buttonID", R.id.player4);
                     startActivityForResult(intent, 4);
-                }
-                else {
+                } else {
                     player4.setBackgroundResource(R.drawable.character_connie);
                     player5.setVisibility(View.VISIBLE);
                     player4.setText(R.string.player4);
@@ -123,8 +122,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                 if (!player5.getText().equals("+")) {
                     intent.putExtra("buttonID", R.id.player5);
                     startActivityForResult(intent, 5);
-                }
-                else {
+                } else {
                     player5.setBackgroundResource(R.drawable.character_connie);
                     player6.setVisibility(View.VISIBLE);
                     player5.setText(R.string.player5);
@@ -136,8 +134,7 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
                 if (!player6.getText().equals("+")) {
                     intent.putExtra("buttonID", R.id.player6);
                     startActivityForResult(intent, 6);
-                }
-                else {
+                } else {
                     player6.setBackgroundResource(R.drawable.character_connie);
                     player6.setText(R.string.player6);
                     players[5] = new Player("Connie", R.drawable.character_connie);
@@ -154,56 +151,50 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
 
             default:
                 break;
-		}
-		
-	}
+        }
+
+    }
 
 
-	
-	private void suppress(){
-		if(player6.getVisibility() == View.VISIBLE && !player6.getText().equals(getResources().getString(R.string.add))){
-			player6.setText(R.string.add);
+    private void suppress() {
+        if (player6.getVisibility() == View.VISIBLE && !player6.getText().equals(getResources().getString(R.string.add))) {
+            player6.setText(R.string.add);
             player6.setBackgroundResource(android.R.drawable.btn_default);
             players[5] = null;
-		}
-		else if(player5.getVisibility() == View.VISIBLE && !player5.getText().equals(getResources().getString(R.string.add))){
-			player6.setVisibility(View.INVISIBLE);
-			player5.setText(R.string.add);
+        } else if (player5.getVisibility() == View.VISIBLE && !player5.getText().equals(getResources().getString(R.string.add))) {
+            player6.setVisibility(View.INVISIBLE);
+            player5.setText(R.string.add);
             player5.setBackgroundResource(android.R.drawable.btn_default);
             players[4] = null;
-		}
-		else if(player4.getVisibility() == View.VISIBLE && !player4.getText().equals(getResources().getString(R.string.add))){
-			player5.setVisibility(View.INVISIBLE);
-			player4.setText(R.string.add);
+        } else if (player4.getVisibility() == View.VISIBLE && !player4.getText().equals(getResources().getString(R.string.add))) {
+            player5.setVisibility(View.INVISIBLE);
+            player4.setText(R.string.add);
             player4.setBackgroundResource(android.R.drawable.btn_default);
             players[3] = null;
-		}
-		else {
-			player4.setVisibility(View.INVISIBLE);
-			player3.setText(R.string.add);
+        } else {
+            player4.setVisibility(View.INVISIBLE);
+            player3.setText(R.string.add);
             player3.setBackgroundResource(android.R.drawable.btn_default);
             players[2] = null;
+            suppress.setEnabled(false);
         }
-	}
+    }
 
     private int getPlayersNumber() {
-        if(player6.getVisibility() == View.VISIBLE && !player6.getText().equals(getResources().getString(R.string.add))){
+        if (player6.getVisibility() == View.VISIBLE && !player6.getText().equals(getResources().getString(R.string.add))) {
             return 6;
-        }
-        else if(player5.getVisibility() == View.VISIBLE && !player5.getText().equals(getResources().getString(R.string.add))){
+        } else if (player5.getVisibility() == View.VISIBLE && !player5.getText().equals(getResources().getString(R.string.add))) {
             return 5;
-        }
-        else if(player4.getVisibility() == View.VISIBLE && !player4.getText().equals(getResources().getString(R.string.add))){
+        } else if (player4.getVisibility() == View.VISIBLE && !player4.getText().equals(getResources().getString(R.string.add))) {
             return 4;
-        }
-        else if(player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))){
+        } else if (player3.getVisibility() == View.VISIBLE && !player3.getText().equals(getResources().getString(R.string.add))) {
             return 3;
-		} else {
-			return 2;
-		}
+        } else {
+            return 2;
+        }
     }
-	
-	private void launch(){
+
+    private void launch() {
         int playerNum = 0;
         while (playerNum < players.length && players[playerNum] != null)
             playerNum++;
@@ -221,10 +212,10 @@ public class LobbyScreenSlidePageFragment extends Fragment implements OnClickLis
         Intent intent = new Intent(LobbyScreenSlidePageFragment.this.getActivity(), InGameActivity.class);
         intent.putExtra("players", p);
         startActivity(intent);
-	}
+    }
 
     public void setCharacter(int buttonID, int pictureID, String name) {
-        switch(buttonID) {
+        switch (buttonID) {
             case R.id.player1:
                 player1.setBackgroundResource(pictureID);
                 players[0].setName(name);

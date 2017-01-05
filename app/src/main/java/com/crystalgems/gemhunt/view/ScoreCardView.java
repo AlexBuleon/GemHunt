@@ -35,7 +35,7 @@ public class ScoreCardView extends RelativeLayout {
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.view_scrore_card, this);
+        inflater.inflate(R.layout.view_score_card, this);
     }
 
     @Override

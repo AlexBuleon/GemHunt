@@ -142,7 +142,7 @@ public class GamePlayerLinkDAO extends DatabaseContentProvider implements GamePl
 
     @Override
     public boolean deleteAllGamePlayers() {
-        return false;
+        return super.delete(GAME_PLAYER_LINK_TABLE, null, null) > 0;
     }
 
     private void setContentValues(GamePlayerLink gamePlayerLink) {

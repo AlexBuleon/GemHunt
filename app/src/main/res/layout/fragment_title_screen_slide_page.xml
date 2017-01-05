@@ -17,8 +17,23 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:paddingBottom="80dp"
+            android:paddingBottom="60dp"
             android:src="@drawable/misc_game_title" />
+
+        <TextView
+            android:id="@+id/slideTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:shadowColor="@color/shadowBlack"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="Slide left or right"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 
