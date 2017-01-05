@@ -17,6 +17,7 @@ import com.crystalgems.gemhunt.model.Player;
 import com.crystalgems.gemhunt.view.ScoreCardView;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ScoreActivity extends Activity implements View.OnClickListener {
     private Game game;
@@ -66,10 +67,15 @@ public class ScoreActivity extends Activity implements View.OnClickListener {
 
         Player[] players = game.getPlayers();
 
+        List<Player> playerList = Database.getPlayerDAO().findAllPlayer();
+
         //save each player of the game
         for (int i = 0; i < players.length; i++) {
             //if the player does not exists on database, we create it
-            if(Database.getPlayerDAO().exists(players[i].getName())) {
+
+            boolean ok = Database.getPlayerDAO().exists(players[i].getName());
+
+            if(!Database.getPlayerDAO().exists(players[i].getName())) {
                 Database.getPlayerDAO().addPlayer(players[i]);
             } else {
                 //get the concerned player on the database

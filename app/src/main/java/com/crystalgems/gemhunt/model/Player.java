@@ -78,10 +78,11 @@ public class Player implements Parcelable, Comparable<Player> {
                 ", turnScore=" + turnScore +
                 ", totalScore=" + totalScore +
                 ", penalty=" + penalty +
-                ", globalPenalty=" + globalPenalty +
                 ", penaltyCounter=" + penaltyCounter +
                 ", rollCounter=" + rollCounter +
                 ", rank=" + rank +
+                ", globalScore=" + globalScore +
+                ", globalPenalty=" + globalPenalty +
                 '}';
     }
 

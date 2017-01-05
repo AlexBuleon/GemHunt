@@ -139,7 +139,7 @@ public class PlayerDAO extends DatabaseContentProvider implements PlayerSchema, 
         final String selection = COLUMN_PLAYER_NAME + " = ?";
         final String[] selectionArg = { String.valueOf(name) };
 
-        return super.query(PLAYER_TABLE, PLAYER_COLUMNS, selection, selectionArg, COLUMN_PLAYER_ID) != null;
+        return super.query(PLAYER_TABLE, PLAYER_COLUMNS, selection, selectionArg, COLUMN_PLAYER_ID).getCount() > 0;
     }
 
     @Override
